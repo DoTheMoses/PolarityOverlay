@@ -1,0 +1,166 @@
+<html>
+<head>
+	<!-- // include shit here -->
+	<link rel="stylesheet" href="css/comm.css" type="text/css" charset="utf-8">
+
+	<script src="js/jquery-2.0.2.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/jstween-1.1.min.js" type="text/javascript" charset="utf-8"></script>
+
+	<!-- this is our main loop -->
+	<script type="text/javascript">
+
+	// variables from stream control
+		var commLSponsor;
+		var commLTag;
+		var commLTwitter;
+
+		var commRSponsor;
+		var commRTag;
+		var commRTwitter;
+
+	// other variables
+		var timestampOld;
+		var timestamp;
+
+		var xmlDoc;
+			
+		var xhr = new XMLHttpRequest();
+			
+		var animating = false; // flag to show when animating, used as a "busy" signal
+		var doUpdate = false;
+
+		// this function inititalizes fields when the scene loads
+		function init() {
+
+			xhr.overrideMimeType('text/xml');
+					
+			var timeout = this.window.setInterval(function() {
+				pollHandler();
+			}, 250);
+				
+			$('#commLSponsor').html('');
+			$('#commLSponsor').opacity(0);		
+			$('#commLTag').html('');
+			$('#commLTag').opacity(0);	
+			$('#commLTwitter').html('');
+			$('#commLTwitter').opacity(0);	
+
+			$('#commRSponsor').html('');
+			$('#commRSponsor').opacity(0);		
+			$('#commRTag').html('');
+			$('#commRTag').opacity(0);	
+			$('#commRTwitter').html('');
+			$('#commRTwitter').opacity(0);
+
+			$.play();
+		}
+
+		function pollHandler()
+		{
+		  loadData();
+		  if (timestamp != timestampOld) {
+				  doUpdate = true;
+		  }
+		  if (!animating && doUpdate) {
+			  updateBoard();
+		  }
+		}
+				
+		// this function pulls data from the stream control gui and allows us to use in our scripts here		
+		function loadData() {
+			xhr.open('GET', 'streamcontrol.xml');
+			xhr.send();
+			xhr.onreadystatechange = function(){ // the method getValueFromTag is defined below
+					xmlDoc = xhr.responseXML;
+
+					commLSponsor = getValueFromTag(xmlDoc,'commLSponsor');
+					commLTag     = getValueFromTag(xmlDoc,'commLTag');
+					commLTwitter = getValueFromTag(xmlDoc,'commLTwitter');
+					commRSponsor = getValueFromTag(xmlDoc,'commRSponsor');
+					commRTag     = getValueFromTag(xmlDoc,'commRTag');
+					commRTwitter = getValueFromTag(xmlDoc,'commRTwitter');					
+					timestampOld = timestamp;
+					timestamp = getValueFromTag(xmlDoc,'timestamp');				
+			}
+		}
+
+		function updateBoard() {
+			if ($('#commLTag').html() != commLTag) {
+				animating = true;
+				$('#commLTag').tween({
+					left:{
+					  start: 160,
+					  stop: 210,
+					  units: 'px',
+					  time: 0,
+					  duration: 0.5,
+					  effect:'easeIn'
+					},
+					opacity: {
+					  start: 100,
+					  stop: 0,
+					  time: 0,
+					  duration: 0.5,
+					  effect: 'easeIn'
+					},
+					onStop: function(){
+						$('#commLTag').html(commLTag);
+						}
+				});
+
+					$('#commLTag').tween({
+						left:{
+						  start: 210,
+						  stop: 160,
+						  units: 'px',
+						  time: 0.5,
+						  duration: 0.5,
+						  effect:'easeOut'
+						},
+						opacity: {
+						  start: 0,
+						  stop: 100,
+						  time: 0.5,
+						  duration: 0.5,
+						  effect: 'easeOut'
+						},
+						onStop: function(){
+							animating = false;
+						}
+					});
+				}					
+
+				$.play();
+				
+				doUpdate = false;
+			}
+
+		function getValueFromTag (xmlDoc,tag) {
+			if (xmlDoc.getElementsByTagName(tag).length != 0 ) {
+				if (xmlDoc.getElementsByTagName(tag)[0].childNodes.length == 0) {
+						return '';
+					} else {
+						return xmlDoc.getElementsByTagName(tag)[0].childNodes[0].nodeValue;
+				}
+			} else {
+				return '';
+			}
+		}
+
+	</script>
+	<!-- close main loop -->
+
+</head>
+
+<body onLoad="init()">
+	<div id="frame">
+		<div id="commRSponsor"></div>
+		<div id="commRTag"></div>
+		<div id="commRTwitter"></div>
+		<div id="commLSponsor"></div>
+		<div id="commLTag"></div>
+		<div id="commLTwitter"></div>
+	</div>  
+</body>
+
+</html>

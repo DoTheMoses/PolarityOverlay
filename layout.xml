@@ -1,0 +1,144 @@
+<!DOCTYPE StreamControlLayout>
+<layout width="550" height="390" tabbed="1">
+
+<tab name="Match Info">
+
+<tabSet x="10" y="10" width="530" height="305">
+	<tab name="Singles">
+		<label x="10" y="10" width="100" height="13">Current Match Info</label>
+
+		<label x="335" y="10" width="100" height="13">Round</label>
+		<lineEdit id="roundCurrent"    x="375" y="5" width="145" height="20" dataSet="csv/rounds.csv" />
+
+		<label 									  x="30"  y="35" width="100" height="13">Sponsor</label>
+		<label 									  x="115" y="35" width="100" height="13">Tag</label>
+		<label 									  x="225" y="35" width="100" height="13">Character</label>
+		<label 									  x="335" y="35" width="100" height="13">Score</label>
+		<label 									  x="389" y="35" width="100" height="13">L</label>
+
+		<label 									        x= "10" y="60" width="100" height="13">P1</label>
+		<lineEdit id="p1SponsorCurrent" x= "30" y="55" width= "75" height="20" dataSet="csv/players.csv" dataField="2" master="p1TagCurrent" />
+		<lineEdit id="p1TagCurrent" 	  x="115" y="55" width="100" height="20" dataSet="csv/players.csv" />  
+		<lineEdit id="p1CharCurrent"    x="225" y="55" width="100" height="20" dataSet="csv/characters.csv" />
+		<spinBox  id="p1Score" 				  x="335" y="55" width= "42" height="22" maximum="999" />
+		<checkBox id="p1L"              x="385" y="56" width= "80" height="20" ></checkBox>
+		<button type="reset"        		x="410" y="55" width= "41" height="23" tooltip="Clear player 1 info" id="rstP1Current" reset="p1SponsorCurrent,p1TagCurrent,p1CharCurrent,p1Score,p1L">Clear</button>
+
+		<label 									        x= "10" y="90" width="100" height="13">P2</label>
+		<lineEdit id="p2SponsorCurrent" x= "30" y="85" width= "75" height="20" dataSet="csv/players.csv" dataField="2" master="p2TagCurrent" />
+		<lineEdit id="p2TagCurrent" 	  x="115" y="85" width="100" height="20" dataSet="csv/players.csv" /> 
+		<lineEdit id="p2CharCurrent" 	  x="225" y="85" width="100" height="20" dataSet="csv/characters.csv" /> 
+		<spinBox  id="p2Score" 				  x="335" y="85" width= "42" height="22" maximum="999" />
+		<checkBox id="p2L"              x="385" y="86" width= "80" height="20" ></checkBox>		
+		<button type="reset"        		x="410" y="85" width= "41" height="23" tooltip="Clear player 2 info" id="rstP2Current" reset="p2SponsorCurrent,p2TagCurrent,p2CharCurrent,p2Score,p2L">Clear</button>			
+
+		<button type="reset"            x="460" y="55" width="60" height="23" tooltip="Clear both player info" id="rstCurrent" reset="p1SponsorCurrent,p1TagCurrent,p1CharCurrent,p1Score,p1L,p2SponsorCurrent,p2TagCurrent,p2CharCurrent,p2Score,p2L">Clear Both</button>
+
+		<button type="swap" x="460" y="85" width="60" height="23" tooltip="Swap player 1 and player 2 info" id="swapCurrent" swapSet1="p1SponsorCurrent,p1TagCurrent,p1CharCurrent,p1L,p1Score" swapSet2="p2SponsorCurrent,p2TagCurrent,p2CharCurrent,p2L,p2Score">Swap</button>
+
+		<line x="10" y="115" width="530" height="15" />
+
+		<label x="10" y="135" width="100" height="13">On Deck Match Info</label>
+
+		<label x="335" y="135" width="100" height="13">Round</label>
+		<lineEdit id="roundOnDeck"    x="375" y="130" width="145" height="20" dataSet="csv/rounds.csv" />
+
+		<label 									  x="30"  y="160" width="100" height="13">Sponsor</label>
+		<label 									  x="115" y="160" width="100" height="13">Tag</label>
+		<label 									  x="225" y="160" width="100" height="13">Character</label>
+
+		<label 									       x= "10" y="185" width="100" height="13">P1</label>
+		<lineEdit id="p1SponsorOnDeck" x= "30" y="180" width= "75" height="20" dataSet="csv/players.csv" dataField="2" master="p1TagOnDeck" />
+		<lineEdit id="p1TagOnDeck" 	   x="115" y="180" width="100" height="20" dataSet="csv/players.csv" />  
+		<lineEdit id="p1CharOnDeck" 	 x="225" y="180" width="100" height="20" dataSet="csv/characters.csv" /> 
+		<button type="reset"        	 x="335" y="180" width= "41" height="23" tooltip="Clear player 1 info" id="rstP1OnDeck" reset="p1SponsorOnDeck,p1TagOnDeck,p1CharOnDeck">Clear</button>
+
+		<label 									       x= "10" y="215" width="100" height="13">P2</label>
+		<lineEdit id="p2SponsorOnDeck" x= "30" y="210" width= "75" height="20" dataSet="csv/players.csv" dataField="2" master="p2TagOnDeck" />
+		<lineEdit id="p2TagOnDeck" 	   x="115" y="210" width="100" height="20" dataSet="csv/players.csv" /> 
+		<lineEdit id="p2CharOnDeck" 	 x="225" y="210" width="100" height="20" dataSet="csv/characters.csv" /> 
+		<button type="reset"        	 x="335" y="210" width= "41" height="23" tooltip="Clear player 2 info" id="rstP2OnDeck" reset="p2SponsorOnDeck,p2TagOnDeck,p2CharOnDeck">Clear</button>
+
+		<button type="reset"           x="385" y="180" width="60" height="23" tooltip="Clear both player info" id="rstOnDeck" reset="p1SponsorOnDeck,p1TagOnDeck,p1CharOnDeck,p2SponsorOnDeck,p2TagOnDeck,p2CharOnDeck">Clear Both</button>
+
+		<button type="swap" x="385" y="210" width="60" height="23" tooltip="Swap player 1 and player 2 info" id="swapOnDeck" swapSet1="p1SponsorOnDeck,p1TagOnDeck,p1CharOnDeck" swapSet2="p2SponsorOnDeck,p2TagOnDeck,p2CharOnDeck">Swap</button>
+
+		<button type="swap" x="10" y="245" width="505" height="23" tooltip="Swap On Deck Match Info to Current Match Info" id="swapOnDeckToCurrent" swapSet1="p1SponsorCurrent,p1TagCurrent,p1CharCurrent,p2SponsorCurrent,p2TagCurrent,p2CharCurrent,roundCurrent" swapSet2="p1SponsorOnDeck,p1TagOnDeck,p1CharOnDeck,p2SponsorOnDeck,p2TagOnDeck,p2CharOnDeck,roundOnDeck">Swap On Deck Match Info and Current Match Info</button>
+
+	</tab>
+	<tab name="Doubles">
+		<label 									  x="30"  y="10" width="100" height="13">Sponsor</label>
+		<label 									  x="145" y="10" width="100" height="13">Tag</label>
+		<label 									  x="285" y="10" width="100" height="13">Character</label>
+
+		<label 									          x= "10" y="35" width="100" height="13">P1</label>
+		<lineEdit id="t1p1SponsorCurrent" x= "30" y="30" width="100" height="20" />
+		<lineEdit id="t1p1TagCurrent" 	  x="145" y="30" width="125" height="20" />  
+
+		<label 									          x= "10" y="65" width="100" height="13">P2</label>
+		<lineEdit id="t1p2SponsorCurrent" x= "30" y="60" width="100" height="20" />
+		<lineEdit id="t1p2TagCurrent" 	  x="145" y="60" width="125" height="20" /> 
+	</tab>
+</tabSet>
+
+</tab>
+		
+	<tab name="Wait Screen">
+
+		<label 							   x= "10" y="15" width="100" height="13">Message</label>
+		<lineEdit id="message" x= "60" y="10" width="480" height="20" />
+
+		<label 							 x= "10" y="45" width="100" height="13">Timer (in minutes)</label>
+		<spinBox id="timer"  x="100" y="40" width="42" height="22" maximum="999" />
+		<button type="reset" x="150" y="40" width="80" height="23" tooltip="Clear timer" id="rstTimer" reset="timer">Reset Timer</button>
+	</tab>
+
+	<tab name="Commentators">
+
+		<label 									    x="40"  y="10" width="100" height="13">Sponsor</label>
+		<label 									    x="125" y="10" width="100" height="13">Tag</label>
+		<label 									    x="235" y="10" width="120" height="13">Twitter</label>
+
+		<label 									    x="10"  y="40" width="100" height="13">Left</label>
+		<lineEdit id="commLSponsor" x="40"  y="35" width="75" height="20" dataSet="csv/commentators.csv" dataField="3" master="commLTag" />
+		<lineEdit id="commLTag" 	  x="125" y="35" width="100" height="20" dataSet="csv/commentators.csv" />
+		<lineEdit id="commLTwitter" x="235" y="35" width="100" height="20" dataSet="csv/commentators.csv" dataField="2" master="commLTag" />
+		<button type="reset"        x="345" y="35" width="41" height="23" tooltip="Clear left commentator info" id="rstCommL" reset="commLSponsor,commLTag,commLTwitter">Clear</button>
+
+		<label 									    x= "10" y="70" width="100" height="13">Right</label>
+		<lineEdit id="commRSponsor" x= "40" y="65" width="75" height="20" dataSet="csv/commentators.csv" dataField="3" master="commRTag" />
+		<lineEdit id="commRTag" 	  x="125" y="65" width="100" height="20" dataSet="csv/commentators.csv" />
+		<lineEdit id="commRTwitter" x="235" y="65" width="100" height="20" dataSet="csv/commentators.csv" dataField="2" master="commRTag" />
+		<button type="reset"        x="345" y="65" width="41" height="23" tooltip="Clear right commentator info" id="rstCommR" reset="commRSponsor,commRTag,commRTwitter">Clear</button>
+
+		<button type="reset"        x="395" y="35" width="60" height="23" tooltip="Clear both commentator info" id="rstComms" reset="commLSponsor,commLTag,commLTwitter,commRSponsor,commRTag,commRTwitter">Clear Both</button>
+
+		<button type="swap" x="395" y="65" width="60" height="23" tooltip="Swap left and right commentator info" id="swapComm" swapSet1="commLSponsor,commLTag,commLTwitter" swapSet2="commRSponsor,commRTag,commRTwitter">Swap</button>
+
+		<label 									    x="10" y="100" width="500" height="13">Start by typing the Tag of the commentator. The rest should fill if they've commentated before.</label>
+
+	</tab>
+
+	<tab name="Event">
+
+		<label 										 x="10" y="15" width="100" height="13">Series</label>
+		<comboBox id="eventSeries" x="45" y="10" width="150" height="20" editable="1" >
+			<comboItem>CFL Smackdown</comboItem><comboItem>Unrivaled</comboItem><comboItem>Outlawed</comboItem>	
+		</comboBox>
+
+		<label 									  x="205" y="15" width="100" height="13">Entry</label>
+		<lineEdit id="eventEntry" x="235" y="10" width="60" height="20" />  
+
+		<label 									  x="10" y="45" width="100" height="13">Game Streaming</label>
+		<radioGroup id="eventGame">
+			<radioButton x="10" y="70" width="80" height="20" value="0">Smash 64</radioButton>
+			<radioButton x="10" y="95" width="80" height="20" value="1">Melee</radioButton>
+			<radioButton x="10" y="120" width="80" height="20" value="2">PM</radioButton>
+			<radioButton x="10" y="145" width="80" height="20" value="2">Smash 4</radioButton>		
+		</radioGroup>
+
+
+	</tab>
+
+
+</layout>

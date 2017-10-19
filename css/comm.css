@@ -1,0 +1,96 @@
+@font-face {
+    font-family: 'AcherusGrotesque';
+    src: url('ACHERUS_GROTESQUE_-_REGULAR.OTF');
+}
+
+body {
+	margin:0px;
+	background-color: rgba(0, 0, 0, 0);
+    font-family: 'AcherusGrotesque';
+    color: white;
+    height: 100%;
+    width: 100%;  
+}
+
+#p1,#p2 {
+    position: fixed;    
+    font-size:30px; 
+}
+
+#p1 {
+    top:235px;
+    right:20px;    
+    text-align:right;
+}
+#p2 {
+    top:17px;
+    left:878px;    
+    text-align:left;
+}
+
+#p1SponsorCurrent,#p2SponsorCurrent,#p1SponsorCurrent_sb,#p2SponsorCurrent_sb {
+    color:#E43D2E;  
+}
+#p1TagCurrent,#p1SponsorCurrent,#p2TagCurrent,#p2SponsorCurrent,#p1TagCurrent_sb,#p1SponsorCurrent_sb,#p2TagCurrent_sb,#p2SponsorCurrent_sb {
+    display:inline-block;
+}
+
+#p1_sb,#p2_sb,#p1Score,#p2Score {
+    font-size:30px;   
+    position:fixed;  
+}
+
+#p1_sb {
+    top:665px;
+    left:80px;    
+    text-align:left;    
+}
+#p1Score {
+    top:665px;
+    left:40px;
+}
+
+#p2_sb {
+    top:665px;
+    right:490px;    
+    text-align:right;    
+}
+#p2Score {
+    top:665px;
+    right:435px;
+}
+
+/* COMMENTARY STUFF NOW */
+#commLSponsor, #commRSponsor {color:#E43D2E;}
+#commLTwitter, #commRTwitter {
+    font-size:25px;
+    position:fixed;     
+}
+#commL, #commR {
+    font-size:40px;   
+    position:fixed;  
+}
+
+#commLSponsor, #commLTag, #commRSponsor, #commRTag {display:inline-block;}
+#commLSponsor, #commLTag, #commLTwitter {text-align: right;}
+#commRSponsor, #commRTag, #commRTwitter {text-align: left;}
+
+/* position stuff */
+#commLTwitter {
+    top:605px;
+    right:780px;
+}
+#commL{
+    top:560px;
+    right:780px;
+}
+#commRTwitter {
+    top:605px;
+    left:780px;
+}
+#commR{
+    top:560px;
+    left:780px;
+}
+
+

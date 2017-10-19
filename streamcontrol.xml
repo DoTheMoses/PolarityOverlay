@@ -1,0 +1,37 @@
+<!DOCTYPE StreamControl>
+<items>
+ <timestamp>1508435427</timestamp>
+ <commLSponsor>Polarity</commLSponsor>
+ <commLTag>Moses</commLTag>
+ <commLTwitter>DoTheMoses</commLTwitter>
+ <commRSponsor>PG</commRSponsor>
+ <commRTag>Plup</commRTag>
+ <commRTwitter>PG_Plup</commRTwitter>
+ <eventEntry></eventEntry>
+ <eventGame>0</eventGame>
+ <eventSeries>CFL Smackdown</eventSeries>
+ <message></message>
+ <p1CharCurrent></p1CharCurrent>
+ <p1CharOnDeck></p1CharOnDeck>
+ <p1L>0</p1L>
+ <p1Score>0</p1Score>
+ <p1SponsorCurrent>Liquid</p1SponsorCurrent>
+ <p1SponsorOnDeck>Liquid</p1SponsorOnDeck>
+ <p1TagCurrent>Hungrybox</p1TagCurrent>
+ <p1TagOnDeck>Hungrybox</p1TagOnDeck>
+ <p2CharCurrent></p2CharCurrent>
+ <p2CharOnDeck></p2CharOnDeck>
+ <p2L>0</p2L>
+ <p2Score>1</p2Score>
+ <p2SponsorCurrent>FBC</p2SponsorCurrent>
+ <p2SponsorOnDeck>PG</p2SponsorOnDeck>
+ <p2TagCurrent>Lad</p2TagCurrent>
+ <p2TagOnDeck>Plup</p2TagOnDeck>
+ <roundCurrent></roundCurrent>
+ <roundOnDeck></roundOnDeck>
+ <t1p1SponsorCurrent></t1p1SponsorCurrent>
+ <t1p1TagCurrent></t1p1TagCurrent>
+ <t1p2SponsorCurrent></t1p2SponsorCurrent>
+ <t1p2TagCurrent></t1p2TagCurrent>
+ <timer>0</timer>
+</items>
