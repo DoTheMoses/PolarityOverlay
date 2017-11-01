@@ -1,7 +1,7 @@
 <html>
 <head>
 	<!-- // include shit here -->
-	<link rel="stylesheet" href="css/comm.css" type="text/css" charset="utf-8">
+	<link rel="stylesheet" href="css/melee_main.css" type="text/css" charset="utf-8">
 
 	<script src="js/jquery-2.0.2.min.js" type="text/javascript" charset="utf-8"></script>
 	<script src="js/jstween-1.1.min.js" type="text/javascript" charset="utf-8"></script>
@@ -10,12 +10,17 @@
 	<script type="text/javascript">
 
 	// variables from stream control
+		var roundCurrent;
+
 		var p1SponsorCurrent; 
 		var p1TagCurrent;   
 		var p1Score; 
 		var p2SponsorCurrent;
 		var p2TagCurrent; 
 		var p2Score; 		
+
+		var commLTag;
+		var commRTag;
 
 	// other variables
 		var timestampOld;
@@ -36,6 +41,8 @@
 			var timeout = this.window.setInterval(function() {
 				pollHandler();
 			}, 250);
+			$('#roundCurrent').html('');
+			$('#roundCurrent').opacity(0);		
 				
 			$('#p1SponsorCurrent').html('');
 			$('#p1SponsorCurrent').opacity(0);		
@@ -61,6 +68,11 @@
 			$('#p2Score').html('');
 			$('#p2Score').opacity(0);
 
+			$('#commLTag').html('');
+			$('#commLTag').opacity(0);
+			$('#commRTag').html('');
+			$('#commRTag').opacity(0);
+
 			$.play();
 		}
 
@@ -82,19 +94,37 @@
 			xhr.onreadystatechange = function(){ // the method getValueFromTag is defined below
 					xmlDoc = xhr.responseXML;
 
+					roundCurrent 		 = getValueFromTag(xmlDoc,'roundCurrent');
+
 					p1SponsorCurrent = getValueFromTag(xmlDoc,'p1SponsorCurrent');
 					p1TagCurrent     = getValueFromTag(xmlDoc,'p1TagCurrent');
 					p1Score          = getValueFromTag(xmlDoc,'p1Score');					
 					p2SponsorCurrent = getValueFromTag(xmlDoc,'p2SponsorCurrent');
 					p2TagCurrent	   = getValueFromTag(xmlDoc,'p2TagCurrent');	
 					p2Score          = getValueFromTag(xmlDoc,'p2Score');				
-										
+						
+					commLTag				 = getValueFromTag(xmlDoc,'commLTag');	
+					commRTag				 = getValueFromTag(xmlDoc,'commRTag');	
+
 					timestampOld = timestamp;
 					timestamp = getValueFromTag(xmlDoc,'timestamp');				
 			}
 		}
 
 		function updateBoard() {
+			if ($('#roundCurrent').html() != roundCurrent) {
+				animating = true;
+				$('#roundCurrent').tween({
+					opacity: {start: 100,stop: 0,time: 0,duration: 0.5,effect: 'easeIn'},
+					onStop: function(){$('#roundCurrent').html(roundCurrent);}
+				});
+				$('#roundCurrent').tween({
+					opacity: {start: 0,stop: 100,time: 0.5,duration: 0.5,effect: 'easeOut'},
+					onStop: function(){animating = false;}
+				});						
+			}	
+
+
 			if ($('#p1TagCurrent').html() != p1TagCurrent) {
 				animating = true;
 				$('#p1TagCurrent').tween({
@@ -114,7 +144,6 @@
 					opacity: {start: 0,stop: 100,time: 0.5,duration: 0.5,effect: 'easeOut'},
 					onStop: function(){animating = false;}
 				});						
-				
 			}					
 
 			if ($('#p2TagCurrent').html() != p2TagCurrent) {
@@ -136,7 +165,6 @@
 					opacity: {start: 0,stop: 100,time: 0.5,duration: 0.5,effect: 'easeOut'},
 					onStop: function(){animating = false;}
 				});						
-				
 			}	
 
 			// ----------------------------------------------------------------------------
@@ -197,7 +225,6 @@
 					opacity: {start: 0,stop: 100,time: 0.5,duration: 0.5,effect: 'easeOut'},
 					onStop: function(){animating = false;}
 				});					
-				
 			}	
 
 			if ($('#p2Score').html() != p2Score) {
@@ -210,9 +237,35 @@
 				$('#p2Score').tween({
 					opacity: {start: 0,stop: 100,time: 0.5,duration: 0.5,effect: 'easeOut'},
 					onStop: function(){animating = false;}
-				});					
-				
-			}	
+				});
+			}			
+
+				// comm info
+			if ($('#commLTag').html() != commLTag) {
+				animating = true;
+				$('#commLTag').tween({
+					opacity: {start: 100,stop: 0,time: 0,duration: 0.5,effect: 'easeIn'},
+					onStop: function(){$('#commLTag').html(commLTag);}
+				});
+	
+				$('#commLTag').tween({
+					opacity: {start: 0,stop: 100,time: 0.5,duration: 0.5,effect: 'easeOut'},
+					onStop: function(){animating = false;}
+				});		
+			}
+
+			if ($('#commRTag').html() != commRTag) {
+				animating = true;
+				$('#commRTag').tween({
+					opacity: {start: 100,stop: 0,time: 0,duration: 0.5,effect: 'easeIn'},
+					onStop: function(){$('#commRTag').html(commRTag);}
+				});
+	
+				$('#commRTag').tween({
+					opacity: {start: 0,stop: 100,time: 0.5,duration: 0.5,effect: 'easeOut'},
+					onStop: function(){animating = false;}
+				});
+			}
 
 				$.play();
 				
@@ -237,6 +290,8 @@
 </head>
 
 <body onLoad="init()">
+	<div id="roundCurrent"></div>
+
 	<div id="p1">
 		<div id="p1SponsorCurrent"></div>
 		<div id="p1TagCurrent"></div>
@@ -260,6 +315,17 @@
 		<div id="p2Score"></div>
 
 	</div>	
+
+	<div id="commLinfo">
+		<div id="commLSponsor"></div>		
+		<div id="commLTag"></div>
+	</div>
+	<div id="commLTwitter"></div>	
+	<div id="commRinfo">
+		<div id="commRSponsor"></div>		
+		<div id="commRTag"></div>
+	</div>
+	<div id="commRTwitter"></div>	
 
 </body>
 

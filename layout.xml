@@ -10,6 +10,9 @@
 		<label x="335" y="10" width="100" height="13">Round</label>
 		<lineEdit id="roundCurrent"    x="375" y="5" width="145" height="20" dataSet="csv/rounds.csv" />
 
+		<label x="335" y="10" width="100" height="13">Round</label>
+		<lineEdit id="roundCurrent"    x="375" y="5" width="145" height="20" dataSet="csv/rounds.csv" />
+
 		<label 									  x="30"  y="35" width="100" height="13">Sponsor</label>
 		<label 									  x="115" y="35" width="100" height="13">Tag</label>
 		<label 									  x="225" y="35" width="100" height="13">Character</label>
