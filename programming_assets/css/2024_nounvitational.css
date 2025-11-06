@@ -1,0 +1,582 @@
+@import "base.css";
+
+/*=======================================================================*/
+/* VARIABLES
+/*=======================================================================*/
+@font-face {
+    font-family: Uxum Grotesque Ultra;
+    src: url("../backend/fonts/TRIAL_UxumGrotesque-Ultra.otf");
+}
+@font-face {
+    font-family: Uxum Grotesque Bold;
+    src: url("../backend/fonts/TRIAL_UxumGrotesque-Bold.otf");
+}
+@font-face {
+    font-family: Uxum Grotesque Regular;
+    src: url("../backend/fonts/TRIAL_UxumGrotesque-Regular.otf");
+}
+@font-face {
+    font-family: Uxum Grotesque Light;
+    src: url("../backend/fonts/TRIAL_UxumGrotesque-Light.otf");
+}
+:root {
+  --main-color: #FFC629;
+  --secondary-color: #170F36;
+  --font-ultra: 'Uxum Grotesque Ultra';
+  --font-bold: 'Uxum Grotesque Bold';
+  --font-regular: 'Uxum Grotesque Regular';
+  --font-light: 'Uxum Grotesque Light';
+}
+
+/*=======================================================================*/
+/* BODY
+/*=======================================================================*/
+
+/* set style template for scenes */
+body {
+  font-family: var(--font-bold);
+  text-transform: uppercase;
+  /*text-transform: uppercase;*/
+}
+
+/*========================================================================*/
+/*
+/*    ######  ####### #     # #     # ####### ### #     # #######
+/*    #     # #     # #  #  # ##    #    #     #  ##   ## # 
+/*    #     # #     # #  #  # # #   #    #     #  # # # # #
+/*    #     # #     # #  #  # #  #  #    #     #  #  #  # #####
+/*    #     # #     # #  #  # #   # #    #     #  #     # #
+/*    #     # #     # #  #  # #    ##    #     #  #     # #
+/*    ######  #######  ## ##  #     #    #    ### #     # #######
+/*
+/*========================================================================*/
+
+#message_downtime {
+  position: absolute;
+  height:138px;
+  width:1200px;
+  left:360px;
+  top:710px;
+  font-size: 75px;
+  text-align: center;
+  font-family: var(--font-bold);
+}
+
+#scene_downtime {
+  height: 100%;
+  width: 100%;
+}
+
+#sponsors_static {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 830px;
+  left: 520px;
+  background-image: url('../overlays/graphics/misc_assets/sponsors_static.png');
+  background-repeat: no-repeat;
+}
+
+/*========================================================================*/
+/*
+/*     #####     #     #####  ####### ####### ######   #####
+/*    #     #   # #   #     #    #    #       #     # #     #
+/*    #        #   #  #          #    #       #     # #
+/*    #       #     #  #####     #    #####   ######   #####
+/*    #       #######       #    #    #       #   #         #
+/*    #     # #     # #     #    #    #       #    #  #     #
+/*     #####  #     #  #####     #    ####### #     #  #####
+/*
+/*========================================================================*/
+
+/*.casters_2 {
+  background-image: url("../overlays/graphics/overlay_casters_2.png");
+}
+
+.casters_3 {
+  background-image: url("../overlays/graphics/overlay_casters_3.png");
+}*/
+
+#caster_wrapper_1,#caster_wrapper_2,#caster_wrapper_3,#caster_wrapper_4 {
+  width: 500px;
+  height: 100px;
+  top: 925px;
+  font-size: 47px;
+  font-family: var(--font-ultra);
+}
+
+#caster_wrapper_1 {left:  287px;}
+#caster_wrapper_2 {left: 1135px;}
+#caster_wrapper_3 {left: 1257px;}
+
+#caster_full_1, #caster_full_2, #caster_full_3 {
+  margin-bottom: -40px;
+  text-shadow: 2px 2px 2px #000000;
+}
+
+#caster_wrapper_1 {
+  text-align: left;
+}
+#caster_wrapper_2 {
+  text-align: right;
+}
+
+#caster_sponsor_1, #caster_sponsor_2, #caster_sponsor_3, #caster_sponsor_4 {
+   color: white;}
+
+#caster_twitter_1, #caster_twitter_2, #caster_twitter_3, #caster_twitter_4 {
+  font-size: 15px;
+  padding-left: 10px;
+  font-family: var(--font-regular);
+  color: white;
+}
+
+#caster_twitter_2 {
+  padding-left: 0px;
+  padding-right: 10px;
+}
+
+#caster_pronouns_1, #caster_pronouns_2, #caster_pronouns_3, #caster_pronouns_4 {
+  font-size: 15px;
+  font-family: var(--font-regular);
+  color: white;
+  font-style: normal;
+  font-variant: small-caps
+}
+
+.hide {display: none;}
+.show {display: inline;}
+
+/*========================================================================*/
+/*
+/*    #       ####### #     # ####### ######     ####### #     # ### ######  ######  
+/*    #       #     # #  #  # #       #     #       #    #     #  #  #     # #     # 
+/*    #       #     # #  #  # #       #     #       #    #     #  #  #     # #     # 
+/*    #       #     # #  #  # #####   ######        #    #######  #  ######  #     # 
+/*    #       #     # #  #  # #       #   #         #    #     #  #  #   #   #     # 
+/*    #       #     # #  #  # #       #    #        #    #     #  #  #    #  #     # 
+/*    ####### #######  ## ##  ####### #     #       #    #     # ### #     # ######  
+/*
+/*========================================================================*/
+
+/*#scene_wrapper_lower_third { 
+  background-image: url("../overlays/graphics/overlay_lower_third.png");
+}*/
+
+#lower_third_wrapper {
+  height: 134px;
+  width: 900px;
+  left: 580px;
+  top: 900px;
+  font-size: 20px;
+}
+
+#lower_third_line_first_wrapper {
+  font-size: 17px;
+  padding-top: 25px;
+  font-family: var(--font-regular);
+  margin-bottom: -8px;
+}
+
+#lower_third_line_second_wrapper {
+  font-size: 50px; 
+  font-family: var(--font-ultra);
+}
+
+#left_pic_wrapper {
+  position: absolute;
+  left: 290px;
+  top: -12px;
+  height: 120px;
+  width: 120px;
+}
+
+#right_pic_wrapper {
+  position: absolute;
+  left: 705px;
+  top: -12px;
+  height: 120px;
+  width: 120px;
+}
+
+#left_pic, #right_pic {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-image: url("../overlays/graphics/player_photos/QUARTER_SHOTS/aklo.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+#right_pic {
+  background-image: url("../overlays/graphics/player_photos/QUARTER_SHOTS/zain.png");
+}
+
+#plate_vs_wrapper {
+  position: absolute;
+  left: 275px;
+  top: 45px;
+  height: 20px;
+  width: 550px;
+  font-size: 23px;
+  text-align: center;
+}
+
+#local_time_text {
+  position: absolute;
+  top: 922px;
+  left: 1480px;
+  font-size: 18px;
+  font-family: var(--font-regular);
+}
+
+/*ticker*/
+.ticker-container {
+  width: 100%;
+  overflow: hidden;
+  font-size: 22px;
+  bottom: 0px;
+  position: absolute;
+  padding-bottom: 8px;
+}
+.ticker-wrapper {
+  width: 100%;
+  padding-left: 100%;
+  background-color: transparent;
+  }
+  @keyframes ticker {
+  0% {
+  transform: translate3d(0, 0, 0);
+  }
+  100% {
+  transform: translate3d(-100%, 0, 0);
+  }
+}
+.ticker-transition {
+  display: inline-block;
+  white-space: nowrap;
+  padding-right: 100%;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-name: ticker;
+  animation-duration: 35s;
+}
+.ticker-item {
+  display: inline-block;
+  padding: 0 1rem;
+}
+
+/*========================================================================*/
+/*
+/*     #####         #####  #     # ####### #######  #####
+/*    #     #       #     # #     # #     #    #    #     #
+/*          #       #       #     # #     #    #    #
+/*     #####  #####  #####  ####### #     #    #     #####
+/*    #                   # #     # #     #    #          #
+/*    #             #     # #     # #     #    #    #     #
+/*    #######        #####  #     # #######    #     #####
+/*
+/*========================================================================*/
+
+#scene_wrapper_2_shot_16x9 {
+  background-image: url("../overlays/graphics/overlay_2_shot_16x9.png");
+}
+
+#scene_wrapper_2_shot_73x60 {
+  background-image: url("../overlays/graphics/overlay_2_shot_73x60.png"); 
+}
+
+#sponsors_static_2_shot_73x60 {
+  position: absolute;  
+  height: 200px;
+  width: 100%;
+  top: 870px;
+  left: 565px;
+  background-image: url('../overlays/graphics/misc_assets/sponsors_static.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+/*========================================================================*/
+/*
+/*     #####         #####  #     # ####### #######  #####
+/*    #     #       #     # #     # #     #    #    #     #
+/*          #       #       #     # #     #    #    #
+/*     #####  #####  #####  ####### #     #    #     #####
+/*          #             # #     # #     #    #          #
+/*    #     #       #     # #     # #     #    #    #     #
+/*     #####         #####  #     # #######    #     #####
+/*
+/*========================================================================*/
+
+#scene_wrapper_3_shot_73x60 {
+  background-image: url("../overlays/graphics/overlay_3_shot_73x60.png"); 
+}
+
+#sponsors_static_3_shot_73x60 {
+  position: absolute;  
+  height: 170px;
+  width: 100%;
+  bottom: 10px;
+  left: 625px;
+  background-image: url('../overlays/graphics/misc_assets/sponsors_static.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+/* H2H */
+
+#scene_wrapper_gameplay_h2h_melee_singles {
+  background-image: url("../overlays/graphics/overlay_gameplay_melee_singles22.png");
+}
+
+#round_wrapper_h2h {
+  width: 440px;
+  height: 61px;
+  left: 740px;
+  top: 452px;
+}
+
+#round_h2h {
+  padding-top: 12px;
+  font-size: 30px;
+}
+
+#l_tag_wrapper_h2h, #r_tag_wrapper_h2h {
+  height: 46px;
+  width: 395px;
+  font-size: 28px;
+  font-family: var(--font-ultra);
+  top: 900px;
+  padding-top: 14px;
+}
+
+#l_tag_wrapper_h2h {left:  450px;}
+#r_tag_wrapper_h2h {right: 450px;}
+
+#l_tag_h2h,#l_sponsor_h2h,#r_tag_h2h,#r_sponsor_h2h, #l_loss_h2h, #r_loss_h2h {
+  var(--font-ultra);
+}
+
+#l_sponsor_h2h, #l_loss_h2h {
+  color: var(--color-blue);
+}
+
+#r_sponsor_h2h, #r_loss_h2h {
+  color: var(--color-red);
+}
+
+/*#l_pronoun_wrapper_h2h, #r_pronoun_wrapper_h2h {
+  top: 435px;
+  width: 300px;
+  height: 55px;
+}
+
+#l_pronoun_wrapper_h2h {left:  0px;}
+#r_pronoun_wrapper_h2h {right: 0px;}*/
+
+#l_pronoun_h2h, #r_pronoun_h2h {
+  font-size: 20px;
+  padding-top: -10px;
+  text-transform: lowercase;
+}
+
+#l_loss_h2h, #r_loss_h2h {
+  font-size: 35px;
+  padding-left: 5px;
+}
+
+#l_score_wrapper_h2h, #r_score_wrapper_h2h {
+  text-shadow: 2px 2px 2px #000000;
+  height: 100px;
+  width: 100px;
+  font-family: var(--font-ultra);
+  top: 905px;
+}
+
+#l_score_wrapper_h2h {left:  830px;}
+#r_score_wrapper_h2h {right: 830px;}
+
+#l_score_h2h, #r_score_h2h {
+  font-size: 50px;
+}
+
+#l_char_h2h, #r_char_h2h {
+  width: 36px;
+  height: 36px;
+}
+
+#l_char_wrapper_h2h, #r_char_wrapper_h2h {top: 905px;}
+#l_char_wrapper_h2h {left:  436px;}
+#r_char_wrapper_h2h {right: 434px;}
+
+/*========================================================================*/
+/*
+/*     #####     #    #     # ####### ######  #          #    #     #
+/*    #     #   # #   ##   ## #       #     # #         # #    #   #
+/*    #        #   #  # # # # #       #     # #        #   #    # #
+/*    #  #### #     # #  #  # #####   ######  #       #     #    #
+/*    #     # ####### #     # #       #       #       #######    #
+/*    #     # #     # #     # #       #       #       #     #    #
+/*     #####  #     # #     # ####### #       ####### #     #    #
+/*
+/*========================================================================*/
+
+/*#scene_wrapper_gameplay_melee_singles {
+  background-image: url("../overlays/graphics/overlay_gameplay_melee_singles.png");
+}*/
+
+#round_wrapper {
+  width: 310px;
+  height: 70px;
+  left: 0px;
+  bottom: 40px;
+}
+
+#round {
+  padding-top: 11px;
+  font-size: 35px;
+}
+
+#round_wrapper_doubles {
+  width: 310px;
+  height: 70px;
+  right: 120px;
+  top: 190px;
+}
+
+#round_wrapper_doubles {
+  padding-top: 11px;
+  font-size: 35px;
+}
+
+#l_tag_wrapper, #r_tag_wrapper {
+  height: 40px;
+  width: 310px;
+  font-size: 29px;
+  font-family: var(--font-ultra);
+  top: 793px;
+}
+
+#l_tag_wrapper_doubles, #r_tag_wrapper_doubles {
+  height: 40px;
+  width: 310px;
+  font-size: 33px;
+  font-family: var(--font-ultra);
+  top: 882px;
+  right: 100px;
+}
+#r_tag_wrapper_doubles {
+  top: 965px;
+}
+
+#l_tag_wrapper,#l_sponsor_wrapper {
+  left:  33px;
+  text-align: left;
+}
+#r_tag_wrapper,#r_sponsor_wrapper {
+  right: 19px;
+  text-align: right;
+}
+
+#l_sponsor_wrapper, #r_sponsor_wrapper {
+  width: 260px;
+  height: 20px;
+  position: absolute;
+  top: 775px;
+}
+
+#r_sponsor_wrapper {
+  text-align: right;
+  width: 200px;
+  right: 29px;
+}
+
+#l_sponsor,#r_sponsor {
+  width: 100%;
+  height: 100%;
+  font-size: 19px;
+  color: white;
+  display: block;
+}
+
+#l_tag, #r_tag, #l_loss, #r_loss {
+  font-family: var(--font-ultra);
+}
+#l_sponsor,#r_sponsor {
+  font-family: var(--font-light);
+}
+
+#l_tag_doubles, #r_tag_doubles {
+  font-family: var(--font-regular);
+}
+
+#l_pronoun_wrapper, #r_pronoun_wrapper {
+  top: 705px;
+  width: 300px;
+  height: 55px;
+  font-family: var(--font-bold);
+}
+
+#l_pronoun_wrapper {left:  0px;}
+#r_pronoun_wrapper {right: 0px;}
+
+#l_pronoun, #r_pronoun {
+  font-size: 20px;
+}
+
+#l_loss, #r_loss {
+  font-size: 35px;
+  padding-left: 5px;
+}
+
+#l_score_wrapper, #r_score_wrapper {
+  text-shadow: 2px 2px 2px #000000;
+  height: 100px;
+  width: 100px;
+	font-family: var(--font-ultra);
+  bottom: 140px;
+}
+
+#l_score_wrapper_doubles, #r_score_wrapper_doubles {
+  text-shadow: 2px 2px 2px #000000;
+  height: 100px;
+  width: 100px;
+  font-family: var(--font-ultra);
+  bottom: 121px;
+}
+
+#l_score_wrapper {left:  166px;}
+#r_score_wrapper {right: 166px;}
+
+#l_score_wrapper_doubles {right: 450px;}
+#r_score_wrapper_doubles {
+  right: 450px;  
+  bottom: 35px;
+}
+
+#l_score, #r_score {
+  font-size: 100px;
+}
+#l_score_doubles, #r_score_doubles {
+  font-size: 65px;
+}
+
+#l_char, #r_char {
+  width: 65px;
+  height: 65px;
+}
+
+#l_char_wrapper, #r_char_wrapper {
+  top: 871px;
+  height: 90px;
+  width: 100px;
+}
+#l_char_wrapper {left:  56px;}
+#r_char_wrapper {right: 18px;}
+
+#sponsors_carousel_wrapper {
+  height: 175px;
+  width: 175px;
+  right: 27px;
+  top: 50px;
+}

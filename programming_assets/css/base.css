@@ -1,0 +1,428 @@
+/*========================================================================*/
+/*
+/*     ######  ####### #          #    ######  ### ####### #     #
+/*     #     # #     # #         # #   #     #  #     #     #   #
+/*     #     # #     # #        #   #  #     #  #     #      # #
+/*     ######  #     # #       #     # ######   #     #       #
+/*     #       #     # #       ####### #   #    #     #       #
+/*     #       #     # #       #     # #    #   #     #       #
+/*     #       ####### ####### #     # #     # ###    #       #
+/*========================================================================*/
+/*
+/* Written by Polarity | Matt "Moses" Kiep
+/* @dothemoses on twitter
+/* 
+/*========================================================================*/
+/*
+/*      #####  ####### #     # ####### ####### #     # #######  #####
+/*     #     # #     # ##    #    #    #       ##    #    #    #     #
+/*     #       #     # # #   #    #    #       # #   #    #    #
+/*     #       #     # #  #  #    #    #####   #  #  #    #     #####
+/*     #       #     # #   # #    #    #       #   # #    #          #
+/*     #     # #     # #    ##    #    #       #    ##    #    #     #
+/*      #####  ####### #     #    #    ####### #     #    #     #####
+/*
+/*========================================================================*/
+/*
+/* 00 VARIABLES
+/* 
+/* 01 Timer
+/* 02 Caster Scene
+/* 03
+/* 04 Gameplay Scene
+/*
+/*
+/*
+/*
+/*
+/*
+/*
+/*
+/*
+
+/*========================================================================*/
+/*
+/*     #     #    #    ######  ###    #    ######  #       #######  #####
+/*     #     #   # #   #     #  #    # #   #     # #       #       #     #
+/*     #     #  #   #  #     #  #   #   #  #     # #       #       #
+/*     #     # #     # ######   #  #     # ######  #       #####    #####
+/*      #   #  ####### #   #    #  ####### #     # #       #             #
+/*       # #   #     # #    #   #  #     # #     # #       #       #     #
+/*        #    #     # #     # ### #     # ######  ####### #######  #####
+/*
+/*========================================================================*/
+
+:root {
+  --main-color: #fc0303;
+  --secondary-color: #FFFFFF;
+  --cfl-offwhite: #efebd5;
+  --cfl-offblack: #26201e;
+  --cfl-orange: #f49853;
+  --cfl-teal: #47bab4;
+}
+
+/*========================================================================*/
+/* Fonts
+/*========================================================================*/
+
+@font-face {
+    font-family: Source Sans Pro Bold;
+    src: url("../fonts/Source Sans Pro/SOURCESANSPRO-BOLD.OTF");
+}
+@font-face {
+    font-family: Source Sans Pro Black;
+    src: url("../fonts/Source Sans Pro/SOURCESANSPRO-BLACK.OTF");
+}
+@font-face {
+    font-family: Source Sans Pro Regular;
+    src: url("../fonts/Source Sans Pro/SOURCESANSPRO-REGULAR.OTF");
+}
+
+@font-face {
+    font-family: Legend;
+    src: url("../fonts/LEGEND-M54.TTF");
+}
+
+@font-face {
+    font-family: PoppinsBold;
+    src: url("../fonts/Poppins/Poppins-Bold.ttf");
+}
+@font-face {
+    font-family: PoppinsLight;
+    src: url("../fonts/Poppins/Poppins-Light.ttf");
+}
+
+@font-face {
+    font-family: Saira Semi Condensed Semibold;
+    src: url(../fonts/Saira/static/Saira_SemiCondensed/Saira_SemiCondensed-SemiBold.ttf);
+}
+
+/*========================================================================*/
+/* 00 BODY [BDY]
+/*========================================================================*/
+
+body {
+  margin:0px;
+  background-color: rgba(0, 0, 0, 0);
+  color: white;
+  height: 100%;
+  width: 100%;
+  font-family: 'Source Sans Pro Bold';
+  font-size: 100%; /* sets 100% = 16px = 1em */
+}
+
+/*========================================================================*/
+/*
+/*     ######  ####### #     # #     # ####### ### #     # #######
+/*     #     # #     # #  #  # ##    #    #     #  ##   ## # 
+/*     #     # #     # #  #  # # #   #    #     #  # # # # #
+/*     #     # #     # #  #  # #  #  #    #     #  #  #  # #####
+/*     #     # #     # #  #  # #   # #    #     #  #     # #
+/*     #     # #     # #  #  # #    ##    #     #  #     # #
+/*     ######  #######  ## ##  #     #    #    ### #     # #######
+/*
+/*========================================================================*/
+
+#message_downtime {
+  position: absolute;
+  height:138px;
+  width:303px;
+  left:640px;
+  top:510px;
+  font-size: 75px;
+  text-align: center;
+}
+
+/*========================================================================*/
+/* TIMER
+/*========================================================================*/
+
+#timer_wrapper {
+  position: absolute;
+  height:138px;
+  width:303px;
+  left:640px;
+  top:510px;
+  font-size: 75px;
+  text-align: center;
+}
+
+/* from https://www.timeanddate.com/clocks/free.html */
+#local_time {
+  font-size: 100px;
+}
+
+/*========================================================================*/
+/*
+/*      #####     #     #####  ####### ####### ######   #####
+/*     #     #   # #   #     #    #    #       #     # #     #
+/*     #        #   #  #          #    #       #     # #
+/*     #       #     #  #####     #    #####   ######   #####
+/*     #       #######       #    #    #       #   #         #
+/*     #     # #     # #     #    #    #       #    #  #     #
+/*      #####  #     #  #####     #    ####### #     #  #####
+/*
+/*========================================================================*/
+
+#scene_wrapper_casters {
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  background-size: contain;
+}
+
+#caster_wrapper_1, #caster_wrapper_2, #caster_wrapper_3, #caster_wrapper_4 {
+  position: absolute;
+  height: 100%;
+}
+
+#caster_sponsor_1, #caster_tag_1, #caster_pronouns_1, #caster_twitter_1, 
+#caster_sponsor_2, #caster_tag_2, #caster_pronouns_2, #caster_twitter_2,
+#caster_sponsor_3, #caster_tag_3, #caster_pronouns_3, #caster_twitter_3,
+#caster_sponsor_4, #caster_tag_4, #caster_pronouns_4, #caster_twitter_4 {
+  display: inline-block;
+}
+
+#caster_sponsor_1, #caster_pronouns_1, #caster_sponsor_2, #caster_pronouns_2,
+#caster_sponsor_3, #caster_pronouns_3, #caster_sponsor_4, #caster_pronouns_4 {
+  color: var(--main-color);
+}
+
+#caster_pronouns_1, #caster_pronouns_2, #caster_pronouns_3, #caster_pronouns_4 {
+  font-style: italic;
+  text-transform: lowercase;
+}
+
+/*========================================================================*/
+/*
+/*    #       ####### #     # ####### ######     ####### #     # ### ######  ######  
+/*    #       #     # #  #  # #       #     #       #    #     #  #  #     # #     # 
+/*    #       #     # #  #  # #       #     #       #    #     #  #  #     # #     # 
+/*    #       #     # #  #  # #####   ######        #    #######  #  ######  #     # 
+/*    #       #     # #  #  # #       #   #         #    #     #  #  #   #   #     # 
+/*    #       #     # #  #  # #       #    #        #    #     #  #  #    #  #     # 
+/*    ####### #######  ## ##  ####### #     #       #    #     # ### #     # ######  
+/*/
+/*========================================================================*/
+
+#scene_wrapper_lower_third {
+  height: 100%;
+  width: 100%;
+  background-size: contain;    
+}
+
+#lower_third_wrapper {
+  position: absolute;
+}
+
+/*========================================================================*/
+/*
+/*     #####         #####  #     # ####### #######  #####
+/*    #     #       #     # #     # #     #    #    #     #
+/*          #       #       #     # #     #    #    #
+/*     #####  #####  #####  ####### #     #    #     #####
+/*    #                   # #     # #     #    #          #
+/*    #             #     # #     # #     #    #    #     #
+/*    #######        #####  #     # #######    #     #####
+/*
+/*========================================================================*/
+
+#scene_wrapper_2_shot_16x9 {
+  height: 100%;
+  width: 100%;
+  background-size: contain;
+}
+
+#scene_wrapper_2_shot_73x60 {
+  height: 100%;
+  width: 100%;
+  background-size: contain;
+}
+
+/*========================================================================*/
+/*
+/*     #####         #####  #     # ####### #######  #####
+/*    #     #       #     # #     # #     #    #    #     #
+/*          #       #       #     # #     #    #    #
+/*     #####  #####  #####  ####### #     #    #     #####
+/*          #             # #     # #     #    #          #
+/*    #     #       #     # #     # #     #    #    #     #
+/*     #####         #####  #     # #######    #     #####
+/*
+/*========================================================================*/
+
+#scene_wrapper_3_shot_73x60 {
+  height: 100%;
+  width: 100%;
+  background-size: contain;
+}
+
+
+/* h2h */
+
+#scene_wrapper_gameplay_h2h_melee_singles {
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  background-size: contain;    
+}
+
+#round_wrapper_h2h {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+#round_h2h {
+  text-align: center;
+  width: 100%;
+  color: white;
+}
+
+#l_tag_wrapper_h2h, #r_tag_wrapper_h2h {
+  width:100%;
+  height: 100%;
+  position: absolute;
+  text-align: center;
+}
+
+#l_tag_h2h,#l_sponsor_h2h,#r_tag_h2h,#r_sponsor_h2h, #l_loss_h2h, #r_loss_h2h, #l_pronoun_h2h, #r_pronoun_h2h {
+  display:inline-block;
+}
+
+/*#l_pronoun_wrapper_h2h, #r_pronoun_wrapper_h2h {
+  width:100%;
+  height: 100%;
+  position:absolute;
+}*/
+
+#l_score_wrapper_h2h, #r_score_wrapper_h2h {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  color: white;
+  font-family: var(--font-bold-reg);
+}
+
+#l_score_h2h, #r_score_h2h {
+  text-align: center;
+  font-size: 70px;
+}
+
+#l_char_wrapper_h2h, #r_char_wrapper_h2h {
+  position:absolute;
+}
+
+#l_char_h2h, #r_char_h2h {
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+/*========================================================================*/
+/*
+/*     #####     #    #     # ####### ######  #          #    #     #
+/*    #     #   # #   ##   ## #       #     # #         # #    #   #
+/*    #        #   #  # # # # #       #     # #        #   #    # #
+/*    #  #### #     # #  #  # #####   ######  #       #     #    #
+/*    #     # ####### #     # #       #       #       #######    #
+/*    #     # #     # #     # #       #       #       #     #    #
+/*     #####  #     # #     # ####### #       ####### #     #    #
+/*
+/*========================================================================*/
+
+#scene_wrapper_gameplay_melee_singles {
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  background-size: contain;    
+}
+
+#scene_wrapper_gameplay_melee_doubles {
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  background-size: contain;    
+}
+
+#round_wrapper {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+#round {
+  text-align: center;
+  width: 100%;
+  color: white;
+}
+
+#round_wrapper_doubles {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+#round_doubles {
+  text-align: center;
+  width: 100%;
+  color: white;
+}
+
+#l_tag_wrapper, #r_tag_wrapper, #l_tag_wrapper_doubles, #r_tag_wrapper_doubles {
+  width:100%;
+  height: 100%;
+  position: absolute;
+  text-align: center;
+}
+
+#l_tag, #l_tag_doubles, #l_sponsor, #r_tag, #r_tag_doubles, #r_sponsor, #l_loss, #r_loss {
+  display:inline-block;
+}
+
+#l_pronoun_wrapper, #r_pronoun_wrapper {
+  width:100%;
+  height: 100%;
+  position:absolute;
+}
+
+#l_sponsor, #r_sponsor {
+  width:100%;
+  height: 100%;
+  position:absolute;
+}
+
+#l_score_wrapper, #l_score_wrapper_doubles, #r_score_wrapper, #r_score_wrapper_doubles {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  color: white;
+  font-family: var(--font-bold-regular);
+}
+
+#l_score, #l_score_doubles, #r_score, #r_score_doubles {
+  text-align: center;
+  font-size: 70px;
+}
+
+#l_char_wrapper, #r_char_wrapper {
+  position:absolute;
+}
+
+#l_char, #r_char {
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+#sponsors_carousel_wrapper {
+  position: absolute;
+}
+
+#sponsors_carousel {
+  height: 100%;
+  width: 100%;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  animation-name: sponsors_carousel_animation;
+  animation-iteration-count: infinite;
+}
