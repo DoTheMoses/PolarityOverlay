@@ -1,0 +1,384 @@
+<html>
+  <head>
+    <link id="pagestyle" rel="stylesheet" href="../backend/2024_nounvitational.css" type="text/css" charset="utf-8">
+
+    <script src="../backend/js/jquery-2.0.2.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../backend/js/jstween-1.1.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../backend/js/functions.js" type="text/javascript"></script>
+
+  </head>
+
+  <body>
+    <!-- ============================================================= -->
+    <!-- Scene Elements ============================================== -->
+    <!-- ============================================================= -->
+
+    <div id="scene_wrapper_gameplay_melee_singles">
+
+      <div id="round_wrapper">
+        <div id="round"></div>
+      </div>
+
+      <div id="l_sponsor_wrapper">
+        <div id="l_sponsor"></div>
+      </div>
+
+      <div id="l_tag_wrapper">
+        <div id="l_tag"></div>
+        <div id="l_loss"></div>
+      </div>
+
+      <div id="l_char_wrapper">
+        <div id="l_char"></div>
+      </div>
+
+      <div id="l_pronoun_wrapper">
+        <div id="l_pronoun"></div>
+      </div>
+
+      <div id="l_score_wrapper">
+        <div id="l_score"></div>
+      </div>
+
+      <div id="r_sponsor_wrapper">
+        <div id="r_sponsor"></div>
+      </div>
+
+      <div id="r_tag_wrapper">
+        <div id="r_tag"></div>
+        <div id="r_loss"></div>
+      </div>
+
+      <div id="r_char_wrapper">
+        <div id="r_char"></div>
+      </div>
+
+     <div id="r_pronoun_wrapper">
+        <div id="r_pronoun"></div>
+      </div>
+
+      <div id="r_score_wrapper">
+        <div id="r_score"></div>
+      </div>
+
+      <div id="sponsors_carousel_wrapper">
+        <div id="sponsors_carousel"></div>
+      </div>
+
+    </div>
+
+    <!-- ============================================================= -->
+    <!-- Main Loop =================================================== -->
+    <!-- ============================================================= -->
+
+    <script type="text/javascript">
+      // data variables
+      var round;
+      var l_sponsor, l_tag, l_char, l_char_old, l_color, l_color_old, l_char_full, l_pronoun, l_score, l_loss;
+      var r_sponsor, r_tag, r_char, r_char_old, r_color, r_color_old, r_char_full, r_pronoun, r_score, r_loss;
+      var l_char_update, r_char_update;
+
+      // backend variables
+      var timestamp, timestampOld;
+      var xmlDoc;
+      var xhr = new XMLHttpRequest();
+      var animating = false; // flag to show when animating, used as a "busy" signal
+      var doUpdate = false;
+
+      // this function inititalizes fields when the scene loads
+      function init() {
+
+        xhr.overrideMimeType('text/xml');
+
+        var timeout = this.window.setInterval(function() {
+          poll_handler();
+        }, 250);
+
+        $('#round').html('');
+        $('#round').opacity(0);
+
+        $('#l_char').css("background-image","none");
+        $('#l_char').opacity(0);
+        $('#l_sponsor').html('');
+        $('#l_sponsor').opacity(0);
+        $('#l_tag').html('');
+        $('#l_tag').opacity(0);
+        $('#l_pronoun').html('');
+        $('#l_pronoun').opacity(0);
+        $('#l_loss').html('');
+        $('#l_loss').opacity(0);
+        $('#l_score').html('');
+        $('#l_score').opacity(0);
+
+        $('#r_char').css("background-image","none");
+        $('#r_char').opacity(0);
+        $('#r_sponsor').html('');
+        $('#r_sponsor').opacity(0);
+        $('#r_tag').html('');
+        $('#r_tag').opacity(0);
+        $('#r_pronoun').html('');
+        $('#r_pronoun').opacity(0);
+        $('#r_loss').html('');
+        $('#r_loss').opacity(0);
+        $('#r_score').html('');
+        $('#r_score').opacity(0);
+
+        $.play();
+      }
+
+      // this function pulls data from the stream control gui and allows us to use in our scripts here
+      function load_data() {
+        var stream_control_location = "../sc/streamcontrol.xml";
+
+        xhr.open('GET', stream_control_location);
+        xhr.send();
+
+        xhr.onreadystatechange = function(){
+          xmlDoc = xhr.responseXML;
+
+          round = getValueFromTag(xmlDoc,'round_current');
+
+          l_sponsor   = getValueFromTag(xmlDoc, 'l_sponsor_current');
+          l_tag       = getValueFromTag(xmlDoc, 'l_tag_current');
+          l_char      = getValueFromTag(xmlDoc,'l_char_current');
+          l_color     = getValueFromTag(xmlDoc,'l_color_current');
+          if (l_color.length == 0)
+            l_char_full = "url(\"../overlays/graphics/smash_stock_icons/melee/" + l_char + ".png\")";
+          else
+            l_char_full = "url(\"../overlays/graphics/smash_stock_icons/melee/" + l_char + " " + l_color + ".png\")";
+          l_pronoun   = getValueFromTag(xmlDoc, 'l_pronoun_current');
+          l_score     = getValueFromTag(xmlDoc, 'l_score');
+
+          if (getValueFromTag(xmlDoc,'l_loss') == "1")
+            l_loss = "L";
+          else
+            l_loss = "";
+
+          if (l_color_old != l_color || l_char_old != l_char)
+            l_char_update = 1;
+          else
+            l_char_update = 0;
+
+          l_color_old = l_color;
+          l_char_old = l_char;
+
+          r_sponsor   = getValueFromTag(xmlDoc, 'r_sponsor_current');
+          r_tag       = getValueFromTag(xmlDoc, 'r_tag_current');
+          r_char      = getValueFromTag(xmlDoc,'r_char_current');
+          r_color     = getValueFromTag(xmlDoc,'r_color_current');
+          if (r_color.length == 0)
+            r_char_full = "url(\"../overlays/graphics/smash_stock_icons/melee/" + r_char + ".png\")";
+          else
+            r_char_full = "url(\"../overlays/graphics/smash_stock_icons/melee/" + r_char + " " + r_color + ".png\")";
+          r_pronoun = getValueFromTag(xmlDoc, 'r_pronoun_current');
+          r_score   = getValueFromTag(xmlDoc, 'r_score');
+
+          if (getValueFromTag(xmlDoc,'r_loss') == "1") 
+            r_loss = "L";
+          else
+            r_loss = "";
+
+          if (r_color_old != r_color || r_char_old != r_char)
+            r_char_update = 1;
+          else
+            r_char_update = 0;
+
+          r_color_old = r_color;
+          r_char_old = r_char;
+
+          // timestamp for updating
+          timestampOld = timestamp;
+          timestamp = getValueFromTag(xmlDoc,'timestamp');
+
+        }
+      }
+
+      // this function updates all elements in the html with new values using "tweens" to do animations
+      function updateBoard() {
+
+        if ($('#round').html() != round) {
+          animating = true;
+          $('#round').tween({
+            opacity: {start: 100,stop: 0,time: 0,duration: 0.5,effect: 'easeIn'},
+            onStop: function(){$('#round').html(round);}
+          });
+          $('#round').tween({
+            opacity: {start: 0,stop: 100,time: 0.5,duration: 0.5,effect: 'easeOut'},
+            onStop: function(){animating = false;}
+          });
+        }
+
+        if ($('#l_tag').html() != l_tag || $('#l_sponsor').html() != l_sponsor || $('#l_loss').html() != l_loss) {
+          animating = true;
+          $('#l_tag').tween({
+            opacity: {start: 100,stop: 0,time: 0,duration: 0.5,effect: 'easeIn'},
+            onStop: function(){$('#l_tag').html(l_tag);}
+          });
+          $('#l_sponsor').tween({
+            opacity: {start: 100,stop: 0,time: 0,duration: 0.5,effect: 'easeIn'},
+            onStop: function(){$('#l_sponsor').html(l_sponsor);}
+          });
+          $('#l_loss').tween({
+              opacity: {start: 100,stop: 0,time: 0,duration: 0.5,effect: 'easeIn'},
+              onStop: function(){$('#l_loss').html(l_loss);}
+          });
+
+          $('#l_tag').tween({
+            opacity: {start: 0,stop: 100,time: 0.5,duration: 0.5,effect: 'easeOut'},
+            onStop: function(){animating = false;}
+          });
+          $('#l_sponsor').tween({
+            opacity: {start: 0,stop: 100,time: 0.5,duration: 0.5,effect: 'easeOut'},
+            onStop: function(){animating = false;}
+          });
+          $('#l_loss').tween({
+            opacity: {start: 0,stop: 100,time: 0.5,duration: 0.5,effect: 'easeOut'},
+            onStop: function(){animating = false;}
+          });
+        }
+
+        if (l_char_update){
+          animating = true;
+          $('#l_char').tween({
+            opacity: {start: 100,stop: 0,time: 0,duration: 0.5,effect: 'easeIn'},
+            onStop: function(){$('#l_char').css("background-image", l_char_full);}
+          });
+
+          $('#l_char').tween({
+            opacity: {start: 0,stop: 100,time: 0.5,duration: 0.5,effect: 'easeOut'},
+            onStop: function(){animating = false;}
+          });
+        }
+
+        if ($('#l_pronoun').html() != l_pronoun) {
+          animating = true;
+          $('#l_pronoun').tween({
+            opacity: {start: 100,stop: 0,time: 0,duration: 0.5,effect: 'easeIn'},
+            onStop: function(){$('#l_pronoun').html(l_pronoun);}
+          });
+
+          $('#l_pronoun').tween({
+            opacity: {start: 0,stop: 100,time: 0.5,duration: 0.5,effect: 'easeOut'},
+            onStop: function(){animating = false;}
+          });
+        }
+
+        if ($('#l_score').html() != l_score) {
+          animating = true;
+          $('#l_score').tween({
+            opacity: {start: 100,stop: 0,time: 0,duration: 0.5,effect: 'easeIn'},
+            onStop: function(){$('#l_score').html(l_score);}
+          });
+
+          $('#l_score').tween({
+            opacity: {start: 0,stop: 100,time: 0.5,duration: 0.5,effect: 'easeOut'},
+            onStop: function(){animating = false;}
+          });
+        }
+
+/*        if ($('#r_tag').html() != r_tag || $('#r_sponsor').html() != r_sponsor || $('#r_loss').html() != r_loss) {
+          animating = true;
+          $('#r_tag').tween({
+            opacity: {start: 100,stop: 0,time: 0,duration: 0.5,effect: 'easeIn'},
+            onStop: function(){$('#r_tag').html(r_tag);}
+          });
+          $('#r_sponsor').tween({
+            opacity: {start: 100,stop: 0,time: 0,duration: 0.5,effect: 'easeIn'},
+            onStop: function(){$('#r_sponsor').html(r_sponsor);}
+          });
+          $('#r_loss').tween({
+            opacity: {start: 100,stop: 0,time: 0,duration: 0.5,effect: 'easeIn'},
+            onStop: function(){$('#r_loss').html(r_loss);}
+          });
+
+          $('#r_tag').tween({
+            opacity: {start: 0,stop: 100,time: 0.5,duration: 0.5,effect: 'easeOut'},
+            onStop: function(){animating = false;}
+          });
+          $('#r_sponsor').tween({
+            opacity: {start: 0,stop: 100,time: 0.5,duration: 0.5,effect: 'easeOut'},
+            onStop: function(){animating = false;}
+          });
+          $('#r_loss').tween({
+            opacity: {start: 0,stop: 100,time: 0.5,duration: 0.5,effect: 'easeOut'},
+            onStop: function(){animating = false;}
+          });
+        }*/
+
+        if ($('#r_tag').html() != r_tag || $('#r_sponsor').html() != r_sponsor || $('#r_loss').html() != r_loss) {
+          animating = true;
+          $('#r_tag').tween({
+            opacity: {start: 100,stop: 0,time: 0,duration: 0.5,effect: 'easeIn'},
+            onStop: function(){$('#r_tag').html(r_tag);}
+          });
+          $('#r_sponsor').tween({
+            opacity: {start: 100,stop: 0,time: 0,duration: 0.5,effect: 'easeIn'},
+            onStop: function(){$('#r_sponsor').html(r_sponsor);}
+          });
+          $('#r_loss').tween({
+              opacity: {start: 100,stop: 0,time: 0,duration: 0.5,effect: 'easeIn'},
+              onStop: function(){$('#r_loss').html(r_loss);}
+          });
+
+          $('#r_tag').tween({
+            opacity: {start: 0,stop: 100,time: 0.5,duration: 0.5,effect: 'easeOut'},
+            onStop: function(){animating = false;}
+          });
+          $('#r_sponsor').tween({
+            opacity: {start: 0,stop: 100,time: 0.5,duration: 0.5,effect: 'easeOut'},
+            onStop: function(){animating = false;}
+          });
+          $('#r_loss').tween({
+            opacity: {start: 0,stop: 100,time: 0.5,duration: 0.5,effect: 'easeOut'},
+            onStop: function(){animating = false;}
+          });
+        }
+
+        if (r_char_update){
+          animating = true;
+          $('#r_char').tween({
+            opacity: {start: 100,stop: 0,time: 0,duration: 0.5,effect: 'easeIn'},
+            onStop: function(){$('#r_char').css("background-image", r_char_full);}
+          });
+
+          $('#r_char').tween({
+            opacity: {start: 0,stop: 100,time: 0.5,duration: 0.5,effect: 'easeOut'},
+            onStop: function(){animating = false;}
+          });
+        }
+
+        if ($('#r_pronoun').html() != r_pronoun) {
+          animating = true;
+          $('#r_pronoun').tween({
+            opacity: {start: 100,stop: 0,time: 0,duration: 0.5,effect: 'easeIn'},
+            onStop: function(){$('#r_pronoun').html(r_pronoun);}
+          });
+
+          $('#r_pronoun').tween({
+            opacity: {start: 0,stop: 100,time: 0.5,duration: 0.5,effect: 'easeOut'},
+            onStop: function(){animating = false;}
+          });
+        }
+
+        if ($('#r_score').html() != r_score) {
+          animating = true;
+          $('#r_score').tween({
+            opacity: {start: 100,stop: 0,time: 0,duration: 0.5,effect: 'easeIn'},
+            onStop: function(){$('#r_score').html(r_score);}
+          });
+
+          $('#r_score').tween({
+            opacity: {start: 0,stop: 100,time: 0.5,duration: 0.5,effect: 'easeOut'},
+            onStop: function(){animating = false;}
+          });
+        }
+
+        $.play();
+        doUpdate = false;
+      }
+
+      init();
+    </script>
+  </body>
+
+</html>

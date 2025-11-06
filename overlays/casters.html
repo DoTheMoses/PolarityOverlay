@@ -1,0 +1,388 @@
+<html>
+  <head>
+    <link id="pagestyle" rel="stylesheet" href="../backend/2024_nounvitational.css" type="text/css" charset="utf-8">
+
+    <script src="../backend/js/jquery-2.0.2.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../backend/js/jstween-1.1.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../backend/js/functions.js" type="text/javascript"></script>
+
+  </head>
+
+  <body>
+    <!-- ============================================================= -->
+    <!-- Scene Elements ============================================== -->
+    <!-- ============================================================= -->
+
+    <div id="scene_wrapper_casters" class="casters_2">
+
+      <div id="caster_wrapper_1">
+        <div id="caster_full_1">
+          <div id="caster_sponsor_1"></div>
+          <div id="caster_tag_1"></div>
+        </div>
+        <div id="caster_twitter_1"></div>
+        <div id="caster_pronouns_1"></div>
+      </div>
+
+      <div id="caster_wrapper_2">
+        <div id="caster_full_2">
+          <div id="caster_sponsor_2"></div>
+          <div id="caster_tag_2"></div>
+        </div>
+        <div id="caster_pronouns_2"></div>
+        <div id="caster_twitter_2"></div>
+      </div>
+            
+      <div id="caster_wrapper_3" class="hide">
+        <div id="caster_full_3">
+          <div id="caster_sponsor_3"></div>
+          <div id="caster_tag_3"></div>
+        </div>
+        <div id="caster_twitter_3"></div>
+        <div id="caster_pronouns_3"></div>
+      </div>
+
+      <div id="caster_wrapper_4" class="hide">
+        <div id="caster_full_4">
+          <div id="caster_sponsor_4"></div>
+          <div id="caster_tag_4"></div>
+        </div>
+        <div id="caster_twitter_4"></div>
+        <div id="caster_pronouns_4"></div>
+      </div>
+
+    </div>
+
+    <!-- ============================================================= -->
+    <!-- Main Loop =================================================== -->
+    <!-- ============================================================= -->
+
+    <script type="text/javascript">
+      // data variables
+      var caster_sponsor_1, caster_tag_1, caster_twitter_1, caster_pronouns_1;
+      var caster_sponsor_2, caster_tag_2, caster_twitter_2, caster_pronouns_2;
+      var caster_sponsor_3, caster_tag_3, caster_twitter_3, caster_pronouns_3;
+      var caster_sponsor_4, caster_tag_4, caster_twitter_4, caster_pronouns_4;
+      var caster_sponsor_5, caster_tag_5, caster_twitter_5, caster_pronouns_5;
+      var caster_sponsor_6, caster_tag_6, caster_twitter_6, caster_pronouns_6;
+
+      var timestamp_show, timestamp_show_old;
+      var timestamp_hide, timestamp_hide_old;
+
+      // backend variables
+      var timestamp, timestampOld;
+      var xmlDoc;
+      var xhr = new XMLHttpRequest();
+      var animating = false; // flag to show when animating, used as a "busy" signal
+      var doUpdate = false;
+
+      // this function inititalizes fields when the scene loads
+      function init() {
+        xhr.overrideMimeType('text/xml');
+
+        var timeout = this.window.setInterval(function() {
+          poll_handler();
+        }, 250);
+
+        $('#caster_sponsor_1').html('');
+        $('#caster_sponsor_1').opacity(0);
+        $('#caster_tag_1').html('');
+        $('#caster_tag_1').opacity(0);
+        $('#caster_pronouns_1').html('');
+        $('#caster_pronouns_1').opacity(0);
+        $('#caster_twitter_1').html('');
+        $('#caster_twitter_1').opacity(0);
+
+        $('#caster_sponsor_2').html('');
+        $('#caster_sponsor_2').opacity(0);
+        $('#caster_tag_2').html('');
+        $('#caster_tag_2').opacity(0);
+        $('#caster_pronouns_2').html('');
+        $('#caster_pronouns_2').opacity(0);
+        $('#caster_twitter_2').html('');
+        $('#caster_twitter_2').opacity(0);
+
+        $('#caster_sponsor_3').html('');
+        $('#caster_sponsor_3').opacity(0);
+        $('#caster_tag_3').html('');
+        $('#caster_tag_3').opacity(0);
+        $('#caster_pronouns_3').html('');
+        $('#caster_pronouns_3').opacity(0);
+        $('#caster_twitter_3').html('');
+        $('#caster_twitter_3').opacity(0);
+
+        $('#caster_sponsor_4').html('');
+        $('#caster_sponsor_4').opacity(0);
+        $('#caster_tag_4').html('');
+        $('#caster_tag_4').opacity(0);
+        $('#caster_pronouns_4').html('');
+        $('#caster_pronouns_4').opacity(0);
+        $('#caster_twitter_4').html('');
+        $('#caster_twitter_4').opacity(0);
+
+        $.play();
+      }
+
+      // this function pulls data from the stream control gui and allows us to use in our scripts here
+      function load_data() {
+        var stream_control_location = "../sc/streamcontrol.xml";
+
+        xhr.open('GET', stream_control_location);
+        xhr.send();
+            
+        xhr.onreadystatechange = function(){
+          xmlDoc = xhr.responseXML;
+
+/*          // timestamp for show/hide
+          timestamp_show_old = timestamp_show;
+          timestamp_show = getValueFromTag(xmlDoc,'show_lower_third_casters');
+
+          if (timestamp_show_old != timestamp_show)
+            show_lower_third_casters();
+
+          timestamp_hide_old = timestamp_hide;
+          timestamp_hide = getValueFromTag(xmlDoc,'hide_lower_third_casters');
+
+          if (timestamp_hide_old != timestamp_hide)
+            hide_lower_third_casters();*/
+
+          caster_sponsor_1  = getValueFromTag(xmlDoc, 'caster_sponsor_1');
+          caster_tag_1      = getValueFromTag(xmlDoc, 'caster_tag_1');
+          caster_pronouns_1 = getValueFromTag(xmlDoc, 'caster_pronouns_1')
+          caster_twitter_1  = getValueFromTag(xmlDoc, 'caster_twitter_1');
+          if (caster_twitter_1) {caster_twitter_1 = "@" + caster_twitter_1}
+
+          caster_sponsor_2  = getValueFromTag(xmlDoc, 'caster_sponsor_2');
+          caster_tag_2      = getValueFromTag(xmlDoc, 'caster_tag_2');
+          caster_pronouns_2 = getValueFromTag(xmlDoc, 'caster_pronouns_2')
+          caster_twitter_2  = getValueFromTag(xmlDoc, 'caster_twitter_2');
+          if (caster_twitter_2) {caster_twitter_2 = "@" + caster_twitter_2}
+
+          caster_sponsor_3  = getValueFromTag(xmlDoc, 'caster_sponsor_3');
+          caster_tag_3      = getValueFromTag(xmlDoc, 'caster_tag_3');
+          caster_pronouns_3 = getValueFromTag(xmlDoc, 'caster_pronouns_3')
+          caster_twitter_3  = getValueFromTag(xmlDoc, 'caster_twitter_3');
+          if (caster_twitter_3) {caster_twitter_3 = "@"+caster_twitter_3}
+
+          caster_sponsor_4  = getValueFromTag(xmlDoc, 'caster_sponsor_4');
+          caster_tag_4      = getValueFromTag(xmlDoc, 'caster_tag_4');
+          caster_pronouns_4 = getValueFromTag(xmlDoc, 'caster_pronouns_4')
+          caster_twitter_4  = getValueFromTag(xmlDoc, 'caster_twitter_4');
+          if (caster_twitter_4) {caster_twitter_4 = "@" + caster_twitter_4}
+
+          if (caster_tag_3.length > 0) {
+            document.getElementById("scene_wrapper_casters").className = "casters_3";
+            document.getElementById("caster_wrapper_3").className = "show";
+          } else {
+            document.getElementById("scene_wrapper_casters").className = "casters_2";
+            document.getElementById("caster_wrapper_3").className = "hide";
+          }
+
+          // timestamp for updating
+          timestampOld = timestamp;
+          timestamp = getValueFromTag(xmlDoc,'timestamp');
+
+        }
+      }
+
+      // this function updates all elements in the html with new values using "tweens" to do animations
+      function updateBoard() {
+        if ($('#caster_sponsor_1').html() != caster_sponsor_1 || $('#caster_tag_1').html() != caster_tag_1) {
+          animating = true;
+          $('#caster_sponsor_1').tween({
+            opacity: {start: 100,stop: 0,time: 0,duration: 0.5,effect: 'easeIn'},
+            onStop: function(){$('#caster_sponsor_1').html(caster_sponsor_1);}
+          });
+          $('#caster_tag_1').tween({
+            opacity: {start: 100,stop: 0,time: 0,duration: 0.5,effect: 'easeIn'},
+            onStop: function(){$('#caster_tag_1').html(caster_tag_1);}
+          });
+
+          $('#caster_sponsor_1').tween({
+            opacity: {start: 0,stop: 100,time: 0.5,duration: 0.5,effect: 'easeOut'},
+            onStop: function(){animating = false;}
+          });
+          $('#caster_tag_1').tween({
+            opacity: {start: 0,stop: 100,time: 0.5,duration: 0.5,effect: 'easeOut'},
+            onStop: function(){animating = false;}      
+          });
+        }
+
+        if ($('#caster_pronouns_1').html() != caster_pronouns_1) {
+          animating = true;
+          $('#caster_pronouns_1').tween({
+            opacity: {start: 100,stop: 0,time: 0,duration: 0.5,effect: 'easeIn'},
+            onStop: function(){$('#caster_pronouns_1').html(caster_pronouns_1);}
+          });
+
+          $('#caster_pronouns_1').tween({
+            opacity: {start: 0,stop: 100,time: 0.5,duration: 0.5,effect: 'easeOut'},
+            onStop: function(){animating = false;}
+          });
+        }
+
+        if ($('#caster_twitter_1').html() != caster_twitter_1) {
+          animating = true;
+          $('#caster_twitter_1').tween({
+            opacity: {start: 100,stop: 0,time: 0,duration: 0.5,effect: 'easeIn'},
+            onStop: function(){$('#caster_twitter_1').html(caster_twitter_1);}
+          });
+
+          $('#caster_twitter_1').tween({
+            opacity: {start: 0,stop: 100,time: 0.5,duration: 0.5,effect: 'easeOut'},
+            onStop: function(){animating = false;}
+          });
+        }
+
+        if ($('#caster_sponsor_2').html() != caster_sponsor_2 || $('#caster_tag_2').html() != caster_tag_2) {
+          animating = true;
+          $('#caster_sponsor_2').tween({
+            opacity: {start: 100,stop: 0,time: 0,duration: 0.5,effect: 'easeIn'},
+            onStop: function(){$('#caster_sponsor_2').html(caster_sponsor_2);}
+          });
+          $('#caster_tag_2').tween({
+            opacity: {start: 100,stop: 0,time: 0,duration: 0.5,effect: 'easeIn'},
+            onStop: function(){$('#caster_tag_2').html(caster_tag_2);}
+          });
+
+          $('#caster_sponsor_2').tween({
+            opacity: {start: 0,stop: 100,time: 0.5,duration: 0.5,effect: 'easeOut'},
+            onStop: function(){animating = false;}
+          });
+          $('#caster_tag_2').tween({
+            opacity: {start: 0,stop: 100,time: 0.5,duration: 0.5,effect: 'easeOut'},
+            onStop: function(){animating = false;}      
+          });
+        }
+
+        if ($('#caster_pronouns_2').html() != caster_pronouns_2) {
+          animating = true;
+          $('#caster_pronouns_2').tween({
+            opacity: {start: 100,stop: 0,time: 0,duration: 0.5,effect: 'easeIn'},
+            onStop: function(){$('#caster_pronouns_2').html(caster_pronouns_2);}
+          });
+
+          $('#caster_pronouns_2').tween({
+            opacity: {start: 0,stop: 100,time: 0.5,duration: 0.5,effect: 'easeOut'},
+            onStop: function(){animating = false;}
+          });
+        }
+
+        if ($('#caster_twitter_2').html() != caster_twitter_2) {
+          animating = true;
+          $('#caster_twitter_2').tween({
+            opacity: {start: 100,stop: 0,time: 0,duration: 0.5,effect: 'easeIn'},
+            onStop: function(){$('#caster_twitter_2').html(caster_twitter_2);}
+          });
+
+          $('#caster_twitter_2').tween({
+            opacity: {start: 0,stop: 100,time: 0.5,duration: 0.5,effect: 'easeOut'},
+            onStop: function(){animating = false;}
+          });
+        }
+
+        if ($('#caster_sponsor_3').html() != caster_sponsor_3 || $('#caster_tag_3').html() != caster_tag_3) {
+          animating = true;
+          $('#caster_sponsor_3').tween({
+            opacity: {start: 100,stop: 0,time: 0,duration: 0.5,effect: 'easeIn'},
+            onStop: function(){$('#caster_sponsor_3').html(caster_sponsor_3);}
+          });
+          $('#caster_tag_3').tween({
+            opacity: {start: 100,stop: 0,time: 0,duration: 0.5,effect: 'easeIn'},
+            onStop: function(){$('#caster_tag_3').html(caster_tag_3);}
+          });
+
+          $('#caster_sponsor_3').tween({
+            opacity: {start: 0,stop: 100,time: 0.5,duration: 0.5,effect: 'easeOut'},
+            onStop: function(){animating = false;}
+          });
+          $('#caster_tag_3').tween({
+            opacity: {start: 0,stop: 100,time: 0.5,duration: 0.5,effect: 'easeOut'},
+            onStop: function(){animating = false;}      
+          });
+        }
+
+        if ($('#caster_pronouns_3').html() != caster_pronouns_3) {
+          animating = true;
+          $('#caster_pronouns_3').tween({
+            opacity: {start: 100,stop: 0,time: 0,duration: 0.5,effect: 'easeIn'},
+            onStop: function(){$('#caster_pronouns_3').html(caster_pronouns_3);}
+          });
+
+          $('#caster_pronouns_3').tween({
+            opacity: {start: 0,stop: 100,time: 0.5,duration: 0.5,effect: 'easeOut'},
+            onStop: function(){animating = false;}
+          });
+        }
+
+        if ($('#caster_twitter_3').html() != caster_twitter_3) {
+          animating = true;
+          $('#caster_twitter_3').tween({
+            opacity: {start: 100,stop: 0,time: 0,duration: 0.5,effect: 'easeIn'},
+            onStop: function(){$('#caster_twitter_3').html(caster_twitter_3);}
+          });
+
+          $('#caster_twitter_3').tween({
+            opacity: {start: 0,stop: 100,time: 0.5,duration: 0.5,effect: 'easeOut'},
+            onStop: function(){animating = false;}
+          });
+        }
+
+        if ($('#caster_sponsor_4').html() != caster_sponsor_4 || $('#caster_tag_4').html() != caster_tag_4) {
+          animating = true;
+          $('#caster_sponsor_4').tween({
+            opacity: {start: 100,stop: 0,time: 0,duration: 0.5,effect: 'easeIn'},
+            onStop: function(){$('#caster_sponsor_4').html(caster_sponsor_4);}
+          });
+          $('#caster_tag_4').tween({
+            opacity: {start: 100,stop: 0,time: 0,duration: 0.5,effect: 'easeIn'},
+            onStop: function(){$('#caster_tag_4').html(caster_tag_4);}
+          });
+
+          $('#caster_sponsor_4').tween({
+            opacity: {start: 0,stop: 100,time: 0.5,duration: 0.5,effect: 'easeOut'},
+            onStop: function(){animating = false;}
+          });
+          $('#caster_tag_4').tween({
+            opacity: {start: 0,stop: 100,time: 0.5,duration: 0.5,effect: 'easeOut'},
+            onStop: function(){animating = false;}      
+          });
+        }
+
+        if ($('#caster_pronouns_4').html() != caster_pronouns_4) {
+          animating = true;
+          $('#caster_pronouns_4').tween({
+            opacity: {start: 100,stop: 0,time: 0,duration: 0.5,effect: 'easeIn'},
+            onStop: function(){$('#caster_pronouns_4').html(caster_pronouns_4);}
+          });
+
+          $('#caster_pronouns_4').tween({
+            opacity: {start: 0,stop: 100,time: 0.5,duration: 0.5,effect: 'easeOut'},
+            onStop: function(){animating = false;}
+          });
+        }
+
+        if ($('#caster_twitter_4').html() != caster_twitter_4) {
+          animating = true;
+          $('#caster_twitter_4').tween({
+            opacity: {start: 100,stop: 0,time: 0,duration: 0.5,effect: 'easeIn'},
+            onStop: function(){$('#caster_twitter_4').html(caster_twitter_4);}
+          });
+
+          $('#caster_twitter_4').tween({
+            opacity: {start: 0,stop: 100,time: 0.5,duration: 0.5,effect: 'easeOut'},
+            onStop: function(){animating = false;}
+          });
+        }      
+
+        $.play();
+          
+        doUpdate = false;
+      }
+
+      init();
+
+    </script>
+  </body>
+
+</html>

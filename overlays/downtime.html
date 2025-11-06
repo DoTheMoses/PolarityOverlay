@@ -1,0 +1,90 @@
+<html>
+  <head>
+    <link id="pagestyle" rel="stylesheet" href="../backend/2024_nounvitational.css" type="text/css" charset="utf-8">
+
+    <script src="../backend/js/jquery-2.0.2.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../backend/js/jstween-1.1.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../backend/js/functions.js" type="text/javascript"></script>
+
+  </head>
+
+  <body>
+    <!-- ============================================================= -->
+    <!-- Scene Elements ============================================== -->
+    <!-- ============================================================= -->
+
+    <div id="scene_downtime">
+      <div id="message_downtime"></div>
+      <div id="sponsors_static"></div>
+    </div>
+
+    <!-- ============================================================= -->
+    <!-- Main Loop =================================================== -->
+    <!-- ============================================================= -->
+
+    <script type="text/javascript">
+      // data variables
+      var message_downtime;
+      // backend variables
+      var timestamp, timestampOld;
+      var xmlDoc;
+      var xhr = new XMLHttpRequest();
+      var animating = false; // flag to show when animating, used as a "busy" signal
+      var doUpdate = false;
+
+      // this function inititalizes fields when the scene loads
+      function init() {
+        xhr.overrideMimeType('text/xml');
+
+        var timeout = this.window.setInterval(function() {
+          poll_handler();
+        }, 250);
+
+        $('#message_downtime').html('');
+        $('#message_downtime').opacity(0);
+
+        $.play();
+      }
+
+      // this function pulls data from the stream control gui and allows us to use in our scripts here
+      function load_data() {
+
+        var stream_control_location = "../sc/streamcontrol.xml";
+
+        xhr.open('GET', stream_control_location);
+        xhr.send();
+
+        xhr.onreadystatechange = function(){
+          xmlDoc = xhr.responseXML;
+
+            message_downtime = getValueFromTag(xmlDoc,'message_downtime');
+
+            // timestamp for updating
+            timestampOld = timestamp;
+            timestamp = getValueFromTag(xmlDoc,'timestamp');
+          }
+      }
+
+      // this function updates all elements in the html with new values using "tweens" to do animations
+      function updateBoard() {
+        if ($('#message_downtime').html() != message_downtime) {
+          animating = true;
+          $('#message_downtime').tween({
+             opacity: {start: 100,stop: 0,time: 0,duration: 0.5,effect: 'easeIn'},
+             onStop: function(){$('#message_downtime').html(message_downtime);}
+           });
+           $('#message_downtime').tween({
+             opacity: {start: 0,stop: 100,time: 0.5,duration: 0.5,effect: 'easeOut'},
+             onStop: function(){animating = false;}
+           });
+        }
+
+        $.play();
+        doUpdate = false;
+      }
+
+      init();
+    </script>
+  </body>
+
+</html>
