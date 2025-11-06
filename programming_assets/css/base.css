@@ -55,10 +55,6 @@
 :root {
   --main-color: #fc0303;
   --secondary-color: #FFFFFF;
-  --cfl-offwhite: #efebd5;
-  --cfl-offblack: #26201e;
-  --cfl-orange: #f49853;
-  --cfl-teal: #47bab4;
 }
 
 /*========================================================================*/
@@ -76,25 +72,6 @@
 @font-face {
     font-family: Source Sans Pro Regular;
     src: url("../fonts/Source Sans Pro/SOURCESANSPRO-REGULAR.OTF");
-}
-
-@font-face {
-    font-family: Legend;
-    src: url("../fonts/LEGEND-M54.TTF");
-}
-
-@font-face {
-    font-family: PoppinsBold;
-    src: url("../fonts/Poppins/Poppins-Bold.ttf");
-}
-@font-face {
-    font-family: PoppinsLight;
-    src: url("../fonts/Poppins/Poppins-Light.ttf");
-}
-
-@font-face {
-    font-family: Saira Semi Condensed Semibold;
-    src: url(../fonts/Saira/static/Saira_SemiCondensed/Saira_SemiCondensed-SemiBold.ttf);
 }
 
 /*========================================================================*/
