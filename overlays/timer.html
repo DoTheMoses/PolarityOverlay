@@ -24,8 +24,6 @@
     <script type="text/javascript">
       // data variables
       var timer_min, timer_sec;
-      timer_min=1;
-      timer_sec=30;
 
       // backend variables
       var timestamp, timestampOld;
@@ -56,24 +54,27 @@
         xhr.onreadystatechange = function(){
           xmlDoc = xhr.responseXML;
 
-/*            timer_min = getValueFromTag(xmlDoc, 'timer_min');
-            timer_sec = getValueFromTag(xmlDoc, 'timer_sec');*/
+          timer_min = getValueFromTag(xmlDoc, 'timer_min');
+          timer_sec = getValueFromTag(xmlDoc, 'timer_sec');
 
-            // timestamp for updating
+          // timestamp for updating
           timestampOld = timestamp;
           timestamp = getValueFromTag(xmlDoc,'timestamp');
           }
       }
 
-      // Update the count down every 1 second
-      var x = setInterval(function() {
+/*        // Update the count down every 1 second
+        var x = setInterval(function() {
 
         // Get today's date and time
         var now = new Date().getTime();
 
-      // Set the date we're counting down to
-      var countDownDate = new Date("Jan 1, 2100 00:"+timer_min+":"+timer_sec).getTime();
-        //var countDownDate = new Date(now.getTime() + 5*6000);
+        // Set the date we're counting down to
+        //var countDownDate = new Date(now);
+        //countDownDate.setTime(5*6000);
+        //var countDownDate = new Date("Jan 1, 2100 00:"+timer_min+":"+timer_sec).getTime();
+        var countDownDate = new Date(now);
+        countDownDate.setTime(countDownDate.getTime() + timer_min*60000 + timer_sec*1000);
 
         // Find the distance between now and the count down date
         var distance = countDownDate - now;
@@ -92,12 +93,42 @@
         // output the result in an element with id="demo"
         document.getElementById("timer").innerHTML = minutes + ":" + seconds_real;
 
+
+
         // if count down is over, write some text
         if (distance < 0) {
           clearInterval(x);
           document.getElementById("timer").innerHTML = "SOON™️";
         }
-      }, 1000);
+
+      }, 1000);*/
+
+
+        var start = Date.now(),diff,minutes,seconds;
+        function timer() {
+        // get the number of seconds that have elapsed since 
+        // startTimer() was called
+        var duration = timer_min * 6 + timer_sec;
+        diff = duration - (((Date.now() - start) / 1000) | 0);
+
+        // does the same job as parseInt truncates the float
+        minutes = (diff / 60) | 0;
+        seconds = (diff % 60) | 0;
+
+        minutes = minutes < 10 ? "0" + minutes : minutes;
+        seconds = seconds < 10 ? "0" + seconds : seconds;
+
+        document.getElementById("timer").innerHTML = minutes + ":" + seconds;
+
+        if (diff <= 0) {
+            // add one second so that the count down starts at the full duration
+            // example 05:00 not 04:59
+            start = Date.now() + 1000;
+        }
+    };
+    // we don't want to wait a full second before the timer starts
+    timer();
+    setInterval(timer, 1000);
 
       init();
     </script>

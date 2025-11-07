@@ -1,6 +1,6 @@
 <!DOCTYPE StreamControl>
 <items>
- <timestamp>1762487080</timestamp>
+ <timestamp>1762490539</timestamp>
  <caster_pronouns_1>He/Him</caster_pronouns_1>
  <caster_pronouns_2>He/They</caster_pronouns_2>
  <caster_pronouns_3></caster_pronouns_3>
@@ -74,6 +74,6 @@
  <t4_tag_current></t4_tag_current>
  <t4_team_color>Red</t4_team_color>
  <timer_min>5</timer_min>
- <timer_sec>20</timer_sec>
+ <timer_sec>0</timer_sec>
  <tl_sponsor_current></tl_sponsor_current>
 </items>
