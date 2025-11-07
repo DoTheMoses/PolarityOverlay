@@ -38,7 +38,7 @@
       </div>
 
       <div id="r_tag_wrapper">
-        <div id="r_sponsor"></div>
+        <div id="r_sponsor"></div>        
         <div id="r_tag"></div>
         <div id="r_loss"></div>
       </div>
@@ -137,9 +137,9 @@
           l_char      = getValueFromTag(xmlDoc,'l_char_current');
           l_color     = getValueFromTag(xmlDoc,'l_color_current');
           if (l_color.length == 0)
-            l_char_full = "url(\"../overlays/graphics/smash_stock_icons/melee/" + l_char + ".png\")";
+            l_char_full = "url(\"overlay_graphics/smash_stock_icons/melee/" + l_char + ".png\")";
           else
-            l_char_full = "url(\"../overlays/graphics/smash_stock_icons/melee/" + l_char + " " + l_color + ".png\")";
+            l_char_full = "url(\"overlay_graphics/smash_stock_icons/melee/" + l_char + " " + l_color + ".png\")";
           l_pronoun   = getValueFromTag(xmlDoc, 'l_pronoun_current');
           l_score     = getValueFromTag(xmlDoc, 'l_score');
 
@@ -161,9 +161,9 @@
           r_char      = getValueFromTag(xmlDoc,'r_char_current');
           r_color     = getValueFromTag(xmlDoc,'r_color_current');
           if (r_color.length == 0)
-            r_char_full = "url(\"../overlays/graphics/smash_stock_icons/melee/" + r_char + ".png\")";
+            r_char_full = "url(\"overlay_graphics/smash_stock_icons/melee/" + r_char + ".png\")";
           else
-            r_char_full = "url(\"../overlays/graphics/smash_stock_icons/melee/" + r_char + " " + r_color + ".png\")";
+            r_char_full = "url(\"overlay_graphics/smash_stock_icons/melee/" + r_char + " " + r_color + ".png\")";
           r_pronoun = getValueFromTag(xmlDoc, 'r_pronoun_current');
           r_score   = getValueFromTag(xmlDoc, 'r_score');
 

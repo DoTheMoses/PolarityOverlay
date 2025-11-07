@@ -13,9 +13,7 @@
     <!-- Scene Elements ============================================== -->
     <!-- ============================================================= -->
 
-    <div id="scene_downtime">
-      <div id="message_downtime"></div>
-      <div id="sponsors_static"></div>
+    <div id="scene_timer">
       <div id="timer"></div>
     </div>
 
@@ -25,7 +23,10 @@
 
     <script type="text/javascript">
       // data variables
-      var message_downtime;
+      var timer_min, timer_sec;
+      timer_min=1;
+      timer_sec=30;
+
       // backend variables
       var timestamp, timestampOld;
       var xmlDoc;
@@ -41,9 +42,6 @@
           poll_handler();
         }, 250);
 
-        $('#message_downtime').html('');
-        $('#message_downtime').opacity(0);
-
         $.play();
       }
 
@@ -58,31 +56,48 @@
         xhr.onreadystatechange = function(){
           xmlDoc = xhr.responseXML;
 
-            message_downtime = getValueFromTag(xmlDoc,'message_downtime');
+/*            timer_min = getValueFromTag(xmlDoc, 'timer_min');
+            timer_sec = getValueFromTag(xmlDoc, 'timer_sec');*/
 
             // timestamp for updating
-            timestampOld = timestamp;
-            timestamp = getValueFromTag(xmlDoc,'timestamp');
+          timestampOld = timestamp;
+          timestamp = getValueFromTag(xmlDoc,'timestamp');
           }
       }
 
-      // this function updates all elements in the html with new values using "tweens" to do animations
-      function updateBoard() {
-        if ($('#message_downtime').html() != message_downtime) {
-          animating = true;
-          $('#message_downtime').tween({
-             opacity: {start: 100,stop: 0,time: 0,duration: 0.5,effect: 'easeIn'},
-             onStop: function(){$('#message_downtime').html(message_downtime);}
-           });
-           $('#message_downtime').tween({
-             opacity: {start: 0,stop: 100,time: 0.5,duration: 0.5,effect: 'easeOut'},
-             onStop: function(){animating = false;}
-           });
+      // Update the count down every 1 second
+      var x = setInterval(function() {
+
+        // Get today's date and time
+        var now = new Date().getTime();
+
+      // Set the date we're counting down to
+      var countDownDate = new Date("Jan 1, 2100 00:"+timer_min+":"+timer_sec).getTime();
+        //var countDownDate = new Date(now.getTime() + 5*6000);
+
+        // Find the distance between now and the count down date
+        var distance = countDownDate - now;
+
+        // Time calculations for days, hours, minutes and seconds
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+        var minutes_real = 0, seconds_real = 0;
+
+        if (seconds < 10) {
+          seconds_real = "0"+seconds;
+        } else {
+          seconds_real = seconds;
         }
 
-        $.play();
-        doUpdate = false;
-      }
+        // output the result in an element with id="demo"
+        document.getElementById("timer").innerHTML = minutes + ":" + seconds_real;
+
+        // if count down is over, write some text
+        if (distance < 0) {
+          clearInterval(x);
+          document.getElementById("timer").innerHTML = "SOON™️";
+        }
+      }, 1000);
 
       init();
     </script>

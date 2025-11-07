@@ -1,7 +1,6 @@
 <!DOCTYPE StreamControl>
 <items>
- <timestamp>1762399932</timestamp>
- <ampm>AM</ampm>
+ <timestamp>1762487080</timestamp>
  <caster_pronouns_1>He/Him</caster_pronouns_1>
  <caster_pronouns_2>He/They</caster_pronouns_2>
  <caster_pronouns_3></caster_pronouns_3>
@@ -26,15 +25,13 @@
  <caster_twitter_4></caster_twitter_4>
  <caster_twitter_5></caster_twitter_5>
  <caster_twitter_6></caster_twitter_6>
- <flag_swap_cam_tags>0</flag_swap_cam_tags>
- <hide_lower_third>1733162872</hide_lower_third>
- <hide_lower_third_casters>1733160282</hide_lower_third_casters>
- <hour>1</hour>
- <l_char_current>MARTH</l_char_current>
+ <hide_lower_third>1762474185</hide_lower_third>
+ <hide_lower_third_casters>1762474179</hide_lower_third_casters>
+ <l_char_current>Fox</l_char_current>
  <l_char_on_deck></l_char_on_deck>
- <l_color_current></l_color_current>
+ <l_color_current>Green</l_color_current>
  <l_color_on_deck></l_color_on_deck>
- <l_loss>0</l_loss>
+ <l_loss>1</l_loss>
  <l_pronoun_current>he/him</l_pronoun_current>
  <l_score>1</l_score>
  <l_sponsor_current>Moist</l_sponsor_current>
@@ -45,12 +42,11 @@
  <lower_third_line_second>Singles up next!</lower_third_line_second>
  <lower_third_line_third></lower_third_line_third>
  <message_downtime>Starting soon</message_downtime>
- <minute>00</minute>
- <r_char_current>Sheik</r_char_current>
+ <r_char_current>Fox</r_char_current>
  <r_char_on_deck></r_char_on_deck>
- <r_color_current></r_color_current>
+ <r_color_current>Red</r_color_current>
  <r_color_on_deck></r_color_on_deck>
- <r_loss>0</r_loss>
+ <r_loss>1</r_loss>
  <r_pronoun_current>he/him</r_pronoun_current>
  <r_score>4</r_score>
  <r_sponsor_current>lil</r_sponsor_current>
@@ -59,8 +55,9 @@
  <r_tag_on_deck></r_tag_on_deck>
  <round_current>LOSERS Finals</round_current>
  <round_on_deck></round_on_deck>
- <show_lower_third>1733160924</show_lower_third>
- <show_lower_third_casters>1733698748</show_lower_third_casters>
+ <show_countdown>0</show_countdown>
+ <show_lower_third>1762474186</show_lower_third>
+ <show_lower_third_casters>1762474180</show_lower_third_casters>
  <t1_char_current></t1_char_current>
  <t1_tag_current></t1_tag_current>
  <t1_team_color>Red</t1_team_color>
@@ -76,5 +73,7 @@
  <t4_sponsor_current></t4_sponsor_current>
  <t4_tag_current></t4_tag_current>
  <t4_team_color>Red</t4_team_color>
+ <timer_min>5</timer_min>
+ <timer_sec>20</timer_sec>
  <tl_sponsor_current></tl_sponsor_current>
 </items>

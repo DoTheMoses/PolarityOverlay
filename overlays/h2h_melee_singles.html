@@ -1,10 +1,10 @@
 <html>
   <head>
-    <link id="pagestyle" rel="stylesheet" href="../backend/tipped_off_15.css" type="text/css" charset="utf-8">
+    <link id="pagestyle" rel="stylesheet" href="../programming_assets/css/2024_nounvitational.css" type="text/css" charset="utf-8">
 
-    <script src="../backend/js/jquery-2.0.2.min.js" type="text/javascript" charset="utf-8"></script>
-    <script src="../backend/js/jstween-1.1.min.js" type="text/javascript" charset="utf-8"></script>
-    <script src="../backend/js/functions.js" type="text/javascript"></script>
+    <script src="../programming_assets/js/jquery-2.0.2.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../programming_assets/js/jstween-1.1.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../programming_assets/js/functions.js" type="text/javascript"></script>
 
   </head>
 
@@ -116,7 +116,7 @@
 
       // this function pulls data from the stream control gui and allows us to use in our scripts here
       function load_data() {
-        var stream_control_location = "../sc/streamcontrol.xml";
+        var stream_control_location = "../streamcontrol/streamcontrol.xml";
 
         xhr.open('GET', stream_control_location);
         xhr.send();
@@ -128,9 +128,7 @@
 
           l_sponsor_h2h   = getValueFromTag(xmlDoc, 'l_sponsor_current');
           l_tag_h2h       = getValueFromTag(xmlDoc, 'l_tag_current');
-          l_color_h2h     = getValueFromTag(xmlDoc,'l_color_current');
-          l_char_h2h      = getValueFromTag(xmlDoc,'l_char_current');
-          l_char_full_h2h = "url(\"../overlays/graphics/smash_stock_icons/melee/" + l_char_h2h + " " + l_color_h2h + ".png\"";
+          l_char_full_h2h = "url(\"overlay_graphics/smash_stock_icons/melee/" + getValueFromTag(xmlDoc,'l_char_current') + ".png\"";
           l_pronoun_h2h   = getValueFromTag(xmlDoc, 'l_pronoun_current');
           l_score_h2h     = getValueFromTag(xmlDoc, 'l_score');
 
@@ -139,15 +137,14 @@
           else
             l_loss_h2h = "";
 
-          if (getValueFromTag(xmlDoc,'l_color_current') != l_color_h2h || getValueFromTag(xmlDoc,'l_char_current') != l_char_h2h)
+          if (getValueFromTag(xmlDoc,'l_char_current') != l_char_h2h)
             l_char_update_h2h = 1;
           else
             l_char_update_h2h = 0;
 
           r_sponsor_h2h   = getValueFromTag(xmlDoc, 'r_sponsor_current');
           r_tag_h2h       = getValueFromTag(xmlDoc, 'r_tag_current');
-          r_char_full_h2h = "url(\"../overlays/graphics/smash_stock_icons/melee/" + getValueFromTag(xmlDoc,'r_char_current') + ".png\"";
-          //r_color_h2h   = getValueFromTag(xmlDoc,'r_color_current');
+          r_char_full_h2h = "url(\"overlay_graphics/smash_stock_icons/melee/" + getValueFromTag(xmlDoc,'r_char_current') + ".png\"";
           r_pronoun_h2h   = getValueFromTag(xmlDoc, 'r_pronoun_current');
           r_score_h2h     = getValueFromTag(xmlDoc, 'r_score');
 
@@ -156,7 +153,7 @@
           else
             r_loss_h2h = "";
 
-          if (getValueFromTag(xmlDoc,'r_color_current') != r_color_h2h || getValueFromTag(xmlDoc,'r_char_current') != r_char_h2h)
+          if (getValueFromTag(xmlDoc,'r_char_current') != r_char_h2h)
             r_char_update_h2h = 1;
           else
             r_char_update_h2h = 0;
