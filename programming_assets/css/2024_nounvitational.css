@@ -1,0 +1,543 @@
+@import "base.css";
+
+/*=======================================================================*/
+/* VARIABLES
+/*=======================================================================*/
+@font-face {
+    font-family: 'Londrina Solid Thin';
+    src: url("../fonts/LondrinaSolid-Thin.ttf");
+}
+@font-face {
+    font-family: 'Londrina Solid Light';
+    src: url("../fonts/LondrinaSolid-Light.ttf");
+}
+@font-face {
+    font-family: 'Londrina Solid Regular';
+    src: url("../fonts/LondrinaSolid-Regular.ttf");
+}
+@font-face {
+    font-family: 'Londrina Solid Black';
+    src: url("../fonts/LondrinaSolid-Black.ttf");
+}
+
+:root {
+  --main-color: #FFC629;
+  --secondary-color: #170F36;
+  --font-thin: 'Londrina Solid Thin';
+  --font-light: 'Londrina Solid Light';
+  --font-regular: 'Londrina Solid Regular';
+  --font-black: 'Londrina Solid Black';
+}
+
+/*=======================================================================*/
+/* BODY
+/*=======================================================================*/
+
+/* set style template for scenes */
+body {
+  font-family: var(--font-black);
+  text-transform: uppercase;
+  /*text-transform: uppercase;*/
+}
+
+/*========================================================================*/
+/*
+/*    ######  ####### #     # #     # ####### ### #     # #######
+/*    #     # #     # #  #  # ##    #    #     #  ##   ## # 
+/*    #     # #     # #  #  # # #   #    #     #  # # # # #
+/*    #     # #     # #  #  # #  #  #    #     #  #  #  # #####
+/*    #     # #     # #  #  # #   # #    #     #  #     # #
+/*    #     # #     # #  #  # #    ##    #     #  #     # #
+/*    ######  #######  ## ##  #     #    #    ### #     # #######
+/*
+/*========================================================================*/
+
+#message_downtime {
+  position: absolute;
+  height:138px;
+  width:1200px;
+  left:360px;
+  top:670px;
+  font-size: 150px;
+  text-align: center;
+  font-family: var(--font-black);
+  -webkit-text-stroke: 8px black;
+  letter-spacing: -2px
+}
+
+#scene_downtime {
+  height: 100%;
+  width: 100%;
+}
+
+/*#sponsors_static {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 830px;
+  left: 520px;
+  background-image: url('../overlays/graphics/misc_assets/sponsors_static.png');
+  background-repeat: no-repeat;
+}*/
+
+/*========================================================================*/
+/*
+/*    ######  ####### #     # #     # ####### ### #     # #######
+/*    #     # #     # #  #  # ##    #    #     #  ##   ## # 
+/*    #     # #     # #  #  # # #   #    #     #  # # # # #
+/*    #     # #     # #  #  # #  #  #    #     #  #  #  # #####
+/*    #     # #     # #  #  # #   # #    #     #  #     # #
+/*    #     # #     # #  #  # #    ##    #     #  #     # #
+/*    ######  #######  ## ##  #     #    #    ### #     # #######
+/*
+/*========================================================================*/
+
+#scene_timer {
+  height: 100%;
+  width: 100%;
+    color: #D62A28;
+}
+
+#timer {
+  position: absolute;
+  height:138px;
+  width:1200px;
+  left:360px;
+  top:800px;
+  font-size: 250px;
+  text-align: center;
+  font-family: var(--font-black);
+  -webkit-text-stroke: 8px black;
+  letter-spacing: -2px
+  color: #D62A28;
+}
+
+/*========================================================================*/
+/*
+/*     #####     #     #####  ####### ####### ######   #####
+/*    #     #   # #   #     #    #    #       #     # #     #
+/*    #        #   #  #          #    #       #     # #
+/*    #       #     #  #####     #    #####   ######   #####
+/*    #       #######       #    #    #       #   #         #
+/*    #     # #     # #     #    #    #       #    #  #     #
+/*     #####  #     #  #####     #    ####### #     #  #####
+/*
+/*========================================================================*/
+
+/*.casters_2 {
+  background-image: url("../overlays/graphics/overlay_casters_2.png");
+}
+
+.casters_3 {
+  background-image: url("../overlays/graphics/overlay_casters_3.png");
+}*/
+
+#caster_wrapper_1,#caster_wrapper_2,#caster_wrapper_3,#caster_wrapper_4 {
+  width: 500px;
+  height: 80px;
+  top: 850px;
+  font-size: 70px;
+  font-family: var(--font-black);
+  -webkit-text-stroke: 3px black;
+  letter-spacing: -2px  
+}
+
+#caster_wrapper_1 {left:  310px;}
+#caster_wrapper_2 {left: 1120px;}
+
+#caster_full_1, #caster_full_2, #caster_full_3 {
+  margin-bottom: -10px;
+}
+
+#caster_wrapper_1 {
+  text-align: right;
+}
+#caster_wrapper_2 {
+  text-align: left;
+}
+
+#caster_sponsor_1, #caster_sponsor_2, #caster_sponsor_3, #caster_sponsor_4 {
+   color: #D62A28;}
+
+#caster_twitter_1, #caster_twitter_2, #caster_twitter_3, #caster_twitter_4 {
+  font-size: 35px;
+  padding-left: 25px;
+  font-family: var(--font-black);
+  color: #D62A28;
+  -webkit-text-stroke: 0px black;  
+}
+
+#caster_twitter_2 {
+  padding-left: 0px;
+  padding-right: 25px;
+}
+
+#caster_pronouns_1, #caster_pronouns_2, #caster_pronouns_3, #caster_pronouns_4 {
+  font-size: 30px;
+  font-family: var(--font-black);
+  color: white;
+  font-style: normal;
+  -webkit-text-stroke: 0px black;
+  color: #D62A28;
+}
+
+.hide {display: none;}
+.show {display: inline;}
+
+/*========================================================================*/
+/*
+/*    #       ####### #     # ####### ######     ####### #     # ### ######  ######  
+/*    #       #     # #  #  # #       #     #       #    #     #  #  #     # #     # 
+/*    #       #     # #  #  # #       #     #       #    #     #  #  #     # #     # 
+/*    #       #     # #  #  # #####   ######        #    #######  #  ######  #     # 
+/*    #       #     # #  #  # #       #   #         #    #     #  #  #   #   #     # 
+/*    #       #     # #  #  # #       #    #        #    #     #  #  #    #  #     # 
+/*    ####### #######  ## ##  ####### #     #       #    #     # ### #     # ######  
+/*
+/*========================================================================*/
+
+/*#scene_wrapper_lower_third { 
+  background-image: url("../overlays/graphics/overlay_lower_third.png");
+}*/
+
+#lower_third_wrapper {
+  height: 134px;
+  width: 900px;
+  left: 450px;
+  top: 850px;
+}
+
+#lower_third_line_first_wrapper {
+  font-size: 65px;
+  padding-top: 20px;
+  font-family: var(--font-black);
+  margin-bottom: -8px;
+  -webkit-text-stroke: 2px black;  
+}
+
+#lower_third_line_second_wrapper {
+  font-size: 45px;
+  padding-top: 5px;  
+  font-family: var(--font-black);
+  -webkit-text-stroke: 0px black;
+  color: #D62A28;
+}
+
+/*========================================================================*/
+/*
+/*     #####         #####  #     # ####### #######  #####
+/*    #     #       #     # #     # #     #    #    #     #
+/*          #       #       #     # #     #    #    #
+/*     #####  #####  #####  ####### #     #    #     #####
+/*    #                   # #     # #     #    #          #
+/*    #             #     # #     # #     #    #    #     #
+/*    #######        #####  #     # #######    #     #####
+/*
+/*========================================================================*/
+
+#scene_wrapper_2_shot_16x9 {
+  background-image: url("../overlays/graphics/overlay_2_shot_16x9.png");
+}
+
+#scene_wrapper_2_shot_73x60 {
+  background-image: url("../overlays/graphics/overlay_2_shot_73x60.png"); 
+}
+
+#sponsors_static_2_shot_73x60 {
+  position: absolute;  
+  height: 200px;
+  width: 100%;
+  top: 870px;
+  left: 565px;
+  background-image: url('../overlays/graphics/misc_assets/sponsors_static.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+/*========================================================================*/
+/*
+/*     #####         #####  #     # ####### #######  #####
+/*    #     #       #     # #     # #     #    #    #     #
+/*          #       #       #     # #     #    #    #
+/*     #####  #####  #####  ####### #     #    #     #####
+/*          #             # #     # #     #    #          #
+/*    #     #       #     # #     # #     #    #    #     #
+/*     #####         #####  #     # #######    #     #####
+/*
+/*========================================================================*/
+
+#scene_wrapper_3_shot_73x60 {
+  background-image: url("../overlays/graphics/overlay_3_shot_73x60.png"); 
+}
+
+#sponsors_static_3_shot_73x60 {
+  position: absolute;  
+  height: 170px;
+  width: 100%;
+  bottom: 10px;
+  left: 625px;
+  background-image: url('../overlays/graphics/misc_assets/sponsors_static.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+/* H2H */
+
+#scene_wrapper_gameplay_h2h_melee_singles {
+  background-image: url("../overlays/graphics/overlay_gameplay_melee_singles22.png");
+}
+
+#round_wrapper_h2h {
+  width: 440px;
+  height: 100px;
+  left: 740px;
+  top: 540px;
+  -webkit-text-stroke: 2px black;
+}
+
+#round_h2h {
+  padding-top: 12px;
+  font-size: 50px;
+}
+
+#l_tag_wrapper_h2h, #r_tag_wrapper_h2h {
+  height: 75px;
+  width: 450px;
+  font-size: 50px;
+  font-family: var(--font-ultra);
+  bottom: 7px;
+  padding-top: 14px;
+  -webkit-text-stroke: 2px black;
+}
+
+#l_tag_wrapper_h2h {left:  120px;text-align: right}
+#r_tag_wrapper_h2h {right: 120px;text-align: left}
+
+#l_tag_h2h,#l_sponsor_h2h,#r_tag_h2h,#r_sponsor_h2h, #l_loss_h2h, #r_loss_h2h {
+  var(--font-black);
+}
+
+#l_sponsor_h2h, #l_loss_h2h {
+  color: var(--color-blue);
+}
+
+#r_sponsor_h2h, #r_loss_h2h {
+  color:   color: #D62A28;;
+}
+
+/*#l_pronoun_wrapper_h2h, #r_pronoun_wrapper_h2h {
+  top: 435px;
+  width: 300px;
+  height: 55px;
+}
+
+#l_pronoun_wrapper_h2h {left:  0px;}
+#r_pronoun_wrapper_h2h {right: 0px;}*/
+
+#l_pronoun_h2h, #r_pronoun_h2h {
+  font-size: 30px;
+  padding-top: -10px;
+  color: #D62A28;
+}
+
+#l_loss_h2h, #r_loss_h2h {
+  font-size: 35px;
+  padding-left: 5px;
+}
+
+#l_score_wrapper_h2h, #r_score_wrapper_h2h {
+  text-shadow: 2px 2px 2px #000000;
+  height: 100px;
+  width: 100px;
+  font-family: var(--font-ultra);
+  top: 1000px;
+}
+
+#l_score_wrapper_h2h {left:  5px;}
+#r_score_wrapper_h2h {right: 5px;}
+
+#l_score_h2h, #r_score_h2h {
+  font-size: 50px;
+}
+
+#l_char_h2h, #r_char_h2h {
+  width: 75px;
+  height: 75px;
+}
+
+#l_char_wrapper_h2h, #r_char_wrapper_h2h {top: 992px;}
+#l_char_wrapper_h2h {left:  595px;}
+#r_char_wrapper_h2h {right: 595px;}
+
+/*========================================================================*/
+/*
+/*     #####     #    #     # ####### ######  #          #    #     #
+/*    #     #   # #   ##   ## #       #     # #         # #    #   #
+/*    #        #   #  # # # # #       #     # #        #   #    # #
+/*    #  #### #     # #  #  # #####   ######  #       #     #    #
+/*    #     # ####### #     # #       #       #       #######    #
+/*    #     # #     # #     # #       #       #       #     #    #
+/*     #####  #     # #     # ####### #       ####### #     #    #
+/*
+/*========================================================================*/
+
+/*#scene_wrapper_gameplay_melee_singles {
+  background-image: url("../overlays/graphics/overlay_gameplay_melee_singles.png");
+}*/
+
+#round_wrapper {
+  width: 310px;
+  height: 70px;
+  left: 787px;
+  top: 14px;
+  text-align: center;
+  -webkit-text-stroke: 2px black;
+  letter-spacing: -1px;
+}
+
+#round {
+  padding-top: 11px;
+  font-size: 35px;
+}
+
+/* TAGS*/
+
+#l_tag_wrapper, #r_tag_wrapper {
+  height: 20px;
+  width: 310px;
+  font-size: 32px;
+  font-family: var(--font-black);
+  bottom: 37px;
+  -webkit-text-stroke: 1px black;
+}
+
+#l_tag_wrapper {
+  left:  70px;
+  text-align: left;
+}
+
+#r_tag_wrapper {
+  right: 55px;
+  text-align: right;
+}
+
+#l_tag, #r_tag {
+  position: relative;
+}
+
+#l_sponsor,#r_sponsor {
+  font-size: 22px;
+  -webkit-text-stroke: 1px black;
+  position: relative;
+}
+
+#l_pronoun_wrapper, #r_pronoun_wrapper {
+  bottom: 5px;
+  width: 70px;
+  height: 25px;
+  font-family: var(--font-bold);
+  -webkit-text-stroke: 1px black;
+}
+
+#l_pronoun_wrapper {left:  170px;text-align: right;}
+#r_pronoun_wrapper {right: 170px;text-align: left;}
+
+#l_pronoun, #r_pronoun {
+  font-size: 22px;
+}
+
+#l_loss, #r_loss {
+  font-size: 20px;
+  padding-left: 5px;
+}
+
+#l_score_wrapper, #r_score_wrapper {
+  text-shadow: 2px 2px 2px #000000;
+  height: 30px;
+  width: 30px;
+	font-family: var(--font-ultra);
+  bottom: 17px;
+}
+
+#l_score_wrapper {left:  12px;}
+#r_score_wrapper {right: 12px;}
+
+#l_score, #r_score {
+  font-size: 30px;
+}
+
+#l_char, #r_char {
+  width: 40px;
+  height: 40px;
+}
+
+#l_char_wrapper, #r_char_wrapper {
+  bottom: 10px;
+  height: 40px;
+  width: 40px;
+}
+#l_char_wrapper {left:  250px;}
+#r_char_wrapper {right: 250px;}
+
+#sponsors_carousel_wrapper {
+  height: 175px;
+  width: 175px;
+  right: 27px;
+  top: 50px;
+}
+
+/*DOUBLES*/
+
+#round_wrapper_doubles {
+  width: 310px;
+  height: 50px;
+  left: 1130px;
+  top: 10px;
+  text-align: center;
+  -webkit-text-stroke: 2px black;
+  letter-spacing: -1px;
+}
+
+#round_wrapper_doubles {
+  padding-top: 11px;
+  font-size: 35px;
+}
+
+#l_tag_wrapper_doubles, #r_tag_wrapper_doubles {
+  height: 40px;
+  width: 500px;
+  font-size: 33px;
+  font-family: var(--font-ultra);
+  top: 362px;
+  left: 25px;
+  -webkit-text-stroke: 1px black;
+}
+
+#r_tag_wrapper_doubles {
+  top: 672px;
+}
+
+#l_tag_doubles, #r_tag_doubles {
+  font-family: var(--font-black);
+}
+
+#l_score_doubles, #r_score_doubles {
+  font-size: 40px;
+}
+
+#l_score_wrapper_doubles, #r_score_wrapper_doubles {
+  text-shadow: 2px 2px 2px #000000;
+  height: 100px;
+  width: 20px;
+  font-family: var(--font-ultra);
+  bottom: 121px;
+}
+
+#l_score_wrapper_doubles {
+  left: 544px;
+  top: 362px;
+}
+#r_score_wrapper_doubles {
+  left: 544px;  
+  bottom: 312px;
+}

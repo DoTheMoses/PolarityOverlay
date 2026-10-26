@@ -1,0 +1,71 @@
+<html>
+  <head>
+    <link id="pagestyle" rel="stylesheet" href="../backend/tipped_off_15.css" type="text/css" charset="utf-8">
+
+    <script src="../backend/js/jquery-2.0.2.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../backend/js/jstween-1.1.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../backend/js/functions.js" type="text/javascript"></script>
+
+  </head>
+
+  <body>
+    <!-- ============================================================= -->
+    <!-- Scene Elements ============================================== -->
+    <!-- ============================================================= -->
+
+    <div id="scene_wrapper_2_shot_73x60">
+      <div id="sponsors_static_2_shot_73x60"></div>
+    </div>
+
+    <!-- ============================================================= -->
+    <!-- Main Loop =================================================== -->
+    <!-- ============================================================= -->
+
+    <script type="text/javascript">
+      // backend variables
+      var timestamp, timestampOld;
+      var xmlDoc;    
+      var xhr = new XMLHttpRequest();
+      var animating = false; // flag to show when animating, used as a "busy" signal
+      var doUpdate = false;
+
+      // this function inititalizes fields when the scene loads
+      function init() {
+
+        xhr.overrideMimeType('text/xml');
+
+        var timeout = this.window.setInterval(function() {
+          poll_handler();
+        }, 250);
+
+        $.play();
+      }
+
+      // this function pulls data from the stream control gui and allows us to use in our scripts here
+      function load_data() {
+        var stream_control_location = "../sc/streamcontrol.xml";
+
+        xhr.open('GET', stream_control_location);
+        xhr.send();
+
+        xhr.onreadystatechange = function(){
+          xmlDoc = xhr.responseXML;
+
+          // timestamp for updating
+          timestampOld = timestamp;
+          timestamp = getValueFromTag(xmlDoc,'timestamp');
+        }
+      }
+
+      // this function updates all elements in the html with new values using "tweens" to do animations
+      function updateBoard() {
+        $.play();
+        doUpdate = false;
+      }
+
+      init();
+    </script>
+
+  </body>
+
+</html>

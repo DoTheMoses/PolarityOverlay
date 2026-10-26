@@ -1,0 +1,158 @@
+<html>
+<head>
+  <link id="pagestyle" rel="stylesheet" href="../backend/2024_nounvitational.css" type="text/css" charset="utf-8">
+
+    <script src="../backend/js/jquery-2.0.2.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../backend/js/jstween-1.1.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../backend/js/functions.js" type="text/javascript"></script>
+
+</head>
+
+  <body>
+
+    <!-- ============================================================= -->
+    <!-- Scene Elements ============================================== -->
+    <!-- ============================================================= -->
+
+    <div class="ticker-container">
+      <div class="ticker-wrapper">
+        <div class="ticker-transition">
+          <div id="ticker_item_1" class="ticker-item">Item 1</div>
+          <div class="ticker-item">|</div>
+          <div id="ticker_item_2" class="ticker-item">Item 2</div>
+          <div class="ticker-item">|</div>
+          <div id="ticker_item_3" class="ticker-item">Item 3</div>
+          <div class="ticker-item">|</div>
+          <div id="ticker_item_4" class="ticker-item">Item 4</div>
+          <div class="ticker-item">|</div>
+          <div id="ticker_item_5" class="ticker-item">Item 5</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============================================================= -->
+    <!-- Main Loop =================================================== -->
+    <!-- ============================================================= -->
+
+    <script type="text/javascript">
+      // field variables
+      var ticker_item_1, ticker_item_2, ticker_item_3, ticker_item_4, ticker_item_5;
+
+      // backend variables
+      var timestamp, timestampOld;
+      var xmlDoc;    
+      var xhr = new XMLHttpRequest();
+      var animating = false; // flag to show when animating, used as a "busy" signal
+      var doUpdate = false;
+
+      // this function inititalizes fields when the scene loads
+      function init() {
+
+        xhr.overrideMimeType('text/xml');
+            
+        var timeout = this.window.setInterval(function() {
+          poll_handler();
+        }, 250);
+
+        $.play();
+      }
+
+      // this function pulls data from the stream control gui and allows us to use in our scripts here
+      function load_data() {
+      var stream_control_location = "../sc_ticker/streamcontrol.xml";
+
+      xhr.open('GET', stream_control_location);
+      xhr.send();
+        xhr.onreadystatechange = function(){
+          xmlDoc = xhr.responseXML;
+
+          ticker_item_1 = getValueFromTag(xmlDoc,'ticker_line_1');
+          ticker_item_2 = getValueFromTag(xmlDoc,'ticker_line_2');
+          ticker_item_3 = getValueFromTag(xmlDoc,'ticker_line_3');
+          ticker_item_4 = getValueFromTag(xmlDoc,'ticker_line_4');
+          ticker_item_5 = getValueFromTag(xmlDoc,'ticker_line_5');
+
+          // timestamp for updating
+          timestampOld = timestamp;
+          timestamp = getValueFromTag(xmlDoc,'timestamp');
+        }
+      }
+
+      // this function updates all elements in the html with new values using "tweens" to do animations
+      function updateBoard() {
+        if ($('#ticker_item_1').html() != ticker_item_1) {
+          animating = true;
+          $('#ticker_item_1').tween({
+            opacity: {start: 100,stop: 0,time: 0,duration: 0.5,effect: 'easeIn'},
+            onStop: function(){$('#ticker_item_1').html(ticker_item_1);}
+          });
+
+          $('#ticker_item_1').tween({
+            opacity: {start: 0,stop: 100,time: 0.5,duration: 0.5,effect: 'easeOut'},
+            onStop: function(){animating = false;}
+          });
+        }
+
+        if ($('#ticker_item_2').html() != ticker_item_2) {
+          animating = true;
+          $('#ticker_item_2').tween({
+            opacity: {start: 100,stop: 0,time: 0,duration: 0.5,effect: 'easeIn'},
+            onStop: function(){$('#ticker_item_2').html(ticker_item_2);}
+          });
+
+          $('#ticker_item_2').tween({
+            opacity: {start: 0,stop: 100,time: 0.5,duration: 0.5,effect: 'easeOut'},
+            onStop: function(){animating = false;}
+          });
+        }
+
+        if ($('#ticker_item_3').html() != ticker_item_3) {
+          animating = true;
+          $('#ticker_item_3').tween({
+            opacity: {start: 100,stop: 0,time: 0,duration: 0.5,effect: 'easeIn'},
+            onStop: function(){$('#ticker_item_3').html(ticker_item_3);}
+          });
+
+          $('#ticker_item_3').tween({
+            opacity: {start: 0,stop: 100,time: 0.5,duration: 0.5,effect: 'easeOut'},
+            onStop: function(){animating = false;}
+          });
+        }
+
+        if ($('#ticker_item_4').html() != ticker_item_4) {
+          animating = true;
+          $('#ticker_item_4').tween({
+            opacity: {start: 100,stop: 0,time: 0,duration: 0.5,effect: 'easeIn'},
+            onStop: function(){$('#ticker_item_4').html(ticker_item_4);}
+          });
+
+          $('#ticker_item_4').tween({
+            opacity: {start: 0,stop: 100,time: 0.5,duration: 0.5,effect: 'easeOut'},
+            onStop: function(){animating = false;}
+          });
+        }
+
+        if ($('#ticker_item_5').html() != ticker_item_5) {
+          animating = true;
+          $('#ticker_item_5').tween({
+            opacity: {start: 100,stop: 0,time: 0,duration: 0.5,effect: 'easeIn'},
+            onStop: function(){$('#ticker_item_5').html(ticker_item_5);}
+          });
+
+          $('#ticker_item_5').tween({
+            opacity: {start: 0,stop: 100,time: 0.5,duration: 0.5,effect: 'easeOut'},
+            onStop: function(){animating = false;}
+          });
+        }
+
+        $.play();
+          
+        doUpdate = false;
+      }
+
+    init();
+    </script>
+
+  </body>
+
+</html>
