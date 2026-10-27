@@ -360,6 +360,7 @@ body {
   width:100%;
   height: 100%;
   position:absolute;
+  text-align: center;
 }
 
 #l_sponsor, #r_sponsor {
@@ -388,6 +389,8 @@ body {
 #l_char, #r_char {
   background-repeat: no-repeat;
   background-size: 100%;
+  width: 100%;
+  height: 100%;
 }
 
 #sponsors_carousel_wrapper {

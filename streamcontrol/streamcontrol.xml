@@ -1,6 +1,6 @@
 <!DOCTYPE StreamControl>
 <items>
- <timestamp>1793111838</timestamp>
+ <timestamp>1793129145</timestamp>
  <caster_pronouns_1></caster_pronouns_1>
  <caster_pronouns_2></caster_pronouns_2>
  <caster_pronouns_3></caster_pronouns_3>
@@ -27,17 +27,17 @@
  <caster_twitter_6></caster_twitter_6>
  <hide_lower_third>0</hide_lower_third>
  <hide_lower_third_casters>0</hide_lower_third_casters>
- <l_char_current></l_char_current>
+ <l_char_current>Jigglypuff</l_char_current>
  <l_char_on_deck></l_char_on_deck>
- <l_color_current></l_color_current>
+ <l_color_current>Green</l_color_current>
  <l_color_on_deck></l_color_on_deck>
  <l_loss>0</l_loss>
- <l_pronoun_current></l_pronoun_current>
+ <l_pronoun_current>He/Him</l_pronoun_current>
  <l_pronoun_on_deck>He/Him</l_pronoun_on_deck>
- <l_score>0</l_score>
- <l_sponsor_current></l_sponsor_current>
+ <l_score>1</l_score>
+ <l_sponsor_current>Liquid</l_sponsor_current>
  <l_sponsor_on_deck></l_sponsor_on_deck>
- <l_tag_current>cam</l_tag_current>
+ <l_tag_current>Hungrybox</l_tag_current>
  <l_tag_on_deck>Colbol</l_tag_on_deck>
  <lower_third_line_first></lower_third_line_first>
  <lower_third_line_second></lower_third_line_second>
@@ -63,12 +63,12 @@
  <p4_pronoun></p4_pronoun>
  <p4_sponsor></p4_sponsor>
  <p4_tag>4</p4_tag>
- <r_char_current></r_char_current>
+ <r_char_current>Ice Climbers</r_char_current>
  <r_char_on_deck></r_char_on_deck>
- <r_color_current></r_color_current>
+ <r_color_current>Red</r_color_current>
  <r_color_on_deck></r_color_on_deck>
  <r_loss>0</r_loss>
- <r_pronoun_current></r_pronoun_current>
+ <r_pronoun_current>He/Him</r_pronoun_current>
  <r_pronoun_on_deck>He/Him</r_pronoun_on_deck>
  <r_score>0</r_score>
  <r_sponsor_current>parry.gg</r_sponsor_current>
@@ -76,7 +76,7 @@
  <r_tag_current>DarkGenex</r_tag_current>
  <r_tag_on_deck>Hungrybox</r_tag_on_deck>
  <round_2s></round_2s>
- <round_current>TEST</round_current>
+ <round_current>Grand Finals</round_current>
  <round_on_deck>TEST</round_on_deck>
  <show_countdown>0</show_countdown>
  <show_lower_third>0</show_lower_third>

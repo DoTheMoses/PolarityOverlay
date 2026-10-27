@@ -1,6 +1,6 @@
 <html>
   <head>
-    <link id="pagestyle" rel="stylesheet" href="../programming_assets/css/2024_nounvitational.css" type="text/css" charset="utf-8">
+    <link id="pagestyle" rel="stylesheet" href="../event_assets/backend/event.css" type="text/css" charset="utf-8">
 
     <script src="../programming_assets/js/jquery-2.0.2.min.js" type="text/javascript" charset="utf-8"></script>
     <script src="../programming_assets/js/jstween-1.1.min.js" type="text/javascript" charset="utf-8"></script>
@@ -138,9 +138,9 @@
           l_char      = getValueFromTag(xmlDoc,'l_char_current');
           l_color     = getValueFromTag(xmlDoc,'l_color_current');
           if (l_color.length == 0)
-            l_char_full = "url(\"overlay_graphics/smash_stock_icons/melee/" + l_char + ".png\")";
+            l_char_full = "url(\"../shared_image_assets/smash_stock_icons/melee/" + l_char + ".png\")";
           else
-            l_char_full = "url(\"overlay_graphics/smash_stock_icons/melee/" + l_char + " " + l_color + ".png\")";
+            l_char_full = "url(\"../shared_image_assets/smash_stock_icons/melee/" + l_char + " " + l_color + ".png\")";
           l_pronoun   = getValueFromTag(xmlDoc, 'l_pronoun_current');
           l_score     = getValueFromTag(xmlDoc, 'l_score');
 
@@ -162,9 +162,9 @@
           r_char      = getValueFromTag(xmlDoc,'r_char_current');
           r_color     = getValueFromTag(xmlDoc,'r_color_current');
           if (r_color.length == 0)
-            r_char_full = "url(\"overlay_graphics/smash_stock_icons/melee/" + r_char + ".png\")";
+            r_char_full = "url(\"../shared_image_assets/smash_stock_icons/melee/" + r_char + ".png\")";
           else
-            r_char_full = "url(\"overlay_graphics/smash_stock_icons/melee/" + r_char + " " + r_color + ".png\")";
+            r_char_full = "url(\"../shared_image_assets/smash_stock_icons/melee/" + r_char + " " + r_color + ".png\")";
           r_pronoun = getValueFromTag(xmlDoc, 'r_pronoun_current');
           r_score   = getValueFromTag(xmlDoc, 'r_score');
 
