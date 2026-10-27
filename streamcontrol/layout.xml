@@ -1,288 +1,287 @@
 <!DOCTYPE StreamControlLayout>
 <layout width="630" height="420" tabbed="1">
 
-<tab name="Downtime">
-  <label                                x=" 10" y=" 15" width="100" height="13">Message</label>
-  <lineEdit id="message_downtime"       x=" 60" y=" 10" width="480" height="20" />
+  <tab name="DOWNTIME">
+    <label                                x=" 10" y=" 15" width="100" height="13">Message</label>
+    <lineEdit id="message_downtime"       x=" 60" y=" 10" width="480" height="20" />
 
-  <label                                x=" 10" y=" 30" width="100" height="13">Minutes</label>
-  <lineEdit id="timer_min"              x=" 60" y=" 30" width="480" height="20" />
-  <label                                x=" 10" y=" 50" width="100" height="13">Seconds</label>
-  <lineEdit id="timer_sec"              x=" 60" y=" 50" width="480" height="20" />
+    <label                                x=" 10" y=" 30" width="100" height="13">Minutes</label>
+    <lineEdit id="timer_min"              x=" 60" y=" 30" width="480" height="20" />
+    <label                                x=" 10" y=" 50" width="100" height="13">Seconds</label>
+    <lineEdit id="timer_sec"              x=" 60" y=" 50" width="480" height="20" />
 
-  <label                                x=" 10" y=" 70" width="200" height="13">Show Countdown Timer</label>
-  <checkBox id="show_countdown"         x=" 10" y=" 90" width=" 80" height="20" ></checkBox>
-
-</tab>
-
-<tab name="Lower 3rds">
-  <label                                x="235" y=" 10" width="100" height="13">LOWER THIRD</label>
-
-  <label                                x=" 10" y=" 35" width="100" height="13">First Line</label>
-  <lineEdit id="lower_third_line_first" x=" 80" y=" 30" width="460" height="20" />
-  <label                                x=" 10" y=" 65" width="100" height="13">Second Line</label>
-  <lineEdit id="lower_third_line_second"x=" 80" y=" 60" width="460" height="20" />
-  <label                                x=" 10" y=" 95" width="100" height="13">Third Line</label>
-  <lineEdit id="lower_third_line_third" x=" 80" y=" 90" width="460" height="20" />
-
-  <button type="timestamp" id="show_lower_third"
-                                        x="545" y=" 30" width=" 75" height="38" saveonclick="1" hotkey="F15">Show</button>
-  <button type="timestamp" id="hide_lower_third"
-                                        x="545" y=" 75" width=" 75" height="38" saveonclick="1" hotkey="F16">Hide</button>
-
-  <line                                 x="  5" y="115" width="615" height="15" />
-
-  <label                                x="245" y="130" width="100" height="13">CASTERS</label>
-
-  <label                                x=" 40" y="150" width="100" height="13">Sponsor</label>
-  <label                                x="125" y="150" width="100" height="13">Tag</label>
-  <label                                x="235" y="150" width="120" height="13">Twitter (no @)</label>
-  <label                                x="345" y="150" width="120" height="13">Pronouns</label>
-
-  <label                                x=" 10" y="180" width="100" height="13">C1</label>
-  <lineEdit id="caster_sponsor_1"       x=" 40" y="175" width=" 75" height="20" dataSet="../programming_assets/csv/casters.csv" dataField="2" master="caster_tag_1" />
-  <lineEdit id="caster_tag_1"           x="125" y="175" width="100" height="20" dataSet="../programming_assets/csv/casters.csv" />
-  <lineEdit id="caster_twitter_1"       x="235" y="175" width="100" height="20" dataSet="../programming_assets/csv/casters.csv" dataField="3" master="caster_tag_1" />
-  <lineEdit id="caster_pronouns_1"      x="345" y="175" width=" 60" height="20" dataSet="../programming_assets/csv/casters.csv" dataField="4" master="caster_tag_1" />
-  <button type="reset"                  x="415" y="175" width=" 41" height="23" tooltip="Clear left caster info" id="rst_l_caster" reset="caster_sponsor_1,caster_tag_1,caster_twitter_1,caster_pronouns_1">Clear</button>
-
-  <label                                x=" 10" y="210" width="100" height="13">C2</label>
-  <lineEdit id="caster_sponsor_2"       x=" 40" y="205" width=" 75" height="20" dataSet="../programming_assets/csv/casters.csv" dataField="2" master="caster_tag_2" />
-  <lineEdit id="caster_tag_2"           x="125" y="205" width="100" height="20" dataSet="../programming_assets/csv/casters.csv" />
-  <lineEdit id="caster_twitter_2"       x="235" y="205" width="100" height="20" dataSet="../programming_assets/csv/casters.csv" dataField="3" master="caster_tag_2" />
-  <lineEdit id="caster_pronouns_2"      x="345" y="205" width=" 60" height="20" dataSet="../programming_assets/csv/casters.csv" dataField="4" master="caster_tag_2" />
-  <button type="reset"                  x="415" y="205" width=" 41" height="23" tooltip="Clear right caster info" id="rst_r_caster" reset="caster_sponsor_2,caster_tag_2,caster_twitter_2,caster_pronouns_2">Clear</button>
-
-  <label                                x=" 10" y="240" width="100" height="13">C3</label>
-  <lineEdit id="caster_sponsor_3"       x=" 40" y="235" width=" 75" height="20" dataSet="../programming_assets/csv/casters.csv" dataField="2" master="caster_tag_3" />
-  <lineEdit id="caster_tag_3"           x="125" y="235" width="100" height="20" dataSet="../programming_assets/csv/casters.csv" />
-  <lineEdit id="caster_twitter_3"       x="235" y="235" width="100" height="20" dataSet="../programming_assets/csv/casters.csv" dataField="3" master="caster_tag_3" />
-  <lineEdit id="caster_pronouns_3"      x="345" y="235" width=" 60" height="20" dataSet="../programming_assets/csv/casters.csv" dataField="4" master="caster_tag_3" />
-  <button type="reset"                  x="415" y="235" width=" 41" height="23" tooltip="Clear 3 caster info" id="rst_3_caster" reset="caster_sponsor_3,caster_tag_3,caster_twitter_3,caster_pronouns_3">Clear</button>
-
-  <label                                x=" 10" y="270" width="100" height="13">C4</label>
-  <lineEdit id="caster_sponsor_4"       x=" 40" y="265" width=" 75" height="20" dataSet="../programming_assets/csv/casters.csv" dataField="2" master="caster_tag_4" />
-  <lineEdit id="caster_tag_4"           x="125" y="265" width="100" height="20" dataSet="../programming_assets/csv/casters.csv" />
-  <lineEdit id="caster_twitter_4"       x="235" y="265" width="100" height="20" dataSet="../programming_assets/csv/casters.csv" dataField="3" master="caster_tag_4" />
-  <lineEdit id="caster_pronouns_4"      x="345" y="265" width=" 60" height="20" dataSet="../programming_assets/csv/casters.csv" dataField="4" master="caster_tag_4" />
-  <button type="reset"                  x="415" y="265" width=" 41" height="23" tooltip="Clear 4 caster info" id="rst_4_caster" reset="caster_sponsor_4,caster_tag_4,caster_twitter_4,caster_pronouns_4">Clear</button>
-
-  <label                                x=" 10" y="300" width="100" height="13">C5</label>
-  <lineEdit id="caster_sponsor_5"       x=" 40" y="295" width=" 75" height="20" dataSet="../programming_assets/csv/casters.csv" dataField="2" master="caster_tag_5" />
-  <lineEdit id="caster_tag_5"           x="125" y="295" width="100" height="20" dataSet="../programming_assets/csv/casters.csv" />
-  <lineEdit id="caster_twitter_5"       x="235" y="295" width="100" height="20" dataSet="../programming_assets/csv/casters.csv" dataField="3" master="caster_tag_5" />
-  <lineEdit id="caster_pronouns_5"      x="345" y="295" width=" 60" height="20" dataSet="../programming_assets/csv/casters.csv" dataField="4" master="caster_tag_5" />
-  <button type="reset"                  x="415" y="295" width=" 41" height="23" tooltip="Clear 5 caster info" id="rst_5_caster" reset="caster_sponsor_5,caster_tag_5,caster_twitter_5,caster_pronouns_5">Clear</button>
-
-  <label                                x=" 10" y="330" width="100" height="13">C6</label>
-  <lineEdit id="caster_sponsor_6"       x=" 40" y="325" width=" 75" height="20" dataSet="../programming_assets/csv/casters.csv" dataField="2" master="caster_tag_6" />
-  <lineEdit id="caster_tag_6"           x="125" y="325" width="100" height="20" dataSet="../programming_assets/csv/casters.csv" />
-  <lineEdit id="caster_twitter_6"       x="235" y="325" width="100" height="20" dataSet="../programming_assets/csv/casters.csv" dataField="3" master="caster_tag_6" />
-  <lineEdit id="caster_pronouns_6"      x="345" y="325" width=" 60" height="20" dataSet="../programming_assets/csv/casters.csv" dataField="4" master="caster_tag_6" />
-  <button type="reset"                  x="415" y="325" width=" 41" height="23" tooltip="Clear 6 caster info" id="rst_6_caster" reset="caster_sponsor_6,caster_tag_6,caster_twitter_6,caster_pronouns_6">Clear</button>
-
-  <button type="reset"                  x="465" y="175" width=" 60"  height="23" tooltip="Clear all caster info" id="rst_casters" reset="caster_sponsor_1,caster_tag_1,caster_twitter_1,caster_pronouns_1,
-  caster_sponsor_2,caster_tag_2,caster_twitter_2,caster_pronouns_2,
-  caster_sponsor_3,caster_tag_3,caster_twitter_3,caster_pronouns_3,
-  caster_sponsor_4,caster_tag_4,caster_twitter_4,caster_pronouns_4,
-  caster_sponsor_5,caster_tag_5,caster_twitter_5,caster_pronouns_5,
-  caster_sponsor_6,caster_tag_6,caster_twitter_6,caster_pronouns_6
-  ">Clear All</button>
-
-  <button type="swap"                   x="465" y="205" width=" 60" height="23" tooltip="Swap 1 and 2 caster info" id="swap_caster_12" swapSet1="caster_sponsor_1,caster_tag_1,caster_twitter_1,caster_pronouns_1" swapSet2="caster_sponsor_2,caster_tag_2,caster_twitter_2,caster_pronouns_2">Swap 1/2</button>
-
-  <button type="swap"                   x="465" y="235" width=" 60" height="23" tooltip="Swap 2 and 3 caster info" id="swap_caster_23" swapSet1="caster_sponsor_2,caster_tag_2,caster_twitter_2,caster_pronouns_2" swapSet2="caster_sponsor_3,caster_tag_3,caster_twitter_3,caster_pronouns_3">Swap 2/3</button>
-
-  <button type="swap"                   x="465" y="265" width=" 60" height="23" tooltip="Swap 3 and 4 caster info" id="swap_caster_34" swapSet1="caster_sponsor_3,caster_tag_3,caster_twitter_3,caster_pronouns_3" swapSet2="caster_sponsor_4,caster_tag_4,caster_twitter_4,caster_pronouns_4">Swap 3/4</button>
-
-  <button type="swap"                   x="465" y="295" width=" 60" height="23" tooltip="Swap 4 and 5 caster info" id="swap_caster_45" swapSet1="caster_sponsor_4,caster_tag_4,caster_twitter_4,caster_pronouns_4" swapSet2="caster_sponsor_5,caster_tag_5,caster_twitter_5,caster_pronouns_5">Swap 4/5</button>
-
-  <button type="swap"                   x="465" y="325" width=" 60" height="23" tooltip="Swap 5 and 6 caster info" id="swap_caster_56" swapSet1="caster_sponsor_5,caster_tag_5,caster_twitter_5,caster_pronouns_5" swapSet2="caster_sponsor_6,caster_tag_6,caster_twitter_6,caster_pronouns_6">Swap 5/6</button>
-
-  <button type="timestamp" id="show_lower_third_casters"
-                                        x="545" y="175" width=" 75" height="38" saveonclick="1" hotkey="F13">Show</button>
-  <button type="timestamp" id="hide_lower_third_casters"
-                                        x="545" y="250" width=" 75" height="38" saveonclick="1" hotkey="F14">Hide</button>
-
-</tab>
-
-<tab name="MATCH INFO">
-
-<tabSet                               x="  5" y=" 10" width="615" height="335">
-
-  <tab name="SINGLES">
-    <label                            x=" 10" y=" 10" width="180" height="13">CURRENT</label>
-
-    <label                            x="335" y=" 10" width="100" height="13">ROUND</label>
-    <lineEdit id="round_current"      x="375" y="  5" width="145" height="20" dataSet="../programming_assets/csv/rounds.csv" />
-
-    <label                            x=" 30" y=" 35" width="100" height="13">SPONSOR</label>
-    <label                            x="100" y=" 35" width="100" height="13">TAG</label>
-    <label                            x="190" y=" 35" width="100" height="13">CHARACTER</label>
-    <label                            x="280" y=" 35" width="100" height="13">COLOR</label>
-    <label                            x="350" y=" 35" width="100" height="13">PRONOUNS</label>
-    <label                            x="420" y=" 35" width="100" height="13">SCORE</label>
-    <label                            x="479" y=" 35" width="100" height="13">L</label>
-
-    <label                            x=" 10" y=" 60" width="100" height="13">L</label>
-    <lineEdit id="l_sponsor_current"  x=" 30" y=" 55" width=" 60" height="20" dataSet="../programming_assets/csv/players.csv" dataField="2" master="l_tag_current" />
-    <lineEdit id="l_tag_current"      x="100" y=" 55" width=" 80" height="20" dataSet="../programming_assets/csv/players.csv" />
-    <lineEdit id="l_char_current"     x="190" y=" 55" width=" 80" height="20" dataSet="../programming_assets/csv/characters.csv" />
-    <lineEdit id="l_color_current"    x="280" y=" 55" width=" 60" height="20" dataSet="../programming_assets/csv/colors.csv" />
-    <lineEdit id="l_pronoun_current"  x="350" y=" 55" width=" 60" height="20" dataSet="../programming_assets/csv/players.csv" dataField="3" master="l_tag_current" />
-    <spinBox  id="l_score"            x="420" y=" 55" width=" 42" height="22" maximum="999" increaseHotkey="Alt+1" decreaseHotkey="Alt+Q" />
-    <checkBox id="l_loss"             x="475" y=" 56" width=" 80" height="20" ></checkBox>
-    <button type="reset"              x="500" y=" 55" width=" 41" height="23" tooltip="Clear player 1 info" id="rst_l_Current" reset="l_sponsor_current,l_tag_current,l_char_current,l_color_current,l_pronoun_current,l_score,l_loss">CLEAR</button>
-
-    <label                            x=" 10" y=" 90" width="100" height="13">R</label>
-    <lineEdit id="r_sponsor_current"  x=" 30" y=" 85" width=" 60" height="20" dataSet="../programming_assets/csv/players.csv" dataField="2" master="r_tag_current" />
-    <lineEdit id="r_tag_current"      x="100" y=" 85" width=" 80" height="20" dataSet="../programming_assets/csv/players.csv" /> 
-    <lineEdit id="r_char_current"     x="190" y=" 85" width=" 80" height="20" dataSet="../programming_assets/csv/characters.csv" />
-    <lineEdit id="r_color_current"    x="280" y=" 85" width=" 60" height="20" dataSet="../programming_assets/csv/colors.csv" />
-    <lineEdit id="r_pronoun_current"  x="350" y=" 85" width=" 60" height="20" dataSet="../programming_assets/csv/players.csv" dataField="3" master="r_tag_current" />
-    <spinBox  id="r_score"            x="420" y=" 85" width=" 42" height="22" maximum="999" increaseHotkey="Alt+2" decreaseHotkey="Alt+W" />
-    <checkBox id="r_loss"             x="475" y=" 86" width=" 80" height="20" ></checkBox>
-    <button type="reset"              x="500" y=" 85" width=" 41" height="23" tooltip="Clear player 2 info" id="rst_r_current" reset="r_sponsor_current,r_tag_current,r_char_current,r_color_current,r_pronoun_current,r_score,r_loss">CLEAR</button>
-
-    <button type="reset"              x="545" y=" 55" width=" 60" height="23" hotkey="Alt+3" tooltip="Clear both player info" id="rst_current" reset="l_sponsor_current,l_tag_current,l_char_current,l_color_current,l_score,l_loss,l_pronoun_current,r_sponsor_current,r_tag_current,r_char_current,r_color_current,r_score,r_loss,r_pronoun_current">CLEAR ALL</button>
-
-    <button type="swap"               x="545" y=" 85" width=" 60" height="23" tooltip="Swap player 1 and player 2 info" id="swap_current" swapSet1="l_sponsor_current,l_tag_current,l_char_current,l_color_current,l_pronoun_current,l_loss,l_score" swapSet2="r_sponsor_current,r_tag_current,r_char_current,r_color_current,r_pronoun_current,r_loss,r_score">SWAP</button>
-
-    <line                             x="  5" y="115" width="600" height="15" />
-
-    <label                            x= "10" y="135" width="100" height="13">ON DECK</label>
-
-    <label                            x="335" y="135" width="100" height="13">ROUND</label>
-    <lineEdit id="round_on_deck"      x="375" y="130" width="145" height="20" dataSet="../programming_assets/csv/rounds.csv" />
-
-    <label                            x=" 30" y="160" width="100" height="13">SPONSOR</label>
-    <label                            x="100" y="160" width="100" height="13">TAG</label>
-    <label                            x="190" y="160" width="100" height="13">CHARACTER</label>
-    <label                            x="280" y="160" width="100" height="13">COLOR</label>
-    <label                            x="350" y="160" width="100" height="13">PRONOUNS</label>
-
-    <label                            x=" 10" y="185" width="100" height="13">L</label>
-    <lineEdit id="l_sponsor_on_deck"  x=" 30" y="180" width=" 60" height="20" dataSet="../programming_assets/csv/players.csv" dataField="2" master="l_tag_on_deck" />
-    <lineEdit id="l_tag_on_deck"      x="100" y="180" width=" 80" height="20" dataSet="../programming_assets/csv/players.csv" />
-    <lineEdit id="l_char_on_deck"     x="190" y="180" width=" 80" height="20" dataSet="../programming_assets/csv/characters.csv" />
-    <lineEdit id="l_color_on_deck"    x="280" y="180" width=" 60" height="20" dataSet="../programming_assets/csv/colors.csv" />
-    <lineEdit id="l_pronoun_on_deck"  x="350" y="180" width=" 60" height="20" dataSet="../programming_assets/csv/players.csv" dataField="3" master="l_tag_on_deck" />
-    <button type="reset"              x="500" y="180" width=" 41" height="23" tooltip="Clear L player on deck" id="rst_l_on_deck" reset="l_sponsor_on_deck,l_tag_on_deck,l_char_on_deck,l_color_on_deck,l_pronoun_on_deck">CLEAR</button>
-
-    <label                            x=" 10" y="215" width="100" height="13">R</label>
-    <lineEdit id="r_sponsor_on_deck"  x=" 30" y="210" width=" 60" height="20" dataSet="../programming_assets/csv/players.csv" dataField="2" master="r_tag_on_deck" />
-    <lineEdit id="r_tag_on_deck"      x="100" y="210" width=" 80" height="20" dataSet="../programming_assets/csv/players.csv" />
-    <lineEdit id="r_char_on_deck"     x="190" y="210" width=" 80" height="20" dataSet="../programming_assets/csv/characters.csv" />
-    <lineEdit id="r_color_on_deck"    x="280" y="210" width=" 60" height="20" dataSet="../programming_assets/csv/colors.csv" />
-    <lineEdit id="r_pronoun_on_deck"  x="350" y="210" width=" 60" height="20" dataSet="../programming_assets/csv/players.csv" dataField="3" master="r_tag_on_deck" />
-    <button type="reset"              x="500" y="210" width=" 41" height="23" tooltip="Clear R player on deck" id="rst_r_on_deck" reset="r_sponsor_on_deck,r_tag_on_deck,r_char_on_deck,r_color_on_deck,r_pronoun_on_deck">CLEAR</button>
-
-    <button type="reset"              x="545" y="180" width=" 60" height="23" tooltip="Clear both player info" id="rst_on_deck" reset="l_sponsor_on_deck,l_tag_on_deck,l_char_on_deck,r_sponsor_on_deck,r_tag_on_deck,r_char_on_deck">CLEAR ALL</button>
-
-    <button type="swap"               x="545" y="210" width=" 60" height="23" tooltip="Swap player 1 and player 2 info" id="swap_on_deck" swapSet1="l_sponsor_on_deck,l_tag_on_deck,l_char_on_deck,l_color_on_deck,l_pronoun_on_deck" swapSet2="r_sponsor_on_deck,r_tag_on_deck,r_char_on_deck,r_color_on_deck,r_pronoun_on_deck">SWAP</button>
-
-    <button type="swap"               x=" 10" y="245" width="590" height="23" tooltip="Swap On Deck Match Info to Current Match Info" id="swap_on_deck_to_current" 
-    swapSet1="l_sponsor_current,l_tag_current,l_char_current,l_color_current,l_pronoun_current,r_sponsor_current,r_tag_current,r_char_current,r_pronoun_current,r_color_current,round_current" 
-    swapSet2="l_sponsor_on_deck,l_tag_on_deck,l_char_on_deck,l_color_on_deck,l_pronoun_on_deck,r_sponsor_on_deck,r_tag_on_deck,r_char_on_deck,r_pronoun_on_deck,r_color_on_deck,round_on_deck">SWAP ON DECK AND CURRENT</button>
+    <label                                x=" 10" y=" 70" width="200" height="13">Show Countdown Timer</label>
+    <checkBox id="show_countdown"         x=" 10" y=" 90" width=" 80" height="20" ></checkBox>
 
   </tab>
 
-  <tab name="DOUBLES">
+  <tab name="Lower 3rds">
+    <label                                x="235" y=" 10" width="100" height="13">LOWER THIRD</label>
 
-    <label                     x=" 10" y=" 10" width="180" height="13">TEAM 1</label>
+    <label                                x=" 10" y=" 35" width="100" height="13">First Line</label>
+    <lineEdit id="lower_third_line_first" x=" 80" y=" 30" width="460" height="20" />
+    <label                                x=" 10" y=" 65" width="100" height="13">Second Line</label>
+    <lineEdit id="lower_third_line_second"x=" 80" y=" 60" width="460" height="20" />
+    <label                                x=" 10" y=" 95" width="100" height="13">Third Line</label>
+    <lineEdit id="lower_third_line_third" x=" 80" y=" 90" width="460" height="20" />
 
-    <label                     x="335" y=" 10" width="100" height="13">ROUND</label>
-    <lineEdit id="round_2s"    x="375" y="  5" width="145" height="20" dataSet="../programming_assets/csv/rounds.csv" />
+    <button type="timestamp" id="show_lower_third"
+                                          x="545" y=" 30" width=" 75" height="38" saveonclick="1" hotkey="F15">Show</button>
+    <button type="timestamp" id="hide_lower_third"
+                                          x="545" y=" 75" width=" 75" height="38" saveonclick="1" hotkey="F16">Hide</button>
 
-    <label                     x=" 30" y=" 35" width="100" height="13">SPONSOR</label>
-    <label                     x="100" y=" 35" width="100" height="13">TAG</label>
-    <label                     x="190" y=" 35" width="100" height="13">CHARACTER</label>
-    <label                     x="280" y=" 35" width="100" height="13">COLOR</label>
-    <label                     x="350" y=" 35" width="100" height="13">PRONOUNS</label>
-    <label                     x="420" y=" 35" width="100" height="13">SCORE</label>
-    <label                     x="479" y=" 35" width="100" height="13">L</label>
+    <line                                 x="  5" y="115" width="615" height="15" />
 
-    <label                     x=" 10" y=" 60" width="100" height="13">1</label>
-    <lineEdit id="p1_sponsor"  x=" 30" y=" 55" width=" 60" height="20" dataSet="../programming_assets/csv/players.csv" dataField="2" master="p1_tag" />
-    <lineEdit id="p1_tag"      x="100" y=" 55" width=" 80" height="20" dataSet="../programming_assets/csv/players.csv" />
-    <lineEdit id="p1_char"     x="190" y=" 55" width=" 80" height="20" dataSet="../programming_assets/csv/characters.csv" />
-    <lineEdit id="p1_color"    x="280" y=" 55" width=" 60" height="20" dataSet="../programming_assets/csv/colors.csv" />
-    <lineEdit id="p1_pronoun"  x="350" y=" 55" width=" 60" height="20" dataSet="../programming_assets/csv/players.csv" dataField="3" master="p1_tag" />
-    <spinBox  id="t1_score"    x="420" y=" 55" width=" 42" height="55" maximum="999" />
-    <checkBox id="t1_loss"     x="475" y=" 56" width=" 80" height="55" ></checkBox>
-    <button type="reset"       x="500" y=" 55" width=" 41" height="23" tooltip="Clear player 1 info" id="rst_1" 
-      reset="p1_sponsor,p1_tag,p1_char,p1_color,p1_pronoun,t1_score,t1_loss">CLEAR</button>
+    <label                                x="245" y="130" width="100" height="13">CASTERS</label>
 
-    <label                     x=" 10" y=" 90" width="100" height="13">2</label>
-    <lineEdit id="p2_sponsor"  x=" 30" y=" 85" width=" 60" height="20" dataSet="../programming_assets/csv/players.csv" dataField="2" master="p2_tag" />
-    <lineEdit id="p2_tag"      x="100" y=" 85" width=" 80" height="20" dataSet="../programming_assets/csv/players.csv" /> 
-    <lineEdit id="p2_char"     x="190" y=" 85" width=" 80" height="20" dataSet="../programming_assets/csv/characters.csv" />
-    <lineEdit id="p2_color"    x="280" y=" 85" width=" 60" height="20" dataSet="../programming_assets/csv/colors.csv" />
-    <lineEdit id="p2_pronoun"  x="350" y=" 85" width=" 60" height="20" dataSet="../programming_assets/csv/players.csv" dataField="3" master="p2_tag" />
-    <button type="reset"       x="500" y=" 85" width=" 41" height="23" tooltip="Clear player 2 info" id="rst_2" 
-    reset="p2_sponsor,p2_tag,p2_char,p2_color,p2_pronoun">CLEAR</button>
+    <label                                x=" 40" y="150" width="100" height="13">Sponsor</label>
+    <label                                x="125" y="150" width="100" height="13">Tag</label>
+    <label                                x="235" y="150" width="120" height="13">Twitter (no @)</label>
+    <label                                x="345" y="150" width="120" height="13">Pronouns</label>
 
-    <button type="reset"       x="500" y="180" width=" 41" height="23" tooltip="Clear team 1 info" id="rst_team_1" reset=
-      "p1_sponsor,p1_tag,p1_char,p1_color,p1_pronoun,p2_sponsor,p2_tag,p2_char,p2_color,p2_pronoun,t1_score,t1_loss">CLEAR ALL</button>
+    <label                                x=" 10" y="180" width="100" height="13">C1</label>
+    <lineEdit id="caster_sponsor_1"       x=" 40" y="175" width=" 75" height="20" dataSet="../programming_assets/csv/casters.csv" dataField="2" master="caster_tag_1" />
+    <lineEdit id="caster_tag_1"           x="125" y="175" width="100" height="20" dataSet="../programming_assets/csv/casters.csv" />
+    <lineEdit id="caster_twitter_1"       x="235" y="175" width="100" height="20" dataSet="../programming_assets/csv/casters.csv" dataField="3" master="caster_tag_1" />
+    <lineEdit id="caster_pronouns_1"      x="345" y="175" width=" 60" height="20" dataSet="../programming_assets/csv/casters.csv" dataField="4" master="caster_tag_1" />
+    <button type="reset"                  x="415" y="175" width=" 41" height="23" tooltip="Clear left caster info" id="rst_l_caster" reset="caster_sponsor_1,caster_tag_1,caster_twitter_1,caster_pronouns_1">Clear</button>
 
-    <button type="swap"        x="545" y="210" width=" 60" height="23" tooltip="Swap player 1 and player 2 info" id="swap_t1" 
-      swapSet1="p1_sponsor,p1_tag,p1_char,p1_color,p1_pronoun" 
-      swapSet2="p2_sponsor,p2_tag,p2_char,p2_color,p2_pronoun">SWAP</button>
+    <label                                x=" 10" y="210" width="100" height="13">C2</label>
+    <lineEdit id="caster_sponsor_2"       x=" 40" y="205" width=" 75" height="20" dataSet="../programming_assets/csv/casters.csv" dataField="2" master="caster_tag_2" />
+    <lineEdit id="caster_tag_2"           x="125" y="205" width="100" height="20" dataSet="../programming_assets/csv/casters.csv" />
+    <lineEdit id="caster_twitter_2"       x="235" y="205" width="100" height="20" dataSet="../programming_assets/csv/casters.csv" dataField="3" master="caster_tag_2" />
+    <lineEdit id="caster_pronouns_2"      x="345" y="205" width=" 60" height="20" dataSet="../programming_assets/csv/casters.csv" dataField="4" master="caster_tag_2" />
+    <button type="reset"                  x="415" y="205" width=" 41" height="23" tooltip="Clear right caster info" id="rst_r_caster" reset="caster_sponsor_2,caster_tag_2,caster_twitter_2,caster_pronouns_2">Clear</button>
 
-    <line                      x="  5" y="115" width="600" height="15" />
+    <label                                x=" 10" y="240" width="100" height="13">C3</label>
+    <lineEdit id="caster_sponsor_3"       x=" 40" y="235" width=" 75" height="20" dataSet="../programming_assets/csv/casters.csv" dataField="2" master="caster_tag_3" />
+    <lineEdit id="caster_tag_3"           x="125" y="235" width="100" height="20" dataSet="../programming_assets/csv/casters.csv" />
+    <lineEdit id="caster_twitter_3"       x="235" y="235" width="100" height="20" dataSet="../programming_assets/csv/casters.csv" dataField="3" master="caster_tag_3" />
+    <lineEdit id="caster_pronouns_3"      x="345" y="235" width=" 60" height="20" dataSet="../programming_assets/csv/casters.csv" dataField="4" master="caster_tag_3" />
+    <button type="reset"                  x="415" y="235" width=" 41" height="23" tooltip="Clear 3 caster info" id="rst_3_caster" reset="caster_sponsor_3,caster_tag_3,caster_twitter_3,caster_pronouns_3">Clear</button>
 
-    <label                     x= "10" y="135" width="100" height="13">TEAM 2</label>
+    <label                                x=" 10" y="270" width="100" height="13">C4</label>
+    <lineEdit id="caster_sponsor_4"       x=" 40" y="265" width=" 75" height="20" dataSet="../programming_assets/csv/casters.csv" dataField="2" master="caster_tag_4" />
+    <lineEdit id="caster_tag_4"           x="125" y="265" width="100" height="20" dataSet="../programming_assets/csv/casters.csv" />
+    <lineEdit id="caster_twitter_4"       x="235" y="265" width="100" height="20" dataSet="../programming_assets/csv/casters.csv" dataField="3" master="caster_tag_4" />
+    <lineEdit id="caster_pronouns_4"      x="345" y="265" width=" 60" height="20" dataSet="../programming_assets/csv/casters.csv" dataField="4" master="caster_tag_4" />
+    <button type="reset"                  x="415" y="265" width=" 41" height="23" tooltip="Clear 4 caster info" id="rst_4_caster" reset="caster_sponsor_4,caster_tag_4,caster_twitter_4,caster_pronouns_4">Clear</button>
 
-    <label                     x=" 30" y="160" width="100" height="13">SPONSOR</label>
-    <label                     x="100" y="160" width="100" height="13">TAG</label>
-    <label                     x="190" y="160" width="100" height="13">CHARACTER</label>
-    <label                     x="280" y="160" width="100" height="13">COLOR</label>
-    <label                     x="350" y="160" width="100" height="13">PRONOUNS</label>
-    <label                     x="420" y="160" width="100" height="13">SCORE</label>
-    <label                     x="479" y="160" width="100" height="13">L</label>
+    <label                                x=" 10" y="300" width="100" height="13">C5</label>
+    <lineEdit id="caster_sponsor_5"       x=" 40" y="295" width=" 75" height="20" dataSet="../programming_assets/csv/casters.csv" dataField="2" master="caster_tag_5" />
+    <lineEdit id="caster_tag_5"           x="125" y="295" width="100" height="20" dataSet="../programming_assets/csv/casters.csv" />
+    <lineEdit id="caster_twitter_5"       x="235" y="295" width="100" height="20" dataSet="../programming_assets/csv/casters.csv" dataField="3" master="caster_tag_5" />
+    <lineEdit id="caster_pronouns_5"      x="345" y="295" width=" 60" height="20" dataSet="../programming_assets/csv/casters.csv" dataField="4" master="caster_tag_5" />
+    <button type="reset"                  x="415" y="295" width=" 41" height="23" tooltip="Clear 5 caster info" id="rst_5_caster" reset="caster_sponsor_5,caster_tag_5,caster_twitter_5,caster_pronouns_5">Clear</button>
 
-    <label                     x=" 10" y="185" width="100" height="13">3</label>
-    <lineEdit id="p3_sponsor"  x=" 30" y="180" width=" 60" height="20" dataSet="../programming_assets/csv/players.csv" dataField="2" master="3_tag" />
-    <lineEdit id="p3_tag"      x="100" y="180" width=" 80" height="20" dataSet="../programming_assets/csv/players.csv" />
-    <lineEdit id="p3_char"     x="190" y="180" width=" 80" height="20" dataSet="../programming_assets/csv/characters.csv" />
-    <lineEdit id="p3_color"    x="280" y="180" width=" 60" height="20" dataSet="../programming_assets/csv/colors.csv" />
-    <lineEdit id="p3_pronoun"  x="350" y="180" width=" 60" height="20" dataSet="../programming_assets/csv/players.csv" dataField="3" master="3_tag" />
-    <spinBox  id="t2_score"    x="420" y="180" width=" 42" height="55" maximum="999" />
-    <checkBox id="t2_loss"     x="475" y="180" width=" 80" height="55" ></checkBox>
-    <button type="reset"       x="500" y="180" width=" 41" height="23" tooltip="Clear player 3 info" id="rst_3" 
-    reset="p3_sponsor,p3_tag,p3_char,p3_color,p3_pronoun,t2_score,t2_loss">CLEAR</button>
+    <label                                x=" 10" y="330" width="100" height="13">C6</label>
+    <lineEdit id="caster_sponsor_6"       x=" 40" y="325" width=" 75" height="20" dataSet="../programming_assets/csv/casters.csv" dataField="2" master="caster_tag_6" />
+    <lineEdit id="caster_tag_6"           x="125" y="325" width="100" height="20" dataSet="../programming_assets/csv/casters.csv" />
+    <lineEdit id="caster_twitter_6"       x="235" y="325" width="100" height="20" dataSet="../programming_assets/csv/casters.csv" dataField="3" master="caster_tag_6" />
+    <lineEdit id="caster_pronouns_6"      x="345" y="325" width=" 60" height="20" dataSet="../programming_assets/csv/casters.csv" dataField="4" master="caster_tag_6" />
+    <button type="reset"                  x="415" y="325" width=" 41" height="23" tooltip="Clear 6 caster info" id="rst_6_caster" reset="caster_sponsor_6,caster_tag_6,caster_twitter_6,caster_pronouns_6">Clear</button>
 
-    <label                     x=" 10" y="215" width="100" height="13">4</label>
-    <lineEdit id="p4_sponsor"  x=" 30" y="210" width=" 60" height="20" dataSet="../programming_assets/csv/players.csv" dataField="2" master="4_tag" />
-    <lineEdit id="p4_tag"      x="100" y="210" width=" 80" height="20" dataSet="../programming_assets/csv/players.csv" />
-    <lineEdit id="p4_char"     x="190" y="210" width=" 80" height="20" dataSet="../programming_assets/csv/characters.csv" />
-    <lineEdit id="p4_color"    x="280" y="210" width=" 60" height="20" dataSet="../programming_assets/csv/colors.csv" />
-    <lineEdit id="p4_pronoun"  x="350" y="210" width=" 60" height="20" dataSet="../programming_assets/csv/players.csv" dataField="3" master="4_tag" />
-    <button type="reset"       x="500" y="210" width=" 41" height="23" tooltip="Clear player 4 info" id="rst_4" 
-    reset="p4_sponsor,p4_tag,p4_char,p4_color,p4_pronoun">CLEAR</button>
+    <button type="reset"                  x="465" y="175" width=" 60"  height="23" tooltip="Clear all caster info" id="rst_casters" reset="caster_sponsor_1,caster_tag_1,caster_twitter_1,caster_pronouns_1,
+    caster_sponsor_2,caster_tag_2,caster_twitter_2,caster_pronouns_2,
+    caster_sponsor_3,caster_tag_3,caster_twitter_3,caster_pronouns_3,
+    caster_sponsor_4,caster_tag_4,caster_twitter_4,caster_pronouns_4,
+    caster_sponsor_5,caster_tag_5,caster_twitter_5,caster_pronouns_5,
+    caster_sponsor_6,caster_tag_6,caster_twitter_6,caster_pronouns_6
+    ">Clear All</button>
 
-    <button type="reset"       x="545" y="180" width=" 60" height="23" tooltip="Clear both players info" id="rst_team_2" reset=
-    "p3_sponsor,p3_tag,p3_char,p3_color,p3_pronoun,t2_score,t2_loss,p4_sponsor,p4_tag,p4_char,p4_color,p4_pronoun">CLEAR ALL</button>
+    <button type="swap"                   x="465" y="205" width=" 60" height="23" tooltip="Swap 1 and 2 caster info" id="swap_caster_12" swapSet1="caster_sponsor_1,caster_tag_1,caster_twitter_1,caster_pronouns_1" swapSet2="caster_sponsor_2,caster_tag_2,caster_twitter_2,caster_pronouns_2">Swap 1/2</button>
 
-    <button type="swap"        x="545" y="210" width=" 60" height="23" tooltip="Swap player 3 and player 4 info" id="swap_t2" 
-      swapSet1="p3_sponsor,p3_tag,p3_char,p3_color,p3_pronoun" 
-      swapSet2="p4_sponsor,p4_tag,p4_char,p4_color,p4_pronoun">SWAP</button>
+    <button type="swap"                   x="465" y="235" width=" 60" height="23" tooltip="Swap 2 and 3 caster info" id="swap_caster_23" swapSet1="caster_sponsor_2,caster_tag_2,caster_twitter_2,caster_pronouns_2" swapSet2="caster_sponsor_3,caster_tag_3,caster_twitter_3,caster_pronouns_3">Swap 2/3</button>
 
-    <button type="swap"        x=" 10" y="245" width="590" height="23" tooltip="Swap Teams" id="swap_teams" 
-      swapSet1="p1_sponsor,p1_tag,p1_char,p1_color,p1_pronoun,p2_sponsor,p2_tag,p2_char,p2_color,p2_pronoun,t1_score,t1_loss" 
-      swapSet2="p3_sponsor,p3_tag,p3_char,p3_color,p3_pronoun,p4_sponsor,p4_tag,p4_char,p4_color,p4_pronoun,t2_score,t2_loss">SWAP TEAMS</button>
+    <button type="swap"                   x="465" y="265" width=" 60" height="23" tooltip="Swap 3 and 4 caster info" id="swap_caster_34" swapSet1="caster_sponsor_3,caster_tag_3,caster_twitter_3,caster_pronouns_3" swapSet2="caster_sponsor_4,caster_tag_4,caster_twitter_4,caster_pronouns_4">Swap 3/4</button>
+
+    <button type="swap"                   x="465" y="295" width=" 60" height="23" tooltip="Swap 4 and 5 caster info" id="swap_caster_45" swapSet1="caster_sponsor_4,caster_tag_4,caster_twitter_4,caster_pronouns_4" swapSet2="caster_sponsor_5,caster_tag_5,caster_twitter_5,caster_pronouns_5">Swap 4/5</button>
+
+    <button type="swap"                   x="465" y="325" width=" 60" height="23" tooltip="Swap 5 and 6 caster info" id="swap_caster_56" swapSet1="caster_sponsor_5,caster_tag_5,caster_twitter_5,caster_pronouns_5" swapSet2="caster_sponsor_6,caster_tag_6,caster_twitter_6,caster_pronouns_6">Swap 5/6</button>
+
+    <button type="timestamp" id="show_lower_third_casters"
+                                          x="545" y="175" width=" 75" height="38" saveonclick="1" hotkey="F13">Show</button>
+    <button type="timestamp" id="hide_lower_third_casters"
+                                          x="545" y="250" width=" 75" height="38" saveonclick="1" hotkey="F14">Hide</button>
 
   </tab>
-</tabSet>
 
-</tab>
+  <tab name="MATCH INFO">
+
+    <tabSet                               x="  5" y=" 10" width="615" height="335">
+
+      <tab name="SINGLES">
+        <label                            x=" 10" y=" 10" width="180" height="13">CURRENT</label>
+
+        <label                            x="335" y=" 10" width="100" height="13">ROUND</label>
+        <lineEdit id="round_current"      x="375" y="  5" width="145" height="20" dataSet="../programming_assets/csv/rounds.csv" />
+
+        <label                            x=" 30" y=" 35" width="100" height="13">SPONSOR</label>
+        <label                            x="100" y=" 35" width="100" height="13">TAG</label>
+        <label                            x="190" y=" 35" width="100" height="13">CHARACTER</label>
+        <label                            x="280" y=" 35" width="100" height="13">COLOR</label>
+        <label                            x="350" y=" 35" width="100" height="13">PRONOUNS</label>
+        <label                            x="420" y=" 35" width="100" height="13">SCORE</label>
+        <label                            x="479" y=" 35" width="100" height="13">L</label>
+
+        <label                            x=" 10" y=" 60" width="100" height="13">L</label>
+        <lineEdit id="l_sponsor_current"  x=" 30" y=" 55" width=" 60" height="20" dataSet="../event_assetsbackend/players.csv" dataField="2" master="l_tag_current" />
+        <lineEdit id="l_tag_current"      x="100" y=" 55" width=" 80" height="20" dataSet="../event_assets/backend/players.csv" />
+        <lineEdit id="l_char_current"     x="190" y=" 55" width=" 80" height="20" dataSet="../programming_assets/csv/characters.csv" />
+        <lineEdit id="l_color_current"    x="280" y=" 55" width=" 60" height="20" dataSet="../programming_assets/csv/colors.csv" />
+        <lineEdit id="l_pronoun_current"  x="350" y=" 55" width=" 60" height="20" dataSet="../event_assets/backend/players.csv" dataField="3" master="l_tag_current" />
+        <spinBox  id="l_score"            x="420" y=" 55" width=" 42" height="22" maximum="999" increaseHotkey="Alt+1" decreaseHotkey="Alt+Q" />
+        <checkBox id="l_loss"             x="475" y=" 56" width=" 80" height="20" ></checkBox>
+        <button type="reset"              x="500" y=" 55" width=" 41" height="23" tooltip="Clear player 1 info" id="rst_l_Current" reset="l_sponsor_current,l_tag_current,l_char_current,l_color_current,l_pronoun_current,l_score,l_loss">CLEAR</button>
+
+        <label                            x=" 10" y=" 90" width="100" height="13">R</label>
+        <lineEdit id="r_sponsor_current"  x=" 30" y=" 85" width=" 60" height="20" dataSet="../event_assets/backend/players.csv" dataField="2" master="r_tag_current" />
+        <lineEdit id="r_tag_current"      x="100" y=" 85" width=" 80" height="20" dataSet="../event_assets/backend/players.csv" /> 
+        <lineEdit id="r_char_current"     x="190" y=" 85" width=" 80" height="20" dataSet="../programming_assets/csv/characters.csv" />
+        <lineEdit id="r_color_current"    x="280" y=" 85" width=" 60" height="20" dataSet="../programming_assets/csv/colors.csv" />
+        <lineEdit id="r_pronoun_current"  x="350" y=" 85" width=" 60" height="20" dataSet="../event_assets/backend/players.csv" dataField="3" master="r_tag_current" />
+        <spinBox  id="r_score"            x="420" y=" 85" width=" 42" height="22" maximum="999" increaseHotkey="Alt+2" decreaseHotkey="Alt+W" />
+        <checkBox id="r_loss"             x="475" y=" 86" width=" 80" height="20" ></checkBox>
+        <button type="reset"              x="500" y=" 85" width=" 41" height="23" tooltip="Clear player 2 info" id="rst_r_current" reset="r_sponsor_current,r_tag_current,r_char_current,r_color_current,r_pronoun_current,r_score,r_loss">CLEAR</button>
+
+        <button type="reset"              x="545" y=" 55" width=" 60" height="23" hotkey="Alt+3" tooltip="Clear both player info" id="rst_current" reset="l_sponsor_current,l_tag_current,l_char_current,l_color_current,l_score,l_loss,l_pronoun_current,r_sponsor_current,r_tag_current,r_char_current,r_color_current,r_score,r_loss,r_pronoun_current">CLEAR ALL</button>
+
+        <button type="swap"               x="545" y=" 85" width=" 60" height="23" tooltip="Swap player 1 and player 2 info" id="swap_current" swapSet1="l_sponsor_current,l_tag_current,l_char_current,l_color_current,l_pronoun_current,l_loss,l_score" swapSet2="r_sponsor_current,r_tag_current,r_char_current,r_color_current,r_pronoun_current,r_loss,r_score">SWAP</button>
+
+        <line                             x="  5" y="115" width="600" height="15" />
+
+        <label                            x= "10" y="135" width="100" height="13">ON DECK</label>
+
+        <label                            x="335" y="135" width="100" height="13">ROUND</label>
+        <lineEdit id="round_on_deck"      x="375" y="130" width="145" height="20" dataSet="../programming_assets/csv/rounds.csv" />
+
+        <label                            x=" 30" y="160" width="100" height="13">SPONSOR</label>
+        <label                            x="100" y="160" width="100" height="13">TAG</label>
+        <label                            x="190" y="160" width="100" height="13">CHARACTER</label>
+        <label                            x="280" y="160" width="100" height="13">COLOR</label>
+        <label                            x="350" y="160" width="100" height="13">PRONOUNS</label>
+
+        <label                            x=" 10" y="185" width="100" height="13">L</label>
+        <lineEdit id="l_sponsor_on_deck"  x=" 30" y="180" width=" 60" height="20" dataSet="../event_assets/backend/players.csv" dataField="2" master="l_tag_on_deck" />
+        <lineEdit id="l_tag_on_deck"      x="100" y="180" width=" 80" height="20" dataSet="../event_assets/backend/players.csv" />
+        <lineEdit id="l_char_on_deck"     x="190" y="180" width=" 80" height="20" dataSet="../programming_assets/csv/characters.csv" />
+        <lineEdit id="l_color_on_deck"    x="280" y="180" width=" 60" height="20" dataSet="../programming_assets/csv/colors.csv" />
+        <lineEdit id="l_pronoun_on_deck"  x="350" y="180" width=" 60" height="20" dataSet="../event_assets/backend/players.csv" dataField="3" master="l_tag_on_deck" />
+        <button type="reset"              x="500" y="180" width=" 41" height="23" tooltip="Clear L player on deck" id="rst_l_on_deck" reset="l_sponsor_on_deck,l_tag_on_deck,l_char_on_deck,l_color_on_deck,l_pronoun_on_deck">CLEAR</button>
+
+        <label                            x=" 10" y="215" width="100" height="13">R</label>
+        <lineEdit id="r_sponsor_on_deck"  x=" 30" y="210" width=" 60" height="20" dataSet="../event_assets/backend/players.csv" dataField="2" master="r_tag_on_deck" />
+        <lineEdit id="r_tag_on_deck"      x="100" y="210" width=" 80" height="20" dataSet="../event_assets/backend/players.csv" />
+        <lineEdit id="r_char_on_deck"     x="190" y="210" width=" 80" height="20" dataSet="../programming_assets/csv/characters.csv" />
+        <lineEdit id="r_color_on_deck"    x="280" y="210" width=" 60" height="20" dataSet="../programming_assets/csv/colors.csv" />
+        <lineEdit id="r_pronoun_on_deck"  x="350" y="210" width=" 60" height="20" dataSet="../event_assets/backend/players.csv" dataField="3" master="r_tag_on_deck" />
+        <button type="reset"              x="500" y="210" width=" 41" height="23" tooltip="Clear R player on deck" id="rst_r_on_deck" reset="r_sponsor_on_deck,r_tag_on_deck,r_char_on_deck,r_color_on_deck,r_pronoun_on_deck">CLEAR</button>
+
+        <button type="reset"              x="545" y="180" width=" 60" height="23" tooltip="Clear both player info" id="rst_on_deck" reset="l_sponsor_on_deck,l_tag_on_deck,l_char_on_deck,r_sponsor_on_deck,r_tag_on_deck,r_char_on_deck">CLEAR ALL</button>
+
+        <button type="swap"               x="545" y="210" width=" 60" height="23" tooltip="Swap player 1 and player 2 info" id="swap_on_deck" swapSet1="l_sponsor_on_deck,l_tag_on_deck,l_char_on_deck,l_color_on_deck,l_pronoun_on_deck" swapSet2="r_sponsor_on_deck,r_tag_on_deck,r_char_on_deck,r_color_on_deck,r_pronoun_on_deck">SWAP</button>
+
+        <button type="swap"               x=" 10" y="245" width="590" height="23" tooltip="Swap On Deck Match Info to Current Match Info" id="swap_on_deck_to_current" 
+        swapSet1="l_sponsor_current,l_tag_current,l_char_current,l_color_current,l_pronoun_current,r_sponsor_current,r_tag_current,r_char_current,r_pronoun_current,r_color_current,round_current" 
+        swapSet2="l_sponsor_on_deck,l_tag_on_deck,l_char_on_deck,l_color_on_deck,l_pronoun_on_deck,r_sponsor_on_deck,r_tag_on_deck,r_char_on_deck,r_pronoun_on_deck,r_color_on_deck,round_on_deck">SWAP ON DECK AND CURRENT</button>
+
+      </tab>
+      
+      <tab name="DOUBLES">
+
+        <label                     x=" 10" y=" 10" width="180" height="13">TEAM 1</label>
+
+        <label                     x="335" y=" 10" width="100" height="13">ROUND</label>
+        <lineEdit id="round_2s"    x="375" y="  5" width="145" height="20" dataSet="../programming_assets/csv/rounds.csv" />
+
+        <label                     x=" 30" y=" 35" width="100" height="13">SPONSOR</label>
+        <label                     x="100" y=" 35" width="100" height="13">TAG</label>
+        <label                     x="190" y=" 35" width="100" height="13">CHARACTER</label>
+        <label                     x="280" y=" 35" width="100" height="13">COLOR</label>
+        <label                     x="350" y=" 35" width="100" height="13">PRONOUNS</label>
+        <label                     x="420" y=" 35" width="100" height="13">SCORE</label>
+        <label                     x="479" y=" 35" width="100" height="13">L</label>
+
+        <label                     x=" 10" y=" 60" width="100" height="13">1</label>
+        <lineEdit id="p1_sponsor"  x=" 30" y=" 55" width=" 60" height="20" dataSet="../event_assets/backend/players.csv" dataField="2" master="p1_tag" />
+        <lineEdit id="p1_tag"      x="100" y=" 55" width=" 80" height="20" dataSet="../event_assets/backend/players.csv" />
+        <lineEdit id="p1_char"     x="190" y=" 55" width=" 80" height="20" dataSet="../programming_assets/csv/characters.csv" />
+        <lineEdit id="p1_color"    x="280" y=" 55" width=" 60" height="20" dataSet="../programming_assets/csv/colors.csv" />
+        <lineEdit id="p1_pronoun"  x="350" y=" 55" width=" 60" height="20" dataSet="../event_assets/backend/players.csv" dataField="3" master="p1_tag" />
+        <spinBox  id="t1_score"    x="420" y=" 55" width=" 42" height="55" maximum="999" />
+        <checkBox id="t1_loss"     x="475" y=" 56" width=" 80" height="55" ></checkBox>
+        <button type="reset"       x="500" y=" 55" width=" 41" height="23" tooltip="Clear player 1 info" id="rst_1" 
+          reset="p1_sponsor,p1_tag,p1_char,p1_color,p1_pronoun,t1_score,t1_loss">CLEAR</button>
+
+        <label                     x=" 10" y=" 90" width="100" height="13">2</label>
+        <lineEdit id="p2_sponsor"  x=" 30" y=" 85" width=" 60" height="20" dataSet="../event_assets/backend/players.csv" dataField="2" master="p2_tag" />
+        <lineEdit id="p2_tag"      x="100" y=" 85" width=" 80" height="20" dataSet="../event_assets/backend/players.csv" /> 
+        <lineEdit id="p2_char"     x="190" y=" 85" width=" 80" height="20" dataSet="../programming_assets/csv/characters.csv" />
+        <lineEdit id="p2_color"    x="280" y=" 85" width=" 60" height="20" dataSet="../programming_assets/csv/colors.csv" />
+        <lineEdit id="p2_pronoun"  x="350" y=" 85" width=" 60" height="20" dataSet="../event_assets/backend/players.csv" dataField="3" master="p2_tag" />
+        <button type="reset"       x="500" y=" 85" width=" 41" height="23" tooltip="Clear player 2 info" id="rst_2" 
+        reset="p2_sponsor,p2_tag,p2_char,p2_color,p2_pronoun">CLEAR</button>
+
+        <button type="reset"       x="500" y="180" width=" 41" height="23" tooltip="Clear team 1 info" id="rst_team_1" reset=
+          "p1_sponsor,p1_tag,p1_char,p1_color,p1_pronoun,p2_sponsor,p2_tag,p2_char,p2_color,p2_pronoun,t1_score,t1_loss">CLEAR ALL</button>
+
+        <button type="swap"        x="545" y="210" width=" 60" height="23" tooltip="Swap player 1 and player 2 info" id="swap_t1" 
+          swapSet1="p1_sponsor,p1_tag,p1_char,p1_color,p1_pronoun" 
+          swapSet2="p2_sponsor,p2_tag,p2_char,p2_color,p2_pronoun">SWAP</button>
+
+        <line                      x="  5" y="115" width="600" height="15" />
+
+        <label                     x= "10" y="135" width="100" height="13">TEAM 2</label>
+
+        <label                     x=" 30" y="160" width="100" height="13">SPONSOR</label>
+        <label                     x="100" y="160" width="100" height="13">TAG</label>
+        <label                     x="190" y="160" width="100" height="13">CHARACTER</label>
+        <label                     x="280" y="160" width="100" height="13">COLOR</label>
+        <label                     x="350" y="160" width="100" height="13">PRONOUNS</label>
+        <label                     x="420" y="160" width="100" height="13">SCORE</label>
+        <label                     x="479" y="160" width="100" height="13">L</label>
+
+        <label                     x=" 10" y="185" width="100" height="13">3</label>
+        <lineEdit id="p3_sponsor"  x=" 30" y="180" width=" 60" height="20" dataSet="../event_assets/backend/players.csv" dataField="2" master="3_tag" />
+        <lineEdit id="p3_tag"      x="100" y="180" width=" 80" height="20" dataSet="../event_assets/backend/players.csv" />
+        <lineEdit id="p3_char"     x="190" y="180" width=" 80" height="20" dataSet="../programming_assets/csv/characters.csv" />
+        <lineEdit id="p3_color"    x="280" y="180" width=" 60" height="20" dataSet="../programming_assets/csv/colors.csv" />
+        <lineEdit id="p3_pronoun"  x="350" y="180" width=" 60" height="20" dataSet="../event_assets/backend/players.csv" dataField="3" master="3_tag" />
+        <spinBox  id="t2_score"    x="420" y="180" width=" 42" height="55" maximum="999" />
+        <checkBox id="t2_loss"     x="475" y="180" width=" 80" height="55" ></checkBox>
+        <button type="reset"       x="500" y="180" width=" 41" height="23" tooltip="Clear player 3 info" id="rst_3" 
+        reset="p3_sponsor,p3_tag,p3_char,p3_color,p3_pronoun,t2_score,t2_loss">CLEAR</button>
+
+        <label                     x=" 10" y="215" width="100" height="13">4</label>
+        <lineEdit id="p4_sponsor"  x=" 30" y="210" width=" 60" height="20" dataSet="../event_assets/backend/players.csv" dataField="2" master="4_tag" />
+      <lineEdit id="p4_tag"      x="100" y="210" width=" 80" height="20" dataSet="../event_assets/backend/players.csv" />
+      <lineEdit id="p4_char"     x="190" y="210" width=" 80" height="20" dataSet="../programming_assets/csv/characters.csv" />
+      <lineEdit id="p4_color"    x="280" y="210" width=" 60" height="20" dataSet="../programming_assets/csv/colors.csv" />
+      <lineEdit id="p4_pronoun"  x="350" y="210" width=" 60" height="20" dataSet="../event_assets/backend/players.csv" dataField="3" master="4_tag" />
+      <button type="reset"       x="500" y="210" width=" 41" height="23" tooltip="Clear player 4 info" id="rst_4" 
+      reset="p4_sponsor,p4_tag,p4_char,p4_color,p4_pronoun">CLEAR</button>
+
+      <button type="reset"       x="545" y="180" width=" 60" height="23" tooltip="Clear both players info" id="rst_team_2" reset=
+      "p3_sponsor,p3_tag,p3_char,p3_color,p3_pronoun,t2_score,t2_loss,p4_sponsor,p4_tag,p4_char,p4_color,p4_pronoun">CLEAR ALL</button>
+
+      <button type="swap"        x="545" y="210" width=" 60" height="23" tooltip="Swap player 3 and player 4 info" id="swap_t2" 
+        swapSet1="p3_sponsor,p3_tag,p3_char,p3_color,p3_pronoun" 
+        swapSet2="p4_sponsor,p4_tag,p4_char,p4_color,p4_pronoun">SWAP</button>
+
+      <button type="swap"        x=" 10" y="245" width="590" height="23" tooltip="Swap Teams" id="swap_teams" 
+        swapSet1="p1_sponsor,p1_tag,p1_char,p1_color,p1_pronoun,p2_sponsor,p2_tag,p2_char,p2_color,p2_pronoun,t1_score,t1_loss" 
+        swapSet2="p3_sponsor,p3_tag,p3_char,p3_color,p3_pronoun,p4_sponsor,p4_tag,p4_char,p4_color,p4_pronoun,t2_score,t2_loss">SWAP TEAMS</button>
+
+    </tab>
+
+    </tabSet>
+
+  </tab>
+
+  <tab name="Top 8">
 
 
 
-<tab name="Top 8">
-
-
-
-</tab>
+  </tab>
 
 </layout>
