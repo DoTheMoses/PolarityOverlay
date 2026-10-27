@@ -189,80 +189,88 @@
 
   <tab name="DOUBLES">
 
-    <label                    x=" 10" y=" 10" width="180" height="13">TEAM 1</label>
+    <label                     x=" 10" y=" 10" width="180" height="13">TEAM 1</label>
 
-    <label                    x="335" y=" 10" width="100" height="13">ROUND</label>
-    <lineEdit id="round_2s"   x="375" y="  5" width="145" height="20" dataSet="../programming_assets/csv/rounds.csv" />
+    <label                     x="335" y=" 10" width="100" height="13">ROUND</label>
+    <lineEdit id="round_2s"    x="375" y="  5" width="145" height="20" dataSet="../programming_assets/csv/rounds.csv" />
 
-    <label                    x=" 30" y=" 35" width="100" height="13">SPONSOR</label>
-    <label                    x="100" y=" 35" width="100" height="13">TAG</label>
-    <label                    x="190" y=" 35" width="100" height="13">CHARACTER</label>
-    <label                    x="280" y=" 35" width="100" height="13">COLOR</label>
-    <label                    x="350" y=" 35" width="100" height="13">PRONOUNS</label>
-    <label                    x="420" y=" 35" width="100" height="13">SCORE</label>
-    <label                    x="479" y=" 35" width="100" height="13">L</label>
+    <label                     x=" 30" y=" 35" width="100" height="13">SPONSOR</label>
+    <label                     x="100" y=" 35" width="100" height="13">TAG</label>
+    <label                     x="190" y=" 35" width="100" height="13">CHARACTER</label>
+    <label                     x="280" y=" 35" width="100" height="13">COLOR</label>
+    <label                     x="350" y=" 35" width="100" height="13">PRONOUNS</label>
+    <label                     x="420" y=" 35" width="100" height="13">SCORE</label>
+    <label                     x="479" y=" 35" width="100" height="13">L</label>
 
-    <label                            x=" 10" y=" 60" width="100" height="13">1</label>
-    <lineEdit id="1_sponsor"  x=" 30" y=" 55" width=" 60" height="20" dataSet="../programming_assets/csv/players.csv" dataField="2" master="1_tag" />
-    <lineEdit id="1_tag"      x="100" y=" 55" width=" 80" height="20" dataSet="../programming_assets/csv/players.csv" />
-    <lineEdit id="1_char"     x="190" y=" 55" width=" 80" height="20" dataSet="../programming_assets/csv/characters.csv" />
-    <lineEdit id="1_color"    x="280" y=" 55" width=" 60" height="20" dataSet="../programming_assets/csv/colors.csv" />
-    <lineEdit id="1_pronoun"  x="350" y=" 55" width=" 60" height="20" dataSet="../programming_assets/csv/players.csv" dataField="3" master="1_tag" />
-    <spinBox  id="1_score"    x="420" y=" 55" width=" 42" height="55" maximum="999" />
-    <checkBox id="1_loss"     x="475" y=" 56" width=" 80" height="55" ></checkBox>
-    <button type="reset"      x="500" y=" 55" width=" 41" height="23" tooltip="Clear player 1 info" id="rst_1" 
-      reset="1_sponsor,1_tag,1_char,1_color,1_pronoun">CLEAR</button>
+    <label                     x=" 10" y=" 60" width="100" height="13">1</label>
+    <lineEdit id="p1_sponsor"  x=" 30" y=" 55" width=" 60" height="20" dataSet="../programming_assets/csv/players.csv" dataField="2" master="p1_tag" />
+    <lineEdit id="p1_tag"      x="100" y=" 55" width=" 80" height="20" dataSet="../programming_assets/csv/players.csv" />
+    <lineEdit id="p1_char"     x="190" y=" 55" width=" 80" height="20" dataSet="../programming_assets/csv/characters.csv" />
+    <lineEdit id="p1_color"    x="280" y=" 55" width=" 60" height="20" dataSet="../programming_assets/csv/colors.csv" />
+    <lineEdit id="p1_pronoun"  x="350" y=" 55" width=" 60" height="20" dataSet="../programming_assets/csv/players.csv" dataField="3" master="p1_tag" />
+    <spinBox  id="t1_score"    x="420" y=" 55" width=" 42" height="55" maximum="999" />
+    <checkBox id="t1_loss"     x="475" y=" 56" width=" 80" height="55" ></checkBox>
+    <button type="reset"       x="500" y=" 55" width=" 41" height="23" tooltip="Clear player 1 info" id="rst_1" 
+      reset="p1_sponsor,p1_tag,p1_char,p1_color,p1_pronoun,t1_score,t1_loss">CLEAR</button>
 
-    <label                    x=" 10" y=" 90" width="100" height="13">2</label>
-    <lineEdit id="2_sponsor"  x=" 30" y=" 85" width=" 60" height="20" dataSet="../programming_assets/csv/players.csv" dataField="2" master="2_tag" />
-    <lineEdit id="2_tag"      x="100" y=" 85" width=" 80" height="20" dataSet="../programming_assets/csv/players.csv" /> 
-    <lineEdit id="2_char"     x="190" y=" 85" width=" 80" height="20" dataSet="../programming_assets/csv/characters.csv" />
-    <lineEdit id="2_color"    x="280" y=" 85" width=" 60" height="20" dataSet="../programming_assets/csv/colors.csv" />
-    <lineEdit id="2_pronoun"  x="350" y=" 85" width=" 60" height="20" dataSet="../programming_assets/csv/players.csv" dataField="3" master="2_tag" />
-    <button type="reset"      x="500" y=" 85" width=" 41" height="23" tooltip="Clear player 2 info" id="rst_2" 
-    reset="2_sponsor,2_tag,2_char,2_color,2_pronoun">CLEAR</button>
+    <label                     x=" 10" y=" 90" width="100" height="13">2</label>
+    <lineEdit id="p2_sponsor"  x=" 30" y=" 85" width=" 60" height="20" dataSet="../programming_assets/csv/players.csv" dataField="2" master="p2_tag" />
+    <lineEdit id="p2_tag"      x="100" y=" 85" width=" 80" height="20" dataSet="../programming_assets/csv/players.csv" /> 
+    <lineEdit id="p2_char"     x="190" y=" 85" width=" 80" height="20" dataSet="../programming_assets/csv/characters.csv" />
+    <lineEdit id="p2_color"    x="280" y=" 85" width=" 60" height="20" dataSet="../programming_assets/csv/colors.csv" />
+    <lineEdit id="p2_pronoun"  x="350" y=" 85" width=" 60" height="20" dataSet="../programming_assets/csv/players.csv" dataField="3" master="p2_tag" />
+    <button type="reset"       x="500" y=" 85" width=" 41" height="23" tooltip="Clear player 2 info" id="rst_2" 
+    reset="p2_sponsor,p2_tag,p2_char,p2_color,p2_pronoun">CLEAR</button>
 
-    <button type="reset"      x="500" y="180" width=" 41" height="23" tooltip="Clear team 1 info" id="rst_team_1" reset=
-      "1_sponsor,1_tag,1_char,1_color,1_pronoun,2_sponsor,2_tag,2_char,2_color,2_pronoun">CLEAR ALL</button>
+    <button type="reset"       x="500" y="180" width=" 41" height="23" tooltip="Clear team 1 info" id="rst_team_1" reset=
+      "p1_sponsor,p1_tag,p1_char,p1_color,p1_pronoun,p2_sponsor,p2_tag,p2_char,p2_color,p2_pronoun,t1_score,t1_loss">CLEAR ALL</button>
 
+    <button type="swap"        x="545" y="210" width=" 60" height="23" tooltip="Swap player 1 and player 2 info" id="swap_t1" 
+      swapSet1="p1_sponsor,p1_tag,p1_char,p1_color,p1_pronoun" 
+      swapSet2="p2_sponsor,p2_tag,p2_char,p2_color,p2_pronoun">SWAP</button>
 
-    <line                     x="  5" y="115" width="600" height="15" />
+    <line                      x="  5" y="115" width="600" height="15" />
 
-    <label                    x= "10" y="135" width="100" height="13">TEAM 2</label>
+    <label                     x= "10" y="135" width="100" height="13">TEAM 2</label>
 
-    <label                    x=" 30" y="160" width="100" height="13">SPONSOR</label>
-    <label                    x="100" y="160" width="100" height="13">TAG</label>
-    <label                    x="190" y="160" width="100" height="13">CHARACTER</label>
-    <label                    x="280" y="160" width="100" height="13">COLOR</label>
-    <label                    x="350" y="160" width="100" height="13">PRONOUNS</label>
-    <label                    x="420" y="160" width="100" height="13">SCORE</label>
-    <label                    x="479" y="160" width="100" height="13">L</label>
+    <label                     x=" 30" y="160" width="100" height="13">SPONSOR</label>
+    <label                     x="100" y="160" width="100" height="13">TAG</label>
+    <label                     x="190" y="160" width="100" height="13">CHARACTER</label>
+    <label                     x="280" y="160" width="100" height="13">COLOR</label>
+    <label                     x="350" y="160" width="100" height="13">PRONOUNS</label>
+    <label                     x="420" y="160" width="100" height="13">SCORE</label>
+    <label                     x="479" y="160" width="100" height="13">L</label>
 
-    <label                            x=" 10" y="185" width="100" height="13">3</label>
-    <lineEdit id="3_sponsor"  x=" 30" y="180" width=" 60" height="20" dataSet="../programming_assets/csv/players.csv" dataField="2" master="3_tag" />
-    <lineEdit id="3_tag"      x="100" y="180" width=" 80" height="20" dataSet="../programming_assets/csv/players.csv" />
-    <lineEdit id="3_char"     x="190" y="180" width=" 80" height="20" dataSet="../programming_assets/csv/characters.csv" />
-    <lineEdit id="3_color"    x="280" y="180" width=" 60" height="20" dataSet="../programming_assets/csv/colors.csv" />
-    <lineEdit id="3_pronoun"  x="350" y="180" width=" 60" height="20" dataSet="../programming_assets/csv/players.csv" dataField="3" master="3_tag" />
-    <spinBox  id="2_score"    x="420" y="180" width=" 42" height="55" maximum="999" />
-    <checkBox id="1_loss"     x="475" y="180" width=" 80" height="55" ></checkBox>
-    <button type="reset"              x="500" y="180" width=" 41" height="23" tooltip="Clear player 3 info" id="rst_3" reset="3_sponsor,3_tag,3_char,3_color,3_pronoun">CLEAR</button>
+    <label                     x=" 10" y="185" width="100" height="13">3</label>
+    <lineEdit id="p3_sponsor"  x=" 30" y="180" width=" 60" height="20" dataSet="../programming_assets/csv/players.csv" dataField="2" master="3_tag" />
+    <lineEdit id="p3_tag"      x="100" y="180" width=" 80" height="20" dataSet="../programming_assets/csv/players.csv" />
+    <lineEdit id="p3_char"     x="190" y="180" width=" 80" height="20" dataSet="../programming_assets/csv/characters.csv" />
+    <lineEdit id="p3_color"    x="280" y="180" width=" 60" height="20" dataSet="../programming_assets/csv/colors.csv" />
+    <lineEdit id="p3_pronoun"  x="350" y="180" width=" 60" height="20" dataSet="../programming_assets/csv/players.csv" dataField="3" master="3_tag" />
+    <spinBox  id="t2_score"    x="420" y="180" width=" 42" height="55" maximum="999" />
+    <checkBox id="t2_loss"     x="475" y="180" width=" 80" height="55" ></checkBox>
+    <button type="reset"       x="500" y="180" width=" 41" height="23" tooltip="Clear player 3 info" id="rst_3" 
+    reset="p3_sponsor,p3_tag,p3_char,p3_color,p3_pronoun,t2_score,t2_loss">CLEAR</button>
 
-    <label                    x=" 10" y="215" width="100" height="13">4</label>
-    <lineEdit id="4_sponsor"  x=" 30" y="210" width=" 60" height="20" dataSet="../programming_assets/csv/players.csv" dataField="2" master="4_tag" />
-    <lineEdit id="4_tag"      x="100" y="210" width=" 80" height="20" dataSet="../programming_assets/csv/players.csv" />
-    <lineEdit id="4_char"     x="190" y="210" width=" 80" height="20" dataSet="../programming_assets/csv/characters.csv" />
-    <lineEdit id="4_color"    x="280" y="210" width=" 60" height="20" dataSet="../programming_assets/csv/colors.csv" />
-    <lineEdit id="4_pronoun"  x="350" y="210" width=" 60" height="20" dataSet="../programming_assets/csv/players.csv" dataField="3" master="4_tag" />
-    <button type="reset"              x="500" y="210" width=" 41" height="23" tooltip="Clear player 4 info" id="rst_4" reset="4_sponsor,4_tag,4_char,4_color,4_pronoun">CLEAR</button>
+    <label                     x=" 10" y="215" width="100" height="13">4</label>
+    <lineEdit id="p4_sponsor"  x=" 30" y="210" width=" 60" height="20" dataSet="../programming_assets/csv/players.csv" dataField="2" master="4_tag" />
+    <lineEdit id="p4_tag"      x="100" y="210" width=" 80" height="20" dataSet="../programming_assets/csv/players.csv" />
+    <lineEdit id="p4_char"     x="190" y="210" width=" 80" height="20" dataSet="../programming_assets/csv/characters.csv" />
+    <lineEdit id="p4_color"    x="280" y="210" width=" 60" height="20" dataSet="../programming_assets/csv/colors.csv" />
+    <lineEdit id="p4_pronoun"  x="350" y="210" width=" 60" height="20" dataSet="../programming_assets/csv/players.csv" dataField="3" master="4_tag" />
+    <button type="reset"       x="500" y="210" width=" 41" height="23" tooltip="Clear player 4 info" id="rst_4" 
+    reset="p4_sponsor,p4_tag,p4_char,p4_color,p4_pronoun">CLEAR</button>
 
-    <button type="reset"      x="545" y="180" width=" 60" height="23" tooltip="Clear both player info" id="rst_team_2" reset="l_sponsor_on_deck,l_tag_on_deck,l_char_on_deck,r_sponsor_on_deck,r_tag_on_deck,r_char_on_deck">CLEAR ALL</button>
+    <button type="reset"       x="545" y="180" width=" 60" height="23" tooltip="Clear both players info" id="rst_team_2" reset=
+    "p3_sponsor,p3_tag,p3_char,p3_color,p3_pronoun,t2_score,t2_loss,p4_sponsor,p4_tag,p4_char,p4_color,p4_pronoun">CLEAR ALL</button>
 
-    <button type="swap"       x="545" y="210" width=" 60" height="23" tooltip="Swap player 1 and player 2 info" id="swap_team_2" swapSet1="l_sponsor_on_deck,l_tag_on_deck,l_char_on_deck,l_color_on_deck,l_pronoun_on_deck" swapSet2="r_sponsor_on_deck,r_tag_on_deck,r_char_on_deck,r_color_on_deck,r_pronoun_on_deck">SWAP</button>
+    <button type="swap"        x="545" y="210" width=" 60" height="23" tooltip="Swap player 3 and player 4 info" id="swap_t2" 
+      swapSet1="p3_sponsor,p3_tag,p3_char,p3_color,p3_pronoun" 
+      swapSet2="p4_sponsor,p4_tag,p4_char,p4_color,p4_pronoun">SWAP</button>
 
-    <button type="swap"       x=" 10" y="245" width="590" height="23" tooltip="Swap Teams" id="swap_teams" 
-    swapSet1="1_sponsor,1_tag,1_char,1_color,1_pronoun,2_sponsor,2_tag,2_char,2_color,2_pronoun" 
-    swapSet2="3_sponsor,3_tag,3_char,3_color,3_pronoun,4_sponsor,4_tag,4_char,4_color,4_pronoun">SWAP TEAMS</button>
+    <button type="swap"        x=" 10" y="245" width="590" height="23" tooltip="Swap Teams" id="swap_teams" 
+      swapSet1="p1_sponsor,p1_tag,p1_char,p1_color,p1_pronoun,p2_sponsor,p2_tag,p2_char,p2_color,p2_pronoun,t1_score,t1_loss" 
+      swapSet2="p3_sponsor,p3_tag,p3_char,p3_color,p3_pronoun,p4_sponsor,p4_tag,p4_char,p4_color,p4_pronoun,t2_score,t2_loss">SWAP TEAMS</button>
 
   </tab>
 </tabSet>

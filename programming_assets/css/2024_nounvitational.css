@@ -5,19 +5,19 @@
 /*=======================================================================*/
 @font-face {
     font-family: 'Londrina Solid Thin';
-    src: url("../fonts/LondrinaSolid-Thin.ttf");
+    src: url("../programming_assets/fonts/LondrinaSolid-Thin.ttf");
 }
 @font-face {
     font-family: 'Londrina Solid Light';
-    src: url("../fonts/LondrinaSolid-Light.ttf");
+    src: url("../programming_assets/fonts/LondrinaSolid-Light.ttf");
 }
 @font-face {
     font-family: 'Londrina Solid Regular';
-    src: url("../fonts/LondrinaSolid-Regular.ttf");
+    src: url("../programming_assets/fonts/LondrinaSolid-Regular.ttf");
 }
 @font-face {
     font-family: 'Londrina Solid Black';
-    src: url("../fonts/LondrinaSolid-Black.ttf");
+    src: url("../programming_assets/fonts/LondrinaSolid-Black.ttf");
 }
 
 :root {

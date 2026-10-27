@@ -1,29 +1,6 @@
 <!DOCTYPE StreamControl>
 <items>
- <timestamp>1793047922</timestamp>
- <1_char></1_char>
- <1_color></1_color>
- <1_loss>0</1_loss>
- <1_pronoun></1_pronoun>
- <1_score>0</1_score>
- <1_sponsor></1_sponsor>
- <1_tag></1_tag>
- <2_char></2_char>
- <2_color></2_color>
- <2_pronoun></2_pronoun>
- <2_score>0</2_score>
- <2_sponsor></2_sponsor>
- <2_tag></2_tag>
- <3_char></3_char>
- <3_color></3_color>
- <3_pronoun></3_pronoun>
- <3_sponsor></3_sponsor>
- <3_tag></3_tag>
- <4_char></4_char>
- <4_color></4_color>
- <4_pronoun></4_pronoun>
- <4_sponsor></4_sponsor>
- <4_tag></4_tag>
+ <timestamp>1793068875</timestamp>
  <caster_pronouns_1></caster_pronouns_1>
  <caster_pronouns_2></caster_pronouns_2>
  <caster_pronouns_3></caster_pronouns_3>
@@ -55,35 +32,59 @@
  <l_color_current></l_color_current>
  <l_color_on_deck></l_color_on_deck>
  <l_loss>0</l_loss>
- <l_pronoun_current></l_pronoun_current>
+ <l_pronoun_current>He/Him</l_pronoun_current>
  <l_pronoun_on_deck></l_pronoun_on_deck>
  <l_score>0</l_score>
- <l_sponsor_current></l_sponsor_current>
+ <l_sponsor_current>Liquid</l_sponsor_current>
  <l_sponsor_on_deck></l_sponsor_on_deck>
- <l_tag_current></l_tag_current>
+ <l_tag_current>Hungrybox</l_tag_current>
  <l_tag_on_deck></l_tag_on_deck>
  <lower_third_line_first></lower_third_line_first>
  <lower_third_line_second></lower_third_line_second>
  <lower_third_line_third></lower_third_line_third>
  <message_downtime></message_downtime>
+ <p1_char></p1_char>
+ <p1_color></p1_color>
+ <p1_pronoun></p1_pronoun>
+ <p1_sponsor></p1_sponsor>
+ <p1_tag>1</p1_tag>
+ <p2_char></p2_char>
+ <p2_color></p2_color>
+ <p2_pronoun></p2_pronoun>
+ <p2_sponsor></p2_sponsor>
+ <p2_tag>2</p2_tag>
+ <p3_char></p3_char>
+ <p3_color></p3_color>
+ <p3_pronoun></p3_pronoun>
+ <p3_sponsor></p3_sponsor>
+ <p3_tag>3</p3_tag>
+ <p4_char></p4_char>
+ <p4_color></p4_color>
+ <p4_pronoun></p4_pronoun>
+ <p4_sponsor></p4_sponsor>
+ <p4_tag>4</p4_tag>
  <r_char_current></r_char_current>
  <r_char_on_deck></r_char_on_deck>
  <r_color_current></r_color_current>
  <r_color_on_deck></r_color_on_deck>
  <r_loss>0</r_loss>
- <r_pronoun_current></r_pronoun_current>
+ <r_pronoun_current>He/Him</r_pronoun_current>
  <r_pronoun_on_deck></r_pronoun_on_deck>
  <r_score>0</r_score>
  <r_sponsor_current></r_sponsor_current>
  <r_sponsor_on_deck></r_sponsor_on_deck>
- <r_tag_current></r_tag_current>
+ <r_tag_current>Colbol</r_tag_current>
  <r_tag_on_deck></r_tag_on_deck>
  <round_2s></round_2s>
- <round_current></round_current>
+ <round_current>TEST</round_current>
  <round_on_deck></round_on_deck>
  <show_countdown>0</show_countdown>
  <show_lower_third>0</show_lower_third>
  <show_lower_third_casters>0</show_lower_third_casters>
+ <t1_loss>0</t1_loss>
+ <t1_score>0</t1_score>
+ <t2_loss>0</t2_loss>
+ <t2_score>0</t2_score>
  <timer_min></timer_min>
  <timer_sec></timer_sec>
 </items>
