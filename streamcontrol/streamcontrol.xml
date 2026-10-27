@@ -1,6 +1,6 @@
 <!DOCTYPE StreamControl>
 <items>
- <timestamp>1793129145</timestamp>
+ <timestamp>1793136102</timestamp>
  <caster_pronouns_1></caster_pronouns_1>
  <caster_pronouns_2></caster_pronouns_2>
  <caster_pronouns_3></caster_pronouns_3>
@@ -85,6 +85,6 @@
  <t1_score>0</t1_score>
  <t2_loss>0</t2_loss>
  <t2_score>0</t2_score>
- <timer_min></timer_min>
- <timer_sec></timer_sec>
+ <timer_min>9</timer_min>
+ <timer_sec>0</timer_sec>
 </items>
