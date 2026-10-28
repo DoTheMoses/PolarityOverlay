@@ -61,7 +61,7 @@
             "name": "Show scene - pR"
         },
         {
-            "name": "Show Scene - Ads"
+            "name": "Show scene - ads"
         },
         {
             "name": "Show scene - 2 shot (pL/pR)"
@@ -130,7 +130,7 @@
             "name": "Camera scene - stage"
         }
     ],
-    "current_scene": "Show Scene - Ads",
+    "current_scene": "Show scene - 2 shot (pL/pR)",
     "current_program_scene": "Show scene - downtime",
     "canvases": [],
     "current_transition": "Fade",
@@ -3853,7 +3853,7 @@
         },
         {
             "prev_ver": 537001985,
-            "name": "Show Scene - Ads",
+            "name": "Show scene - ads",
             "uuid": "12d1828c-22dc-490f-b5d1-bfd45c0d2613",
             "id": "scene",
             "versioned_id": "scene",
