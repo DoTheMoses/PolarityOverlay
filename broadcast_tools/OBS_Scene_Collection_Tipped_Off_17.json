@@ -621,6 +621,124 @@
                     "private_settings": {}
                 }
             ]
+        },
+        {
+            "prev_ver": 537001985,
+            "name": "bg - 2-shot (wide/game)",
+            "uuid": "cbaeb35a-401e-4a65-997a-627ba7bab25a",
+            "id": "group",
+            "versioned_id": "group",
+            "settings": {
+                "id_counter": 0,
+                "custom_size": true,
+                "cx": 1920,
+                "cy": 1080,
+                "items": [
+                    {
+                        "name": "Asset scene - background",
+                        "source_uuid": "9fd24b32-99de-4454-9a4d-7b58e87d5c89",
+                        "visible": true,
+                        "locked": true,
+                        "rot": 0.0,
+                        "scale_ref": {
+                            "x": 1920.0,
+                            "y": 1080.0
+                        },
+                        "align": 5,
+                        "bounds_type": 0,
+                        "bounds_align": 0,
+                        "bounds_crop": false,
+                        "crop_left": 0,
+                        "crop_top": 0,
+                        "crop_right": 0,
+                        "crop_bottom": 0,
+                        "id": 1,
+                        "group_item_backup": false,
+                        "pos": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "pos_rel": {
+                            "x": -1.7777777910232544,
+                            "y": -1.0
+                        },
+                        "scale": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "scale_rel": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "bounds": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "bounds_rel": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "scale_filter": "disable",
+                        "blend_method": "default",
+                        "blend_type": "normal",
+                        "show_transition": {
+                            "duration": 300
+                        },
+                        "hide_transition": {
+                            "duration": 300
+                        },
+                        "private_settings": {}
+                    }
+                ]
+            },
+            "mixers": 0,
+            "sync": 0,
+            "flags": 0,
+            "volume": 1.0,
+            "balance": 0.5,
+            "enabled": true,
+            "muted": false,
+            "push-to-mute": false,
+            "push-to-mute-delay": 0,
+            "push-to-talk": false,
+            "push-to-talk-delay": 0,
+            "hotkeys": {
+                "libobs.show_scene_item.1": [],
+                "libobs.hide_scene_item.1": []
+            },
+            "deinterlace_mode": 0,
+            "deinterlace_field_order": 0,
+            "monitoring_type": 0,
+            "canvas_uuid": "6c69626f-6273-4c00-9d88-c5136d61696e",
+            "private_settings": {},
+            "filters": [
+                {
+                    "prev_ver": 537001985,
+                    "name": "Image Mask/Blend",
+                    "uuid": "236964b9-a57a-451c-83a6-010f113f6172",
+                    "id": "mask_filter",
+                    "versioned_id": "mask_filter_v2",
+                    "settings": {
+                        "image_path": "C:/Users/matth/OneDrive/Documents/GitHub/PolarityOverlay/event_assets/graphics/masks/mask_2_shot.png"
+                    },
+                    "mixers": 0,
+                    "sync": 0,
+                    "flags": 0,
+                    "volume": 1.0,
+                    "balance": 0.5,
+                    "enabled": true,
+                    "muted": false,
+                    "push-to-mute": false,
+                    "push-to-mute-delay": 0,
+                    "push-to-talk": false,
+                    "push-to-talk-delay": 0,
+                    "hotkeys": {},
+                    "deinterlace_mode": 0,
+                    "deinterlace_field_order": 0,
+                    "monitoring_type": 0,
+                    "private_settings": {}
+                }
+            ]
         }
     ],
     "scene_order": [
@@ -655,7 +773,7 @@
             "name": "Show scene - ad slides"
         },
         {
-            "name": "Show scene - H2H"
+            "name": "Show scene - h2h"
         },
         {
             "name": "Show scene - top 8"
@@ -697,6 +815,9 @@
             "name": "Asset scene - slippi"
         },
         {
+            "name": "Asset scene - sponsor logos"
+        },
+        {
             "name": "CAMERA SCENES ======================="
         },
         {
@@ -715,8 +836,8 @@
             "name": "Camera scene - stage"
         }
     ],
-    "current_scene": "Asset scene - lower 3rd",
-    "current_program_scene": "Show scene - downtime",
+    "current_scene": "Show scene - gameplay (melee singles)",
+    "current_program_scene": "Show scene - 2-shot (stage/game)",
     "canvases": [],
     "current_transition": "Fade",
     "transition_duration": 300,
@@ -1528,12 +1649,12 @@
             "push-to-talk-delay": 0,
             "hotkeys": {
                 "OBSBasic.SelectScene": [],
+                "libobs.show_scene_item.8": [],
+                "libobs.hide_scene_item.8": [],
                 "libobs.show_scene_item.2": [],
                 "libobs.hide_scene_item.2": [],
                 "libobs.show_scene_item.6": [],
                 "libobs.hide_scene_item.6": [],
-                "libobs.show_scene_item.8": [],
-                "libobs.hide_scene_item.8": [],
                 "libobs.show_scene_item.9": [],
                 "libobs.hide_scene_item.9": []
             },
@@ -1828,6 +1949,323 @@
                 "OBSBasic.SelectScene": [],
                 "libobs.show_scene_item.1": [],
                 "libobs.hide_scene_item.1": []
+            },
+            "deinterlace_mode": 0,
+            "deinterlace_field_order": 0,
+            "monitoring_type": 0,
+            "canvas_uuid": "6c69626f-6273-4c00-9d88-c5136d61696e",
+            "private_settings": {}
+        },
+        {
+            "prev_ver": 537001985,
+            "name": "Asset scene - sponsor logos",
+            "uuid": "656a593c-a5d6-42db-8cee-25daf73ef4ac",
+            "id": "scene",
+            "versioned_id": "scene",
+            "settings": {
+                "id_counter": 5,
+                "custom_size": false,
+                "items": [
+                    {
+                        "name": "PRINT_VG_3_Color.png",
+                        "source_uuid": "b34169d0-eb0c-4b3a-a617-54f76d2eac3c",
+                        "visible": true,
+                        "locked": false,
+                        "rot": 0.0,
+                        "scale_ref": {
+                            "x": 1920.0,
+                            "y": 1080.0
+                        },
+                        "align": 5,
+                        "bounds_type": 0,
+                        "bounds_align": 0,
+                        "bounds_crop": false,
+                        "crop_left": 0,
+                        "crop_top": 0,
+                        "crop_right": 0,
+                        "crop_bottom": 0,
+                        "id": 1,
+                        "group_item_backup": false,
+                        "pos": {
+                            "x": 88.0,
+                            "y": 843.0
+                        },
+                        "pos_rel": {
+                            "x": -1.6148147583007812,
+                            "y": 0.5611110925674438
+                        },
+                        "scale": {
+                            "x": 0.06354300677776337,
+                            "y": 0.06354300677776337
+                        },
+                        "scale_rel": {
+                            "x": 0.06354300677776337,
+                            "y": 0.06354300677776337
+                        },
+                        "bounds": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "bounds_rel": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "scale_filter": "disable",
+                        "blend_method": "default",
+                        "blend_type": "normal",
+                        "show_transition": {
+                            "duration": 0
+                        },
+                        "hide_transition": {
+                            "duration": 0
+                        },
+                        "private_settings": {}
+                    },
+                    {
+                        "name": "Image",
+                        "source_uuid": "631a2784-2f4d-4926-8c82-2a9271c093a9",
+                        "visible": true,
+                        "locked": false,
+                        "rot": 0.0,
+                        "scale_ref": {
+                            "x": 1920.0,
+                            "y": 1080.0
+                        },
+                        "align": 5,
+                        "bounds_type": 0,
+                        "bounds_align": 0,
+                        "bounds_crop": false,
+                        "crop_left": 0,
+                        "crop_top": 0,
+                        "crop_right": 0,
+                        "crop_bottom": 0,
+                        "id": 2,
+                        "group_item_backup": false,
+                        "pos": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "pos_rel": {
+                            "x": -1.7777777910232544,
+                            "y": -1.0
+                        },
+                        "scale": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "scale_rel": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "bounds": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "bounds_rel": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "scale_filter": "disable",
+                        "blend_method": "default",
+                        "blend_type": "normal",
+                        "show_transition": {
+                            "duration": 300
+                        },
+                        "hide_transition": {
+                            "duration": 300
+                        },
+                        "private_settings": {}
+                    },
+                    {
+                        "name": "zenni_e4e_logo_lockup-white.png",
+                        "source_uuid": "08e9040a-59a9-4d00-b282-7868014888c8",
+                        "visible": true,
+                        "locked": false,
+                        "rot": 0.0,
+                        "scale_ref": {
+                            "x": 1920.0,
+                            "y": 1080.0
+                        },
+                        "align": 5,
+                        "bounds_type": 0,
+                        "bounds_align": 0,
+                        "bounds_crop": false,
+                        "crop_left": 0,
+                        "crop_top": 0,
+                        "crop_right": 0,
+                        "crop_bottom": 0,
+                        "id": 3,
+                        "group_item_backup": false,
+                        "pos": {
+                            "x": 386.0,
+                            "y": 860.0
+                        },
+                        "pos_rel": {
+                            "x": -1.0629630088806152,
+                            "y": 0.5925925970077515
+                        },
+                        "scale": {
+                            "x": 0.42100000381469727,
+                            "y": 0.4205128252506256
+                        },
+                        "scale_rel": {
+                            "x": 0.42100000381469727,
+                            "y": 0.4205128252506256
+                        },
+                        "bounds": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "bounds_rel": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "scale_filter": "disable",
+                        "blend_method": "default",
+                        "blend_type": "normal",
+                        "show_transition": {
+                            "duration": 0
+                        },
+                        "hide_transition": {
+                            "duration": 0
+                        },
+                        "private_settings": {}
+                    },
+                    {
+                        "name": "logo.png",
+                        "source_uuid": "95974edb-9205-4d32-a785-8f5d953d68e0",
+                        "visible": true,
+                        "locked": false,
+                        "rot": 0.0,
+                        "scale_ref": {
+                            "x": 1920.0,
+                            "y": 1080.0
+                        },
+                        "align": 5,
+                        "bounds_type": 0,
+                        "bounds_align": 0,
+                        "bounds_crop": false,
+                        "crop_left": 0,
+                        "crop_top": 0,
+                        "crop_right": 0,
+                        "crop_bottom": 0,
+                        "id": 4,
+                        "group_item_backup": false,
+                        "pos": {
+                            "x": 897.0,
+                            "y": 882.0
+                        },
+                        "pos_rel": {
+                            "x": -0.11666666716337204,
+                            "y": 0.6333333253860474
+                        },
+                        "scale": {
+                            "x": 0.411812961101532,
+                            "y": 0.4119718372821808
+                        },
+                        "scale_rel": {
+                            "x": 0.411812961101532,
+                            "y": 0.4119718372821808
+                        },
+                        "bounds": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "bounds_rel": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "scale_filter": "disable",
+                        "blend_method": "default",
+                        "blend_type": "normal",
+                        "show_transition": {
+                            "duration": 0
+                        },
+                        "hide_transition": {
+                            "duration": 0
+                        },
+                        "private_settings": {}
+                    },
+                    {
+                        "name": "Polarity Logo (on black).png",
+                        "source_uuid": "4699370d-644b-40d6-99bf-58391760c3d3",
+                        "visible": true,
+                        "locked": false,
+                        "rot": 0.0,
+                        "scale_ref": {
+                            "x": 1920.0,
+                            "y": 1080.0
+                        },
+                        "align": 5,
+                        "bounds_type": 0,
+                        "bounds_align": 0,
+                        "bounds_crop": false,
+                        "crop_left": 186,
+                        "crop_top": 228,
+                        "crop_right": 207,
+                        "crop_bottom": 207,
+                        "id": 5,
+                        "group_item_backup": false,
+                        "pos": {
+                            "x": 1462.0,
+                            "y": 869.0
+                        },
+                        "pos_rel": {
+                            "x": 0.9296296238899231,
+                            "y": 0.6092592477798462
+                        },
+                        "scale": {
+                            "x": 0.2493455559015274,
+                            "y": 0.24922600388526917
+                        },
+                        "scale_rel": {
+                            "x": 0.2493455559015274,
+                            "y": 0.24922600388526917
+                        },
+                        "bounds": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "bounds_rel": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "scale_filter": "disable",
+                        "blend_method": "default",
+                        "blend_type": "normal",
+                        "show_transition": {
+                            "duration": 0
+                        },
+                        "hide_transition": {
+                            "duration": 0
+                        },
+                        "private_settings": {}
+                    }
+                ]
+            },
+            "mixers": 0,
+            "sync": 0,
+            "flags": 0,
+            "volume": 1.0,
+            "balance": 0.5,
+            "enabled": true,
+            "muted": false,
+            "push-to-mute": false,
+            "push-to-mute-delay": 0,
+            "push-to-talk": false,
+            "push-to-talk-delay": 0,
+            "hotkeys": {
+                "OBSBasic.SelectScene": [],
+                "libobs.show_scene_item.1": [],
+                "libobs.hide_scene_item.1": [],
+                "libobs.show_scene_item.2": [],
+                "libobs.hide_scene_item.2": [],
+                "libobs.show_scene_item.3": [],
+                "libobs.hide_scene_item.3": [],
+                "libobs.show_scene_item.4": [],
+                "libobs.hide_scene_item.4": [],
+                "libobs.show_scene_item.5": [],
+                "libobs.hide_scene_item.5": []
             },
             "deinterlace_mode": 0,
             "deinterlace_field_order": 0,
@@ -2807,42 +3245,15 @@
         },
         {
             "prev_ver": 537001985,
-            "name": "CEO Bug.png",
-            "uuid": "ef1c2e2d-7142-43e1-ba1c-a0487b66ed22",
-            "id": "image_source",
-            "versioned_id": "image_source",
-            "settings": {
-                "file": "C:/Users/matth/OneDrive/Desktop/CEO 2026 Broadcast Graphics/overlays/CEO Bug.png"
-            },
-            "mixers": 0,
-            "sync": 0,
-            "flags": 0,
-            "volume": 1.0,
-            "balance": 0.5,
-            "enabled": true,
-            "muted": false,
-            "push-to-mute": false,
-            "push-to-mute-delay": 0,
-            "push-to-talk": false,
-            "push-to-talk-delay": 0,
-            "hotkeys": {},
-            "deinterlace_mode": 0,
-            "deinterlace_field_order": 0,
-            "monitoring_type": 0,
-            "private_settings": {}
-        },
-        {
-            "prev_ver": 537001985,
-            "name": "Comms.html",
-            "uuid": "7c3a13f5-3c89-4bae-ac89-85f98381d4db",
+            "name": "casters.html",
+            "uuid": "943a6084-8e34-4b86-b734-6ff5e229a674",
             "id": "browser_source",
             "versioned_id": "browser_source",
             "settings": {
                 "is_local_file": true,
-                "local_file": "C:/Users/matth/OneDrive/Desktop/CEO 2026 Broadcast Graphics/overlays/Comms.html",
+                "local_file": "C:/Users/matth/OneDrive/Documents/GitHub/PolarityOverlay/overlays/casters.html",
                 "width": 1920,
-                "height": 1080,
-                "shutdown": true
+                "height": 1080
             },
             "mixers": 255,
             "sync": 0,
@@ -3033,13 +3444,35 @@
         },
         {
             "prev_ver": 537001985,
+            "name": "Image",
+            "uuid": "631a2784-2f4d-4926-8c82-2a9271c093a9",
+            "id": "image_source",
+            "versioned_id": "image_source",
+            "settings": {},
+            "mixers": 0,
+            "sync": 0,
+            "flags": 0,
+            "volume": 1.0,
+            "balance": 0.5,
+            "enabled": true,
+            "muted": false,
+            "push-to-mute": false,
+            "push-to-mute-delay": 0,
+            "push-to-talk": false,
+            "push-to-talk-delay": 0,
+            "hotkeys": {},
+            "deinterlace_mode": 0,
+            "deinterlace_field_order": 0,
+            "monitoring_type": 0,
+            "private_settings": {}
+        },
+        {
+            "prev_ver": 537001985,
             "name": "Image Slide Show",
             "uuid": "d74a869e-a993-412d-b4b8-26bdf0a54f76",
             "id": "slideshow",
             "versioned_id": "slideshow_v2",
             "settings": {
-                "playback_behavior": "stop_restart",
-                "slide_mode": "mode_manual",
                 "files": [
                     {
                         "value": "C:/Users/matth/OneDrive/Documents/GitHub/PolarityOverlay/event_assets/ads/slides",
@@ -3047,7 +3480,9 @@
                         "selected": false,
                         "hidden": false
                     }
-                ]
+                ],
+                "playback_behavior": "stop_restart",
+                "slide_mode": "mode_manual"
             },
             "mixers": 0,
             "sync": 0,
@@ -3067,6 +3502,32 @@
                 "SlideShow.NextSlide": [],
                 "SlideShow.PreviousSlide": []
             },
+            "deinterlace_mode": 0,
+            "deinterlace_field_order": 0,
+            "monitoring_type": 0,
+            "private_settings": {}
+        },
+        {
+            "prev_ver": 537001985,
+            "name": "logo.png",
+            "uuid": "95974edb-9205-4d32-a785-8f5d953d68e0",
+            "id": "image_source",
+            "versioned_id": "image_source",
+            "settings": {
+                "file": "C:/Users/matth/OneDrive/Documents/GitHub/PolarityOverlay/event_assets/ads/sponsors/parrygg/logo.png"
+            },
+            "mixers": 0,
+            "sync": 0,
+            "flags": 0,
+            "volume": 1.0,
+            "balance": 0.5,
+            "enabled": true,
+            "muted": false,
+            "push-to-mute": false,
+            "push-to-mute-delay": 0,
+            "push-to-talk": false,
+            "push-to-talk-delay": 0,
+            "hotkeys": {},
             "deinterlace_mode": 0,
             "deinterlace_field_order": 0,
             "monitoring_type": 0,
@@ -3354,6 +3815,32 @@
         },
         {
             "prev_ver": 537001985,
+            "name": "Overlay - H2H.png",
+            "uuid": "94e1fa70-b2d2-49de-922c-29ae683c4a9c",
+            "id": "image_source",
+            "versioned_id": "image_source",
+            "settings": {
+                "file": "C:/Users/matth/OneDrive/Documents/GitHub/PolarityOverlay/event_assets/graphics/Overlay - H2H.png"
+            },
+            "mixers": 0,
+            "sync": 0,
+            "flags": 0,
+            "volume": 1.0,
+            "balance": 0.5,
+            "enabled": true,
+            "muted": false,
+            "push-to-mute": false,
+            "push-to-mute-delay": 0,
+            "push-to-talk": false,
+            "push-to-talk-delay": 0,
+            "hotkeys": {},
+            "deinterlace_mode": 0,
+            "deinterlace_field_order": 0,
+            "monitoring_type": 0,
+            "private_settings": {}
+        },
+        {
+            "prev_ver": 537001985,
             "name": "Overlay - Lower Third.png",
             "uuid": "f9720c70-2958-4882-a702-66a5f9034ea3",
             "id": "image_source",
@@ -3536,12 +4023,38 @@
         },
         {
             "prev_ver": 537001985,
-            "name": "Red Bull Bug.png",
-            "uuid": "57c642e3-f511-4337-a45f-31f4ec9ab11f",
+            "name": "Polarity Logo (on black).png",
+            "uuid": "4699370d-644b-40d6-99bf-58391760c3d3",
             "id": "image_source",
             "versioned_id": "image_source",
             "settings": {
-                "file": "C:/Users/matth/OneDrive/Desktop/CEO 2026 Broadcast Graphics/overlays/Red Bull Bug.png"
+                "file": "C:/Users/matth/OneDrive/Documents/GitHub/PolarityOverlay/event_assets/ads/sponsors/Polarity Logo (on black).png"
+            },
+            "mixers": 0,
+            "sync": 0,
+            "flags": 0,
+            "volume": 1.0,
+            "balance": 0.5,
+            "enabled": true,
+            "muted": false,
+            "push-to-mute": false,
+            "push-to-mute-delay": 0,
+            "push-to-talk": false,
+            "push-to-talk-delay": 0,
+            "hotkeys": {},
+            "deinterlace_mode": 0,
+            "deinterlace_field_order": 0,
+            "monitoring_type": 0,
+            "private_settings": {}
+        },
+        {
+            "prev_ver": 537001985,
+            "name": "PRINT_VG_3_Color.png",
+            "uuid": "b34169d0-eb0c-4b3a-a617-54f76d2eac3c",
+            "id": "image_source",
+            "versioned_id": "image_source",
+            "settings": {
+                "file": "C:/Users/matth/OneDrive/Documents/GitHub/PolarityOverlay/event_assets/ads/sponsors/PRINT_VG_3_Color.png"
             },
             "mixers": 0,
             "sync": 0,
@@ -3567,7 +4080,7 @@
             "id": "scene",
             "versioned_id": "scene",
             "settings": {
-                "id_counter": 9,
+                "id_counter": 10,
                 "custom_size": false,
                 "items": [
                     {
@@ -3844,6 +4357,61 @@
                             "duration": 300
                         },
                         "private_settings": {}
+                    },
+                    {
+                        "name": "Asset scene - sponsor logos",
+                        "source_uuid": "656a593c-a5d6-42db-8cee-25daf73ef4ac",
+                        "visible": true,
+                        "locked": false,
+                        "rot": 0.0,
+                        "scale_ref": {
+                            "x": 1920.0,
+                            "y": 1080.0
+                        },
+                        "align": 5,
+                        "bounds_type": 0,
+                        "bounds_align": 0,
+                        "bounds_crop": false,
+                        "crop_left": 0,
+                        "crop_top": 0,
+                        "crop_right": 0,
+                        "crop_bottom": 0,
+                        "id": 10,
+                        "group_item_backup": false,
+                        "pos": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "pos_rel": {
+                            "x": -1.7777777910232544,
+                            "y": -1.0
+                        },
+                        "scale": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "scale_rel": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "bounds": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "bounds_rel": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "scale_filter": "disable",
+                        "blend_method": "default",
+                        "blend_type": "normal",
+                        "show_transition": {
+                            "duration": 300
+                        },
+                        "hide_transition": {
+                            "duration": 300
+                        },
+                        "private_settings": {}
                     }
                 ]
             },
@@ -3864,10 +4432,12 @@
                 "libobs.hide_scene_item.5": [],
                 "libobs.show_scene_item.4": [],
                 "libobs.hide_scene_item.4": [],
+                "libobs.show_scene_item.9": [],
+                "libobs.hide_scene_item.9": [],
                 "libobs.show_scene_item.8": [],
                 "libobs.hide_scene_item.8": [],
-                "libobs.show_scene_item.9": [],
-                "libobs.hide_scene_item.9": []
+                "libobs.show_scene_item.10": [],
+                "libobs.hide_scene_item.10": []
             },
             "deinterlace_mode": 0,
             "deinterlace_field_order": 0,
@@ -3882,7 +4452,7 @@
             "id": "scene",
             "versioned_id": "scene",
             "settings": {
-                "id_counter": 9,
+                "id_counter": 10,
                 "custom_size": false,
                 "items": [
                     {
@@ -4159,6 +4729,61 @@
                             "duration": 0
                         },
                         "private_settings": {}
+                    },
+                    {
+                        "name": "Asset scene - sponsor logos",
+                        "source_uuid": "656a593c-a5d6-42db-8cee-25daf73ef4ac",
+                        "visible": true,
+                        "locked": false,
+                        "rot": 0.0,
+                        "scale_ref": {
+                            "x": 1920.0,
+                            "y": 1080.0
+                        },
+                        "align": 5,
+                        "bounds_type": 0,
+                        "bounds_align": 0,
+                        "bounds_crop": false,
+                        "crop_left": 0,
+                        "crop_top": 0,
+                        "crop_right": 0,
+                        "crop_bottom": 0,
+                        "id": 10,
+                        "group_item_backup": false,
+                        "pos": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "pos_rel": {
+                            "x": -1.7777777910232544,
+                            "y": -1.0
+                        },
+                        "scale": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "scale_rel": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "bounds": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "bounds_rel": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "scale_filter": "disable",
+                        "blend_method": "default",
+                        "blend_type": "normal",
+                        "show_transition": {
+                            "duration": 300
+                        },
+                        "hide_transition": {
+                            "duration": 300
+                        },
+                        "private_settings": {}
                     }
                 ]
             },
@@ -4182,7 +4807,9 @@
                 "libobs.show_scene_item.9": [],
                 "libobs.hide_scene_item.9": [],
                 "libobs.show_scene_item.8": [],
-                "libobs.hide_scene_item.8": []
+                "libobs.hide_scene_item.8": [],
+                "libobs.show_scene_item.10": [],
+                "libobs.hide_scene_item.10": []
             },
             "deinterlace_mode": 0,
             "deinterlace_field_order": 0,
@@ -4197,7 +4824,7 @@
             "id": "scene",
             "versioned_id": "scene",
             "settings": {
-                "id_counter": 8,
+                "id_counter": 9,
                 "custom_size": false,
                 "items": [
                     {
@@ -4214,7 +4841,7 @@
                         "bounds_type": 0,
                         "bounds_align": 0,
                         "bounds_crop": false,
-                        "crop_left": 301,
+                        "crop_left": 305,
                         "crop_top": 0,
                         "crop_right": 307,
                         "crop_bottom": 0,
@@ -4222,19 +4849,19 @@
                         "group_item_backup": false,
                         "pos": {
                             "x": 1130.0,
-                            "y": 211.0
+                            "y": 206.0
                         },
                         "pos_rel": {
                             "x": 0.31481480598449707,
-                            "y": -0.6092592477798462
+                            "y": -0.6185185313224792
                         },
                         "scale": {
-                            "x": 0.5487805008888245,
-                            "y": 0.5490740537643433
+                            "x": 0.5527523159980774,
+                            "y": 0.5527777671813965
                         },
                         "scale_rel": {
-                            "x": 0.5487805008888245,
-                            "y": 0.5490740537643433
+                            "x": 0.5527523159980774,
+                            "y": 0.5527777671813965
                         },
                         "bounds": {
                             "x": 0.0,
@@ -4276,20 +4903,20 @@
                         "id": 5,
                         "group_item_backup": false,
                         "pos": {
-                            "x": 66.0,
-                            "y": 212.0
+                            "x": 65.0,
+                            "y": 211.0
                         },
                         "pos_rel": {
-                            "x": -1.6555556058883667,
-                            "y": -0.6074074506759644
+                            "x": -1.6574074029922485,
+                            "y": -0.6092592477798462
                         },
                         "scale": {
-                            "x": 0.5479166507720947,
-                            "y": 0.5481481552124023
+                            "x": 0.550000011920929,
+                            "y": 0.550000011920929
                         },
                         "scale_rel": {
-                            "x": 0.5479166507720947,
-                            "y": 0.5481481552124023
+                            "x": 0.550000011920929,
+                            "y": 0.550000011920929
                         },
                         "bounds": {
                             "x": 0.0,
@@ -4474,6 +5101,61 @@
                             "duration": 300
                         },
                         "private_settings": {}
+                    },
+                    {
+                        "name": "Asset scene - sponsor logos",
+                        "source_uuid": "656a593c-a5d6-42db-8cee-25daf73ef4ac",
+                        "visible": true,
+                        "locked": true,
+                        "rot": 0.0,
+                        "scale_ref": {
+                            "x": 1920.0,
+                            "y": 1080.0
+                        },
+                        "align": 5,
+                        "bounds_type": 0,
+                        "bounds_align": 0,
+                        "bounds_crop": false,
+                        "crop_left": 0,
+                        "crop_top": 0,
+                        "crop_right": 0,
+                        "crop_bottom": 0,
+                        "id": 9,
+                        "group_item_backup": false,
+                        "pos": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "pos_rel": {
+                            "x": -1.7777777910232544,
+                            "y": -1.0
+                        },
+                        "scale": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "scale_rel": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "bounds": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "bounds_rel": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "scale_filter": "disable",
+                        "blend_method": "default",
+                        "blend_type": "normal",
+                        "show_transition": {
+                            "duration": 300
+                        },
+                        "hide_transition": {
+                            "duration": 300
+                        },
+                        "private_settings": {}
                     }
                 ]
             },
@@ -4494,10 +5176,12 @@
                 "libobs.hide_scene_item.2": [],
                 "libobs.show_scene_item.5": [],
                 "libobs.hide_scene_item.5": [],
+                "libobs.show_scene_item.8": [],
+                "libobs.hide_scene_item.8": [],
                 "libobs.show_scene_item.7": [],
                 "libobs.hide_scene_item.7": [],
-                "libobs.show_scene_item.8": [],
-                "libobs.hide_scene_item.8": []
+                "libobs.show_scene_item.9": [],
+                "libobs.hide_scene_item.9": []
             },
             "deinterlace_mode": 0,
             "deinterlace_field_order": 0,
@@ -4512,9 +5196,119 @@
             "id": "scene",
             "versioned_id": "scene",
             "settings": {
-                "id_counter": 8,
+                "id_counter": 10,
                 "custom_size": false,
                 "items": [
+                    {
+                        "name": "Asset scene - melee gameplay",
+                        "source_uuid": "6431dfc9-6bd9-42e1-9705-00f6580d2403",
+                        "visible": true,
+                        "locked": true,
+                        "rot": 0.0,
+                        "scale_ref": {
+                            "x": 1920.0,
+                            "y": 1080.0
+                        },
+                        "align": 5,
+                        "bounds_type": 0,
+                        "bounds_align": 0,
+                        "bounds_crop": false,
+                        "crop_left": 305,
+                        "crop_top": 0,
+                        "crop_right": 307,
+                        "crop_bottom": 0,
+                        "id": 2,
+                        "group_item_backup": false,
+                        "pos": {
+                            "x": 1130.0,
+                            "y": 206.0
+                        },
+                        "pos_rel": {
+                            "x": 0.31481480598449707,
+                            "y": -0.6185185313224792
+                        },
+                        "scale": {
+                            "x": 0.5527523159980774,
+                            "y": 0.5527777671813965
+                        },
+                        "scale_rel": {
+                            "x": 0.5527523159980774,
+                            "y": 0.5527777671813965
+                        },
+                        "bounds": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "bounds_rel": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "scale_filter": "disable",
+                        "blend_method": "default",
+                        "blend_type": "normal",
+                        "show_transition": {
+                            "duration": 300
+                        },
+                        "hide_transition": {
+                            "duration": 300
+                        },
+                        "private_settings": {}
+                    },
+                    {
+                        "name": "Camera scene - wide",
+                        "source_uuid": "3d70bcea-1c3a-430c-ac14-04b96ce315a9",
+                        "visible": true,
+                        "locked": true,
+                        "rot": 0.0,
+                        "scale_ref": {
+                            "x": 1920.0,
+                            "y": 1080.0
+                        },
+                        "align": 5,
+                        "bounds_type": 0,
+                        "bounds_align": 0,
+                        "bounds_crop": false,
+                        "crop_left": 0,
+                        "crop_top": 0,
+                        "crop_right": 0,
+                        "crop_bottom": 0,
+                        "id": 5,
+                        "group_item_backup": false,
+                        "pos": {
+                            "x": 65.0,
+                            "y": 211.0
+                        },
+                        "pos_rel": {
+                            "x": -1.6574074029922485,
+                            "y": -0.6092592477798462
+                        },
+                        "scale": {
+                            "x": 0.550000011920929,
+                            "y": 0.550000011920929
+                        },
+                        "scale_rel": {
+                            "x": 0.550000011920929,
+                            "y": 0.550000011920929
+                        },
+                        "bounds": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "bounds_rel": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "scale_filter": "disable",
+                        "blend_method": "default",
+                        "blend_type": "normal",
+                        "show_transition": {
+                            "duration": 300
+                        },
+                        "hide_transition": {
+                            "duration": 300
+                        },
+                        "private_settings": {}
+                    },
                     {
                         "name": "Asset scene - background",
                         "source_uuid": "9fd24b32-99de-4454-9a4d-7b58e87d5c89",
@@ -4534,7 +5328,7 @@
                         "crop_right": 0,
                         "crop_bottom": 0,
                         "id": 1,
-                        "group_item_backup": false,
+                        "group_item_backup": true,
                         "pos": {
                             "x": 0.0,
                             "y": 0.0
@@ -4571,63 +5365,8 @@
                         "private_settings": {}
                     },
                     {
-                        "name": "Asset scene - melee gameplay",
-                        "source_uuid": "6431dfc9-6bd9-42e1-9705-00f6580d2403",
-                        "visible": true,
-                        "locked": false,
-                        "rot": 0.0,
-                        "scale_ref": {
-                            "x": 1920.0,
-                            "y": 1080.0
-                        },
-                        "align": 5,
-                        "bounds_type": 0,
-                        "bounds_align": 0,
-                        "bounds_crop": false,
-                        "crop_left": 305,
-                        "crop_top": 0,
-                        "crop_right": 307,
-                        "crop_bottom": 0,
-                        "id": 2,
-                        "group_item_backup": false,
-                        "pos": {
-                            "x": 941.0,
-                            "y": 234.0
-                        },
-                        "pos_rel": {
-                            "x": -0.035185184329748154,
-                            "y": -0.5666666626930237
-                        },
-                        "scale": {
-                            "x": 0.6230886578559875,
-                            "y": 0.5574073791503906
-                        },
-                        "scale_rel": {
-                            "x": 0.6230886578559875,
-                            "y": 0.5574073791503906
-                        },
-                        "bounds": {
-                            "x": 0.0,
-                            "y": 0.0
-                        },
-                        "bounds_rel": {
-                            "x": 0.0,
-                            "y": 0.0
-                        },
-                        "scale_filter": "disable",
-                        "blend_method": "default",
-                        "blend_type": "normal",
-                        "show_transition": {
-                            "duration": 300
-                        },
-                        "hide_transition": {
-                            "duration": 300
-                        },
-                        "private_settings": {}
-                    },
-                    {
-                        "name": "Camera scene - wide",
-                        "source_uuid": "3d70bcea-1c3a-430c-ac14-04b96ce315a9",
+                        "name": "bg - 2-shot (wide/game)",
+                        "source_uuid": "cbaeb35a-401e-4a65-997a-627ba7bab25a",
                         "visible": true,
                         "locked": false,
                         "rot": 0.0,
@@ -4643,23 +5382,23 @@
                         "crop_top": 0,
                         "crop_right": 0,
                         "crop_bottom": 0,
-                        "id": 5,
+                        "id": 9,
                         "group_item_backup": false,
                         "pos": {
-                            "x": 825.0,
-                            "y": 40.0
+                            "x": 0.0,
+                            "y": 0.0
                         },
                         "pos_rel": {
-                            "x": -0.25,
-                            "y": -0.9259259104728699
+                            "x": -1.7777777910232544,
+                            "y": -1.0
                         },
                         "scale": {
-                            "x": 0.5687500238418579,
-                            "y": 0.5685185194015503
+                            "x": 1.0,
+                            "y": 1.0
                         },
                         "scale_rel": {
-                            "x": 0.5687500238418579,
-                            "y": 0.5685185194015503
+                            "x": 1.0,
+                            "y": 1.0
                         },
                         "bounds": {
                             "x": 0.0,
@@ -4673,10 +5412,10 @@
                         "blend_method": "default",
                         "blend_type": "normal",
                         "show_transition": {
-                            "duration": 300
+                            "duration": 0
                         },
                         "hide_transition": {
-                            "duration": 300
+                            "duration": 0
                         },
                         "private_settings": {}
                     },
@@ -4734,6 +5473,61 @@
                             "duration": 300
                         },
                         "private_settings": {}
+                    },
+                    {
+                        "name": "Asset scene - sponsor logos",
+                        "source_uuid": "656a593c-a5d6-42db-8cee-25daf73ef4ac",
+                        "visible": true,
+                        "locked": false,
+                        "rot": 0.0,
+                        "scale_ref": {
+                            "x": 1920.0,
+                            "y": 1080.0
+                        },
+                        "align": 5,
+                        "bounds_type": 0,
+                        "bounds_align": 0,
+                        "bounds_crop": false,
+                        "crop_left": 0,
+                        "crop_top": 0,
+                        "crop_right": 0,
+                        "crop_bottom": 0,
+                        "id": 10,
+                        "group_item_backup": false,
+                        "pos": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "pos_rel": {
+                            "x": -1.7777777910232544,
+                            "y": -1.0
+                        },
+                        "scale": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "scale_rel": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "bounds": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "bounds_rel": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "scale_filter": "disable",
+                        "blend_method": "default",
+                        "blend_type": "normal",
+                        "show_transition": {
+                            "duration": 300
+                        },
+                        "hide_transition": {
+                            "duration": 300
+                        },
+                        "private_settings": {}
                     }
                 ]
             },
@@ -4750,14 +5544,16 @@
             "push-to-talk-delay": 0,
             "hotkeys": {
                 "OBSBasic.SelectScene": [],
-                "libobs.show_scene_item.1": [],
-                "libobs.hide_scene_item.1": [],
                 "libobs.show_scene_item.2": [],
                 "libobs.hide_scene_item.2": [],
                 "libobs.show_scene_item.5": [],
                 "libobs.hide_scene_item.5": [],
                 "libobs.show_scene_item.8": [],
-                "libobs.hide_scene_item.8": []
+                "libobs.hide_scene_item.8": [],
+                "libobs.show_scene_item.9": [],
+                "libobs.hide_scene_item.9": [],
+                "libobs.show_scene_item.10": [],
+                "libobs.hide_scene_item.10": []
             },
             "deinterlace_mode": 0,
             "deinterlace_field_order": 0,
@@ -4864,7 +5660,7 @@
             "versioned_id": "scene",
             "settings": {
                 "custom_size": false,
-                "id_counter": 6,
+                "id_counter": 8,
                 "items": [
                     {
                         "name": "Camera scene - casters",
@@ -4922,10 +5718,10 @@
                         "private_settings": {}
                     },
                     {
-                        "name": "Comms.html",
-                        "source_uuid": "7c3a13f5-3c89-4bae-ac89-85f98381d4db",
+                        "name": "casters.html",
+                        "source_uuid": "943a6084-8e34-4b86-b734-6ff5e229a674",
                         "visible": true,
-                        "locked": true,
+                        "locked": false,
                         "rot": 0.0,
                         "scale_ref": {
                             "x": 1920.0,
@@ -4939,117 +5735,7 @@
                         "crop_top": 0,
                         "crop_right": 0,
                         "crop_bottom": 0,
-                        "id": 2,
-                        "group_item_backup": false,
-                        "pos": {
-                            "x": 0.0,
-                            "y": 0.0
-                        },
-                        "pos_rel": {
-                            "x": -1.7777777910232544,
-                            "y": -1.0
-                        },
-                        "scale": {
-                            "x": 1.0,
-                            "y": 1.0
-                        },
-                        "scale_rel": {
-                            "x": 1.0,
-                            "y": 1.0
-                        },
-                        "bounds": {
-                            "x": 0.0,
-                            "y": 0.0
-                        },
-                        "bounds_rel": {
-                            "x": 0.0,
-                            "y": 0.0
-                        },
-                        "scale_filter": "disable",
-                        "blend_method": "default",
-                        "blend_type": "normal",
-                        "show_transition": {
-                            "duration": 0
-                        },
-                        "hide_transition": {
-                            "duration": 0
-                        },
-                        "private_settings": {}
-                    },
-                    {
-                        "name": "Red Bull Bug.png",
-                        "source_uuid": "57c642e3-f511-4337-a45f-31f4ec9ab11f",
-                        "visible": false,
-                        "locked": true,
-                        "rot": 0.0,
-                        "scale_ref": {
-                            "x": 1920.0,
-                            "y": 1080.0
-                        },
-                        "align": 5,
-                        "bounds_type": 0,
-                        "bounds_align": 0,
-                        "bounds_crop": false,
-                        "crop_left": 0,
-                        "crop_top": 0,
-                        "crop_right": 0,
-                        "crop_bottom": 0,
-                        "id": 4,
-                        "group_item_backup": false,
-                        "pos": {
-                            "x": 0.0,
-                            "y": 0.0
-                        },
-                        "pos_rel": {
-                            "x": -1.7777777910232544,
-                            "y": -1.0
-                        },
-                        "scale": {
-                            "x": 1.0,
-                            "y": 1.0
-                        },
-                        "scale_rel": {
-                            "x": 1.0,
-                            "y": 1.0
-                        },
-                        "bounds": {
-                            "x": 0.0,
-                            "y": 0.0
-                        },
-                        "bounds_rel": {
-                            "x": 0.0,
-                            "y": 0.0
-                        },
-                        "scale_filter": "disable",
-                        "blend_method": "default",
-                        "blend_type": "normal",
-                        "show_transition": {
-                            "duration": 0
-                        },
-                        "hide_transition": {
-                            "duration": 0
-                        },
-                        "private_settings": {}
-                    },
-                    {
-                        "name": "CEO Bug.png",
-                        "source_uuid": "ef1c2e2d-7142-43e1-ba1c-a0487b66ed22",
-                        "visible": true,
-                        "locked": true,
-                        "rot": 0.0,
-                        "scale_ref": {
-                            "x": 1920.0,
-                            "y": 1080.0
-                        },
-                        "align": 5,
-                        "bounds_type": 0,
-                        "bounds_align": 0,
-                        "bounds_crop": false,
-                        "crop_left": 0,
-                        "crop_top": 0,
-                        "crop_right": 0,
-                        "crop_bottom": 0,
-                        "id": 5,
+                        "id": 7,
                         "group_item_backup": false,
                         "pos": {
                             "x": 0.0,
@@ -5103,12 +5789,8 @@
                 "OBSBasic.SelectScene": [],
                 "libobs.show_scene_item.6": [],
                 "libobs.hide_scene_item.6": [],
-                "libobs.show_scene_item.2": [],
-                "libobs.hide_scene_item.2": [],
-                "libobs.show_scene_item.4": [],
-                "libobs.hide_scene_item.4": [],
-                "libobs.show_scene_item.5": [],
-                "libobs.hide_scene_item.5": []
+                "libobs.show_scene_item.7": [],
+                "libobs.hide_scene_item.7": []
             },
             "deinterlace_mode": 0,
             "deinterlace_field_order": 0,
@@ -5792,12 +6474,12 @@
                 "libobs.hide_scene_item.14": [],
                 "libobs.show_scene_item.15": [],
                 "libobs.hide_scene_item.15": [],
-                "libobs.show_scene_item.16": [],
-                "libobs.hide_scene_item.16": [],
+                "libobs.show_scene_item.20": [],
+                "libobs.hide_scene_item.20": [],
                 "libobs.show_scene_item.18": [],
                 "libobs.hide_scene_item.18": [],
-                "libobs.show_scene_item.20": [],
-                "libobs.hide_scene_item.20": []
+                "libobs.show_scene_item.16": [],
+                "libobs.hide_scene_item.16": []
             },
             "deinterlace_mode": 0,
             "deinterlace_field_order": 0,
@@ -5807,12 +6489,12 @@
         },
         {
             "prev_ver": 537001985,
-            "name": "Show scene - H2H",
+            "name": "Show scene - h2h",
             "uuid": "7b38ae51-e0f9-47a1-be2c-8226b5d401a3",
             "id": "scene",
             "versioned_id": "scene",
             "settings": {
-                "id_counter": 4,
+                "id_counter": 6,
                 "custom_size": false,
                 "items": [
                     {
@@ -5891,20 +6573,20 @@
                         "id": 2,
                         "group_item_backup": false,
                         "pos": {
-                            "x": 961.0,
-                            "y": 123.0
+                            "x": 357.0,
+                            "y": 0.0
                         },
                         "pos_rel": {
-                            "x": 0.0018518518190830946,
-                            "y": -0.7722222208976746
+                            "x": -1.1166666746139526,
+                            "y": -1.0
                         },
                         "scale": {
-                            "x": 0.4963541626930237,
-                            "y": 0.4962962865829468
+                            "x": 1.0,
+                            "y": 1.0
                         },
                         "scale_rel": {
-                            "x": 0.4963541626930237,
-                            "y": 0.4962962865829468
+                            "x": 1.0,
+                            "y": 1.0
                         },
                         "bounds": {
                             "x": 0.0,
@@ -5929,6 +6611,116 @@
                         "name": "Camera scene - pL",
                         "source_uuid": "70caee2b-7c67-4df5-bcfd-a2754ca218eb",
                         "visible": true,
+                        "locked": false,
+                        "rot": 0.0,
+                        "scale_ref": {
+                            "x": 1920.0,
+                            "y": 1080.0
+                        },
+                        "align": 5,
+                        "bounds_type": 0,
+                        "bounds_align": 0,
+                        "bounds_crop": false,
+                        "crop_left": 0,
+                        "crop_top": 0,
+                        "crop_right": 887,
+                        "crop_bottom": 0,
+                        "id": 3,
+                        "group_item_backup": false,
+                        "pos": {
+                            "x": -71.0,
+                            "y": 0.0
+                        },
+                        "pos_rel": {
+                            "x": -1.9092592000961304,
+                            "y": -1.0
+                        },
+                        "scale": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "scale_rel": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "bounds": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "bounds_rel": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "scale_filter": "disable",
+                        "blend_method": "default",
+                        "blend_type": "normal",
+                        "show_transition": {
+                            "duration": 300
+                        },
+                        "hide_transition": {
+                            "duration": 300
+                        },
+                        "private_settings": {}
+                    },
+                    {
+                        "name": "Asset scene - melee gameplay",
+                        "source_uuid": "6431dfc9-6bd9-42e1-9705-00f6580d2403",
+                        "visible": true,
+                        "locked": false,
+                        "rot": 0.0,
+                        "scale_ref": {
+                            "x": 1920.0,
+                            "y": 1080.0
+                        },
+                        "align": 5,
+                        "bounds_type": 0,
+                        "bounds_align": 0,
+                        "bounds_crop": false,
+                        "crop_left": 312,
+                        "crop_top": 0,
+                        "crop_right": 306,
+                        "crop_bottom": 0,
+                        "id": 6,
+                        "group_item_backup": false,
+                        "pos": {
+                            "x": 796.0,
+                            "y": 584.0
+                        },
+                        "pos_rel": {
+                            "x": -0.3037036955356598,
+                            "y": 0.0814814567565918
+                        },
+                        "scale": {
+                            "x": 0.25115206837654114,
+                            "y": 0.2509259283542633
+                        },
+                        "scale_rel": {
+                            "x": 0.25115206837654114,
+                            "y": 0.2509259283542633
+                        },
+                        "bounds": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "bounds_rel": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "scale_filter": "disable",
+                        "blend_method": "default",
+                        "blend_type": "normal",
+                        "show_transition": {
+                            "duration": 300
+                        },
+                        "hide_transition": {
+                            "duration": 300
+                        },
+                        "private_settings": {}
+                    },
+                    {
+                        "name": "Overlay - H2H.png",
+                        "source_uuid": "94e1fa70-b2d2-49de-922c-29ae683c4a9c",
+                        "visible": true,
                         "locked": true,
                         "rot": 0.0,
                         "scale_ref": {
@@ -5943,23 +6735,23 @@
                         "crop_top": 0,
                         "crop_right": 0,
                         "crop_bottom": 0,
-                        "id": 3,
+                        "id": 5,
                         "group_item_backup": false,
                         "pos": {
-                            "x": 10.0,
-                            "y": 117.0
+                            "x": 0.0,
+                            "y": 0.0
                         },
                         "pos_rel": {
-                            "x": -1.7592592239379883,
-                            "y": -0.7833333015441895
+                            "x": -1.7777777910232544,
+                            "y": -1.0
                         },
                         "scale": {
-                            "x": 0.4963541626930237,
-                            "y": 0.4962962865829468
+                            "x": 1.0,
+                            "y": 1.0
                         },
                         "scale_rel": {
-                            "x": 0.4963541626930237,
-                            "y": 0.4962962865829468
+                            "x": 1.0,
+                            "y": 1.0
                         },
                         "bounds": {
                             "x": 0.0,
@@ -6000,7 +6792,11 @@
                 "libobs.show_scene_item.2": [],
                 "libobs.hide_scene_item.2": [],
                 "libobs.show_scene_item.3": [],
-                "libobs.hide_scene_item.3": []
+                "libobs.hide_scene_item.3": [],
+                "libobs.show_scene_item.5": [],
+                "libobs.hide_scene_item.5": [],
+                "libobs.show_scene_item.6": [],
+                "libobs.hide_scene_item.6": []
             },
             "deinterlace_mode": 0,
             "deinterlace_field_order": 0,
@@ -7157,6 +7953,32 @@
                 "libobs.push-to-mute": [],
                 "libobs.push-to-talk": []
             },
+            "deinterlace_mode": 0,
+            "deinterlace_field_order": 0,
+            "monitoring_type": 0,
+            "private_settings": {}
+        },
+        {
+            "prev_ver": 537001985,
+            "name": "zenni_e4e_logo_lockup-white.png",
+            "uuid": "08e9040a-59a9-4d00-b282-7868014888c8",
+            "id": "image_source",
+            "versioned_id": "image_source",
+            "settings": {
+                "file": "C:/Users/matth/OneDrive/Documents/GitHub/PolarityOverlay/event_assets/ads/sponsors/zenni/zenni_e4e_logo_lockup-white.png"
+            },
+            "mixers": 0,
+            "sync": 0,
+            "flags": 0,
+            "volume": 1.0,
+            "balance": 0.5,
+            "enabled": true,
+            "muted": false,
+            "push-to-mute": false,
+            "push-to-mute-delay": 0,
+            "push-to-talk": false,
+            "push-to-talk-delay": 0,
+            "hotkeys": {},
             "deinterlace_mode": 0,
             "deinterlace_field_order": 0,
             "monitoring_type": 0,
