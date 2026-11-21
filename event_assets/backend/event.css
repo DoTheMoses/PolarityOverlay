@@ -4,33 +4,14 @@
 /* VARIABLES
 /*=======================================================================*/
 @font-face {
-    font-family: 'Ariana Pro Thin';
-    src: url("../fonts/arianapro-thin.otf");
-}
-@font-face {
-    font-family: 'Ariana Pro Light';
-    src: url("../fonts/arianapro-light.otf");
-}
-@font-face {
-    font-family: 'Ariana Pro Regular';
-    src: url("../fonts/arianapro-regular.otf");
-}
-@font-face {
-    font-family: 'Ariana Pro Black';
-    src: url("../fonts/arianapro-black.otf");
-}
-@font-face {
-    font-family: 'Briquette Bold Black';
-    src: url("../fonts/BriquetteTypeface-Bold.ttf");
+    font-family: 'Broadway Flat';
+    src: url("fonts/BroadwayFlat.ttf");
 }
 
 :root {
   --main-color: #FFC629;
   --secondary-color: #170F36;
-  --font-thin: 'Ariana Pro Thin';
-  --font-light: 'Ariana Pro Light';
-  --font-regular: 'Ariana Pro Regular';
-  --font-black: 'Briquette Bold Black';
+  --font-black: 'Broadway Flat';
 }
 
 /*=======================================================================*/
@@ -56,20 +37,20 @@ body {
 /*
 /*========================================================================*/
 
-#message_downtime {
-  position: absolute;
-  height:138px;
-  width:100%;
-  top:670px;
-  font-size: 100px;
-  text-align: center;
-  left:0px;
-  font-family: var(--font-black);
-}
-
 #scene_downtime {
   height: 100%;
   width: 100%;
+}
+
+#message_downtime {
+  position: absolute;
+  height: 138px;
+  width: 100%;
+  top: 747px;
+  font-size: 55px;
+  text-align: center;
+  left: 0px;
+  color: black;
 }
 
 /*#sponsors_static {
@@ -109,7 +90,6 @@ body {
   font-size: 250px;
   text-align: center;
   font-family: var(--font-black);
-  -webkit-text-stroke: 8px black;
   letter-spacing: -2px
   color: #D62A28;
 }
@@ -132,23 +112,23 @@ body {
 
 #lower_third_wrapper {
   height: 134px;
-  width: 1400px;
-  left: 400px;
-  top: 880px;
+  width: 100%;
+  top: 945px;
+  text-align: center;
 }
 
 #lower_third_line_first_wrapper {
-  font-size: 75px;
+  font-size: 55px;
   padding-top: 5px;
   font-family: var(--font-black);
-  margin-bottom: -28px;
+  margin-bottom: -10px;
+  color: black;
 }
 
 #lower_third_line_second_wrapper {
-  padding-left: 20px;
-  font-size: 45px;
+  font-size: 35px;
   font-family: var(--font-black);
-  color: #F68A1E;
+  color: #e62323;
 }
 
 /*========================================================================*/
@@ -316,36 +296,37 @@ body {
 #round_wrapper {
   width: 1920px;
   height: 30px;
-  bottom: 30px;
+  top: 25px;
   text-align: center;
-  -webkit-text-stroke: 1px black;
-  letter-spacing: -1px;
 }
 
-#round { font-size: 50px;}
+#round { font-size: 50px;  color: black;}
 
 /* TAGS*/
 
-#l_tag_wrapper, #r_tag_wrapper { height: 20px; width: 310px; font-size: 32px; font-family: var(--font-black); bottom: 293px; -webkit-text-stroke: 1px black;}
-#l_tag_wrapper { left: 35px; text-align: left;}
-#r_tag_wrapper { right: 35px; text-align: right;}
-
-#l_tag, #r_tag {
-  position: relative;
+#l_tag_wrapper, #r_tag_wrapper { 
+  height: 40px;
+  width: 310px;
+  font-size: 40px;
+  font-family: var(--font-black);
+  top: 482px;
+  color: black;
 }
+#l_tag_wrapper { left: 35px;}
+#r_tag_wrapper { right: 35px;}
 
 #l_sponsor,#r_sponsor {
-  font-size: 22px;
-  -webkit-text-stroke: 1px black;
-  position: relative;
+  color: #e62323;
 }
 
 /* PRONOUNS */
 
-#l_pronoun_wrapper, #r_pronoun_wrapper { width: 270px; height: 26px; bottom: 347px; font-family: var(--font-bold); -webkit-text-stroke: 1px black;}
-#l_pronoun_wrapper {left:  15px;}
-#r_pronoun_wrapper {right: 15px;}
-#l_pronoun, #r_pronoun {  font-size: 22px;}
+#l_pronoun_wrapper, #r_pronoun_wrapper { width: 320px; height: 40px; top: 520px; font-family: var(--font-black);
+color: black;
+}
+#l_pronoun_wrapper {left:  30px;}
+#r_pronoun_wrapper {right: 30px;}
+#l_pronoun, #r_pronoun {  font-size: 23px;}
 
 /* LOSS */
 
@@ -354,22 +335,22 @@ body {
 /* SCORE */
 
 #l_score_wrapper, #r_score_wrapper {
-  text-shadow: 2px 2px 2px #000000;
-  font-family: var(--font-ultra);
+  font-family: var(--font-black);
   height: 110px;
   width: 100px;
-  bottom: 120px;
+  top: 27px;
+  color:black;
 }
 
-#l_score_wrapper {left:  167px;}
-#r_score_wrapper {right: 164px;}
-#l_score, #r_score { font-size: 90px;}
+#l_score_wrapper {left:  276px;}
+#r_score_wrapper {right: 278px;}
+#l_score, #r_score { font-size: 80px;}
 
 /* CHARACTER */
 
-#l_char_wrapper, #r_char_wrapper { height: 70px; width: 70px; bottom: 140px;}
-#l_char_wrapper {left:  55px;}
-#r_char_wrapper {right: 51px;}
+#l_char_wrapper, #r_char_wrapper { height: 60px; width: 60px; top: 395px;}
+#l_char_wrapper {left:  270px;}
+#r_char_wrapper {right: 270px;}
 
 /* SPONSOR CAROUSEL */
 

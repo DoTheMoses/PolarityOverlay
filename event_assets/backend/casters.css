@@ -2,33 +2,14 @@
 @import "../../programming_assets/css/event.css";
 
 @font-face {
-    font-family: 'Ariana Pro Thin';
-    src: url("../fonts/arianapro-thin.otf");
-}
-@font-face {
-    font-family: 'Ariana Pro Light';
-    src: url("../fonts/arianapro-light.otf");
-}
-@font-face {
-    font-family: 'Ariana Pro Regular';
-    src: url("../fonts/arianapro-regular.otf");
-}
-@font-face {
-    font-family: 'Ariana Pro Black';
-    src: url("../fonts/arianapro-black.otf");
-}
-@font-face {
-    font-family: 'Briquette Bold Black';
-    src: url("../fonts/BriquetteTypeface-Bold.ttf");
+    font-family: 'Broadway Flat';
+    src: url("fonts/BroadwayFlat.ttf");
 }
 
 :root {
   --main-color: #FFC629;
   --secondary-color: #170F36;
-  --font-thin: 'Ariana Pro Thin';
-  --font-light: 'Ariana Pro Light';
-  --font-regular: 'Ariana Pro Regular';
-  --font-black: 'Briquette Bold Black';
+  --font-black: 'Broadway Flat';
 }
 
 /*========================================================================*/
@@ -52,30 +33,30 @@
 }
 
 #caster_wrapper_1,#caster_wrapper_2,#caster_wrapper_3,#caster_wrapper_4 {
-  width: 500px;
+  width: 410px;
   height: 100px;
-  top: 910px;
+  top: 940px;
   font-size: 55px;
   font-family: var(--font-black);
   text-align: center;
+  color: black;
 }
 
-#caster_wrapper_1 {left:  410px;}
-#caster_wrapper_2 {left: 1020px;}
+#caster_wrapper_1 {left:  290px;}
+#caster_wrapper_2 {right: 290px;}
 
 #caster_full_1, #caster_full_2, #caster_full_3 {
-  margin-bottom: -42px;
+  margin-bottom: -15px;
 }
 
-#caster_sponsor_1, #caster_sponsor_2, #caster_sponsor_3, #caster_sponsor_4 {color: #F68A1E;}
+#caster_sponsor_1, #caster_sponsor_2, #caster_sponsor_3, #caster_sponsor_4 {color: #e62323;}
 
 
 #caster_twitter_1, #caster_twitter_2, #caster_twitter_3, #caster_twitter_4 {
   font-size: 35px;
   padding-left: 25px;
   font-family: var(--font-black);
-  color: #F68A1E;
-  -webkit-text-stroke: 0px black;  
+  color: #e62323;
 }
 
 #caster_twitter_2 {
@@ -84,14 +65,21 @@
 }
 
 #caster_pronouns_1, #caster_pronouns_2, #caster_pronouns_3, #caster_pronouns_4 {
+  position: absolute;
+  width: 410px;
+  height: 100px;
+  top: 926px;
   font-size: 30px;
   font-family: var(--font-black);
-  color: white;
   font-style: normal;
-  -webkit-text-stroke: 0px black;
-  color: #F68A1E;
+  color: black;
   font-style: uppercase;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
 }
+
+#caster_pronouns_1 {left: 295px}
+#caster_pronouns_2 {right: 295px}
 
 .hide {display: none;}
 .show {display: inline;}

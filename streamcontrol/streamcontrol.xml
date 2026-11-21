@@ -1,14 +1,14 @@
 <!DOCTYPE StreamControl>
 <items>
- <timestamp>1795143428</timestamp>
- <caster_pronouns_1>He/Him</caster_pronouns_1>
- <caster_pronouns_2>He/Him</caster_pronouns_2>
+ <timestamp>1795230766</timestamp>
+ <caster_pronouns_1>She/Her</caster_pronouns_1>
+ <caster_pronouns_2>She/They</caster_pronouns_2>
  <caster_pronouns_3></caster_pronouns_3>
  <caster_pronouns_4></caster_pronouns_4>
  <caster_pronouns_5></caster_pronouns_5>
  <caster_pronouns_6></caster_pronouns_6>
- <caster_sponsor_1></caster_sponsor_1>
- <caster_sponsor_2></caster_sponsor_2>
+ <caster_sponsor_1>Test</caster_sponsor_1>
+ <caster_sponsor_2>Test</caster_sponsor_2>
  <caster_sponsor_3></caster_sponsor_3>
  <caster_sponsor_4></caster_sponsor_4>
  <caster_sponsor_5></caster_sponsor_5>
@@ -37,12 +37,12 @@
  <l_score>0</l_score>
  <l_sponsor_current>SR</l_sponsor_current>
  <l_sponsor_on_deck>SR</l_sponsor_on_deck>
- <l_tag_current>Joshman[L]</l_tag_current>
+ <l_tag_current>Joshman</l_tag_current>
  <l_tag_on_deck>Zain [W]</l_tag_on_deck>
- <lower_third_line_first>ZAIN WINS TIPPED OFF 17</lower_third_line_first>
- <lower_third_line_second>LIVE FROM ATLANTA, GEORGIA</lower_third_line_second>
+ <lower_third_line_first>Welcome to Taking Back Tampa: The Movie!</lower_third_line_first>
+ <lower_third_line_second>LIVE FROM TAMPA, FLORIDA</lower_third_line_second>
  <lower_third_line_third></lower_third_line_third>
- <message_downtime>Thanks for watching!</message_downtime>
+ <message_downtime>Starting soon</message_downtime>
  <p1_char></p1_char>
  <p1_color></p1_color>
  <p1_pronoun></p1_pronoun>
@@ -70,10 +70,10 @@
  <r_loss>0</r_loss>
  <r_pronoun_current>He/Him</r_pronoun_current>
  <r_pronoun_on_deck>He/Him</r_pronoun_on_deck>
- <r_score>2</r_score>
- <r_sponsor_current>SR</r_sponsor_current>
+ <r_score>0</r_score>
+ <r_sponsor_current></r_sponsor_current>
  <r_sponsor_on_deck></r_sponsor_on_deck>
- <r_tag_current>Zain</r_tag_current>
+ <r_tag_current>Saturnz</r_tag_current>
  <r_tag_on_deck></r_tag_on_deck>
  <round_2s></round_2s>
  <round_current>Grand Finals</round_current>

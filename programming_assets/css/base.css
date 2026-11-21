@@ -353,7 +353,7 @@ body {
 }
 
 #l_tag, #l_tag_doubles, #l_sponsor, #r_tag, #r_tag_doubles, #r_sponsor, #l_loss, #r_loss {
-  display:inline-block;
+  display:inline;
 }
 
 #l_pronoun_wrapper, #r_pronoun_wrapper {
@@ -366,7 +366,6 @@ body {
 #l_sponsor, #r_sponsor {
   width:100%;
   height: 100%;
-  position:absolute;
 }
 
 #l_score_wrapper, #l_score_wrapper_doubles, #r_score_wrapper, #r_score_wrapper_doubles {
